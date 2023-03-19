@@ -34,6 +34,9 @@ return packer.startup(function(use)
 	-- nord colorscheme
 	use('shaunsingh/nord.nvim')
 
+	-- maximizes and restores current window
+	use('szw/vim-maximizer')
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
