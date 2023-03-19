@@ -35,7 +35,7 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim')
 	
 	-- nord colorscheme
-	use('shaunsingh/nord.nvim')
+	use('arcticicestudio/nord-vim')
 
 	-- maximizes and restores current window
 	use('szw/vim-maximizer')
