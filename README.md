@@ -21,6 +21,7 @@ This config includes the following items:
 - Treesitter
 - null-ls, Prettier
 - autopairs
+- gitsigns
 - Vim maximizer
 - Comment plugin
 
