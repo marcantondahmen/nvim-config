@@ -31,6 +31,9 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use('wbthomason/packer.nvim')
 
+	-- nord colorscheme
+	use('shaunsingh/nord.nvim')
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
