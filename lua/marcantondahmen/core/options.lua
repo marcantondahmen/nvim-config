@@ -1,3 +1,5 @@
+vim.api.nvim_exec('language en_US', true)
+
 local opt = vim.opt
 
 -- line numbers
