@@ -31,6 +31,9 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use('wbthomason/packer.nvim')
 
+	-- lua functions that many plugins use
+	use('nvim-lua/plenary.nvim')
+	
 	-- nord colorscheme
 	use('shaunsingh/nord.nvim')
 
@@ -42,6 +45,9 @@ return packer.startup(function(use)
 
 	-- file explorer
 	use('nvim-tree/nvim-tree.lua')
+
+	-- vs-code like icons
+	use('nvim-tree/nvim-web-devicons')
 
 	if packer_bootstrap then
 		require('packer').sync()
