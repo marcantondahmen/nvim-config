@@ -20,6 +20,7 @@ This config includes the following items:
 - LSP Saga
 - Treesitter
 - null-ls, Prettier
+- autopairs
 - Vim maximizer
 - Comment plugin
 
