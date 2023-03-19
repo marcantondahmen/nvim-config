@@ -21,14 +21,44 @@ nvimtree.setup({
 			enable = true,
 		},
 		icons = {
-			git_placement = 'signcolumn',
+			git_placement = 'after',
+			modified_placement = 'after',
 			show = {
 				file = true,
 				folder = true,
 				folder_arrow = false,
-				git = true,
+				git = false,
+				modified = true,
+			},
+			glyphs = {
+				default = '',
+				symlink = '',
+				bookmark = '',
+				modified = '●',
+				folder = {
+					arrow_closed = '',
+					arrow_open = '',
+					default = '',
+					open = '',
+					empty = '',
+					empty_open = '',
+					symlink = '',
+					symlink_open = '',
+				},
+				git = {
+					unstaged = '✗',
+					staged = '✓',
+					unmerged = '',
+					renamed = '➜',
+					untracked = '★',
+					deleted = '',
+					ignored = '◌',
+				},
 			},
 		},
+		highlight_opened_files = 'all', -- 'none' (default), 'icon', 'name' or 'all'
+		highlight_modified = 'all',
+		highlight_git = true,
 	},
 	-- disable window_picker for
 	-- explorer to work well with
@@ -44,9 +74,22 @@ nvimtree.setup({
 		custom = {
 			'^.git$',
 		},
+		exclude = {},
+		dotfiles = false,
+		git_clean = false,
+		no_buffer = false,
 	},
 	git = {
+		enable = true,
 		ignore = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
+		timeout = 400,
+	},
+	modified = {
+		enable = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
 	},
 })
 
