@@ -18,6 +18,7 @@ This config includes the following items:
 - Autocompletion
 - LSP Config
 - LSP Saga
+- Treesitter
 - Vim maximizer
 - Comment plugin
 

@@ -87,6 +87,15 @@ return packer.startup(function(use)
 	use('jose-elias-alvarez/typescript.nvim') -- additional functionality for typescript server (e.g. rename file & update imports)
 	use('onsails/lspkind.nvim') -- vs-code like icons for autocompletion
 
+	-- treesitter configuration
+	use({
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	})
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
