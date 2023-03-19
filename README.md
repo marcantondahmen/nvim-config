@@ -16,6 +16,8 @@ This config includes the following items:
 - Lualine
 - Telescope
 - Autocompletion
+- LSP Config
+- LSP Saga
 - Vim maximizer
 - Comment plugin
 
