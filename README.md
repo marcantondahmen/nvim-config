@@ -19,6 +19,7 @@ This config includes the following items:
 - LSP Config
 - LSP Saga
 - Treesitter
+- null-ls, Prettier
 - Vim maximizer
 - Comment plugin
 
