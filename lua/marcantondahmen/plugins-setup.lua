@@ -33,7 +33,7 @@ return packer.startup(function(use)
 
 	-- lua functions that many plugins use
 	use('nvim-lua/plenary.nvim')
-	
+
 	-- nord colorscheme
 	use('arcticicestudio/nord-vim')
 
@@ -51,10 +51,10 @@ return packer.startup(function(use)
 
 	-- statusline
 	use('nvim-lualine/lualine.nvim')
-	
+
 	-- fuzzy finding w/ telescope
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance
-	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x' })        -- fuzzy finder
+	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x' }) -- fuzzy finder
 
 	-- autocompletion
 	use('hrsh7th/nvim-cmp') -- completion plugin
@@ -89,7 +89,7 @@ return packer.startup(function(use)
 
 	-- formatting & linting
 	use('jose-elias-alvarez/null-ls.nvim') -- configure formatters & linters
-	use('jayp0521/mason-null-ls.nvim')   -- bridges gap b/w mason & null-ls
+	use('jayp0521/mason-null-ls.nvim') -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
 	use({
