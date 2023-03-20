@@ -22,6 +22,8 @@ This config includes the following items:
 -   LSP Saga
 -   Treesitter
 -   null-ls, Prettier
+-   trouble
+-   which-key
 -   autopairs
 -   Indent guides
 -   gitsigns

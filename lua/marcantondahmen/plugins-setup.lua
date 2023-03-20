@@ -104,6 +104,16 @@ return packer.startup(function(use)
 		requires = 'nvim-tree/nvim-web-devicons',
 	})
 
+	-- which-key
+	use({
+		'folke/which-key.nvim',
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require('which-key').setup()
+		end,
+	})
+
 	-- treesitter configuration
 	use({
 		'nvim-treesitter/nvim-treesitter',
