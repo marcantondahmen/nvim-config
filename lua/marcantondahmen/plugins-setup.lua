@@ -37,6 +37,9 @@ return packer.startup(function(use)
 	-- nord colorscheme
 	use('arcticicestudio/nord-vim')
 
+	-- dashboard
+	use('goolord/alpha-nvim')
+
 	-- maximizes and restores current window
 	use('szw/vim-maximizer')
 

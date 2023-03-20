@@ -14,6 +14,7 @@ This config includes the following items:
 -   Nvim Tree
 -   Icons
 -   Lualine
+-   Alpha Dashboard
 -   Telescope
 -   Autocompletion
 -   LSP Config
