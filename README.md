@@ -36,3 +36,7 @@ Here are some helpful links and resources in order to improve this config:
 
 -   [LSP Servers](https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua#readme)
+
+## Fonts
+
+A good looking font that also works well with symbols is the **Hack Nerd Font** that can be downloaded [here](https://www.nerdfonts.com/font-downloads).

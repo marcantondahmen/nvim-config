@@ -8,17 +8,18 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- configure nvim-tree
 nvimtree.setup({
-	-- change folder arrow icons
+	view = {
+		width = 40,
+	},
 	renderer = {
-		full_name = true,
-		--group_empty = true,
+		full_name = false,
+		group_empty = false,
 		special_files = {},
 		symlink_destination = false,
 		indent_markers = {
-			enable = true,
+			enable = false,
 		},
 		icons = {
 			git_placement = 'after',
@@ -26,7 +27,7 @@ nvimtree.setup({
 			show = {
 				file = true,
 				folder = true,
-				folder_arrow = false,
+				folder_arrow = true,
 				git = false,
 				modified = true,
 			},
@@ -102,7 +103,7 @@ local function open_nvim_tree(data)
 	-- buffer is a directory
 	local directory = vim.fn.isdirectory(data.file) == 1
 
-	if not no_name and not directory then
+	if no_name or directory then
 		return
 	end
 
