@@ -39,4 +39,3 @@ opt.splitbelow = true
 
 -- word char
 opt.iskeyword:append('-')
-
