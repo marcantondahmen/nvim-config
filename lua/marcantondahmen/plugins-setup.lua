@@ -46,6 +46,9 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 
+	-- indent guides
+	use('lukas-reineke/indent-blankline.nvim')
+
 	-- file explorer
 	use('nvim-tree/nvim-tree.lua')
 
