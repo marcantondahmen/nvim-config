@@ -1,5 +1,7 @@
 # Nvim Config
 
+![](images/dashboard.png)
+
 This is the personal NeoVim configuration of Marc Anton Dahmen.
 It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8)
 and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
