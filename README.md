@@ -15,6 +15,7 @@ This config includes the following items:
 -   Icons
 -   Lualine
 -   Alpha Dashboard
+-   Gitui integration
 -   Telescope
 -   Autocompletion
 -   LSP Config
