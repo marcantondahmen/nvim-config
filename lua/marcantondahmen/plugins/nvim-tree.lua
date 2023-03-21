@@ -24,6 +24,7 @@ nvimtree.setup({
 			custom_only = false,
 			list = {
 				{ key = 'v', cb = tree_cb('vsplit') },
+				{ key = 's', cb = tree_cb('split') },
 			},
 		},
 	},
