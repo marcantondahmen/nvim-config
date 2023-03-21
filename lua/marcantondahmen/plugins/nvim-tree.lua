@@ -4,14 +4,28 @@ if not setup then
 	return
 end
 
+local config, nvimtree_config = pcall(require, 'nvim-tree.config')
+if not config then
+	return
+end
+
 -- recommended settings from nvim-tree documentation
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+local tree_cb = nvimtree_config.nvim_tree_callback
+
 -- configure nvim-tree
 nvimtree.setup({
+	hijack_cursor = true,
 	view = {
 		width = 40,
+		mappings = {
+			custom_only = false,
+			list = {
+				{ key = 'h', cb = tree_cb('hsplit') },
+			},
+		},
 	},
 	renderer = {
 		full_name = false,
@@ -57,9 +71,25 @@ nvimtree.setup({
 				},
 			},
 		},
-		highlight_opened_files = 'all', -- 'none' (default), 'icon', 'name' or 'all'
+		highlight_opened_files = 'none', -- 'none' (default), 'icon', 'name' or 'all'
 		highlight_modified = 'all',
 		highlight_git = true,
+	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
+		debounce_delay = 50,
+		severity = {
+			min = vim.diagnostic.severity.HINT,
+			max = vim.diagnostic.severity.ERROR,
+		},
+		icons = {
+			hint = '',
+			info = '',
+			warning = '',
+			error = '',
+		},
 	},
 	-- disable window_picker for
 	-- explorer to work well with
@@ -107,13 +137,17 @@ local function open_nvim_tree(data)
 		return
 	end
 
-	-- change to the directory
-	if directory then
-		vim.cmd.cd(data.file)
-	end
+	-- Found here:
+	-- https://github.com/nvim-tree/nvim-tree.lua/discussions/1517#discussion-4317419
+	if vim.fn.expand('%:p') ~= '' then
+		vim.api.nvim_del_autocmd(data.id)
 
-	-- open the tree
-	require('nvim-tree.api').tree.open()
+		vim.schedule(function()
+			require('nvim-tree.api').tree.open()
+
+			vim.cmd('wincmd p')
+		end)
+	end
 end
 
-vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost' }, { callback = open_nvim_tree })
