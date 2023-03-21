@@ -11,4 +11,7 @@ saga.setup({
 	definition = {
 		edit = '<CR>',
 	},
+	symbol_in_winbar = {
+		enable = false,
+	},
 })

@@ -1,13 +1,22 @@
 -- import lualine plugin safely
 local status, lualine = pcall(require, 'lualine')
 if not status then
-  return
+	return
 end
 
-local lualine_nord = require('lualine.themes.nord')
+-- local lualine_nord = require('lualine.themes.nord')
 
 lualine.setup({
-  options = {
-    theme = lualine_nord,
-  },
+	options = {
+		theme = 'nord',
+	},
+	sections = {
+		lualine_c = {
+			{
+				'filename',
+				file_status = true, -- displays file status (readonly status, modified status)
+				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+			},
+		},
+	},
 })
