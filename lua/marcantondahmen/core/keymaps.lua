@@ -14,12 +14,11 @@ keymap.set('n', '<c-j>', ':wincmd j<CR>', { silent = true, noremap = true })
 keymap.set('n', '<c-h>', ':wincmd h<CR>', { silent = true, noremap = true })
 keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
 
-keymap.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
-keymap.set('n', '<leader>tx', ':tabclose<CR>') -- close current tab
-keymap.set('n', '<leader>tn', ':tabn<CR>') -- go to next tab
-keymap.set('n', '<leader>tp', ':tabp<CR>') -- go to previous tab
-
 -- plugin keybinds
+
+-- barbar
+keymap.set('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true, noremap = true })
+keymap.set('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', { silent = true, noremap = true })
 
 -- vim-maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
