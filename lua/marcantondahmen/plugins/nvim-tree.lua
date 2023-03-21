@@ -23,7 +23,7 @@ nvimtree.setup({
 		mappings = {
 			custom_only = false,
 			list = {
-				{ key = 'h', cb = tree_cb('hsplit') },
+				{ key = 'v', cb = tree_cb('vsplit') },
 			},
 		},
 	},
