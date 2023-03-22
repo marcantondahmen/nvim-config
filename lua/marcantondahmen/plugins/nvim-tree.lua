@@ -34,7 +34,7 @@ nvimtree.setup({
 		special_files = {},
 		symlink_destination = false,
 		indent_markers = {
-			enable = false,
+			enable = true,
 		},
 		icons = {
 			webdev_colors = false,
