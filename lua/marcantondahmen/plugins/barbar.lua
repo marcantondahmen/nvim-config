@@ -20,16 +20,16 @@ require('bufferline').setup({
 	-- Enables / disables diagnostic symbols
 	diagnostics = {
 		-- you can use a list
-		{ enabled = true, icon = 'ﬀ' }, -- ERROR
+		{ enabled = true, icon = '' }, -- ERROR
 		{ enabled = false }, -- WARN
 		{ enabled = false }, -- INFO
-		{ enabled = true }, -- HINT
+		{ enabled = true, icon = '' }, -- HINT
 
 		-- OR `vim.diagnostic.severity`
-		[vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+		[vim.diagnostic.severity.ERROR] = { enabled = true, icon = '' },
 		[vim.diagnostic.severity.WARN] = { enabled = false },
 		[vim.diagnostic.severity.INFO] = { enabled = false },
-		[vim.diagnostic.severity.HINT] = { enabled = true },
+		[vim.diagnostic.severity.HINT] = { enabled = true, icon = '' },
 	},
 
 	-- Excludes buffers from the tabline
