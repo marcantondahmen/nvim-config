@@ -4,11 +4,11 @@ if not status then
 	return
 end
 
--- local lualine_nord = require('lualine.themes.nord')
-
 lualine.setup({
+	-- https://github.com/nvim-lualine/lualine.nvim#component-options
 	options = {
 		theme = 'nord',
+		component_separators = { left = '', right = '' },
 	},
 	sections = {
 		lualine_c = {

@@ -3,6 +3,11 @@ if not setup then
 	return
 end
 
+local highlights = require('nord').bufferline.highlights({
+	italic = false,
+	bold = false,
+})
+
 bufferline.setup({
 	options = {
 		offsets = {
@@ -15,5 +20,6 @@ bufferline.setup({
 		},
 		always_show_bufferline = false,
 		separator_style = 'thin',
+		highlights = highlights,
 	},
 })

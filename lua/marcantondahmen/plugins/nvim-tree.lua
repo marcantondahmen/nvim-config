@@ -37,6 +37,7 @@ nvimtree.setup({
 			enable = false,
 		},
 		icons = {
+			webdev_colors = false,
 			git_placement = 'after',
 			modified_placement = 'after',
 			show = {
