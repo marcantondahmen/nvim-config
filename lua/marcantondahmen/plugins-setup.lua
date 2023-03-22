@@ -55,11 +55,14 @@ return packer.startup(function(use)
 	-- vs-code like icons
 	use('nvim-tree/nvim-web-devicons')
 
-	-- tabs
-	use({ 'akinsho/bufferline.nvim', tag = 'v3.*', requires = 'nvim-tree/nvim-web-devicons' })
-
 	-- statusline
 	use('nvim-lualine/lualine.nvim')
+
+	-- tabline
+	use({
+		'kdheepak/tabline.nvim',
+		requires = { { 'nvim-lualine/lualine.nvim', opt = true }, { 'nvim-tree/nvim-web-devicons', opt = true } },
+	})
 
 	-- fuzzy finding w/ telescope
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance

@@ -16,9 +16,9 @@ keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
 
 -- plugin keybinds
 
--- bufferline
-keymap.set('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true, noremap = true })
-keymap.set('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', { silent = true, noremap = true })
+-- tabline
+keymap.set('n', '<A-,>', '<Cmd>TablineBufferPrevious<CR>', { silent = true, noremap = true })
+keymap.set('n', '<A-.>', '<Cmd>TablineBufferNext<CR>', { silent = true, noremap = true })
 
 -- vim-maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
