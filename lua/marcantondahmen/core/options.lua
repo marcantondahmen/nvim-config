@@ -11,7 +11,6 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = false
 opt.autoindent = true
-opt.showtabline = 2
 
 -- line wrapping
 opt.wrap = false
@@ -43,3 +42,4 @@ opt.iskeyword:append('-')
 
 -- other
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
+opt.showmode = false
