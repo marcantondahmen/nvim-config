@@ -58,11 +58,8 @@ return packer.startup(function(use)
 	-- statusline
 	use('nvim-lualine/lualine.nvim')
 
-	-- tabline
-	use({
-		'kdheepak/tabline.nvim',
-		requires = { { 'nvim-lualine/lualine.nvim', opt = true }, { 'nvim-tree/nvim-web-devicons', opt = true } },
-	})
+	-- buffers and tabs
+	use({ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' })
 
 	-- fuzzy finding w/ telescope
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance
