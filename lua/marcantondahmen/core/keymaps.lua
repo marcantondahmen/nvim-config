@@ -16,7 +16,7 @@ keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
 
 -- plugin keybinds
 
--- barbar
+-- bufferline
 keymap.set('n', '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true, noremap = true })
 keymap.set('n', '<A-.>', '<Cmd>BufferLineCycleNext<CR>', { silent = true, noremap = true })
 
