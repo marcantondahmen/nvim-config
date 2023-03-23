@@ -87,10 +87,10 @@ nvimtree.setup({
 			max = vim.diagnostic.severity.ERROR,
 		},
 		icons = {
-			hint = '',
-			info = '',
-			warning = '',
-			error = '',
+			hint = '',
+			info = '',
+			warning = '',
+			error = '',
 		},
 	},
 	-- disable window_picker for

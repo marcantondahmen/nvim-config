@@ -12,6 +12,8 @@ require('nord').set()
 vim.cmd([[
 	colorscheme nord
 
+	highlight NormalMode guifg=#4C566A guibg=#D8DEE9
+	highlight ReplaceMode guifg=#4C566A guibg=#D8DEE9
 	highlight FloatBorder guifg=#4C566A
 	highlight TelescopePromptBorder guifg=#4C566A
 	highlight TelescopeResultsBorder guifg=#4C566A
