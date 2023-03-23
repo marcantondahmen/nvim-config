@@ -22,6 +22,7 @@ This config includes the following items:
 -   [Gitui](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/plugins/gitui.lua)
 -   [diffview](https://github.com/sindrets/diffview.nvim)
 -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+-   [tagalong](https://github.com/AndrewRadev/tagalong.vim)
 -   [Autocompletion](https://github.com/hrsh7th/nvim-cmp)
 -   [lspconfig](https://github.com/neovim/nvim-lspconfig)
 -   [lspsaga](https://github.com/glepnir/lspsaga.nvim)
