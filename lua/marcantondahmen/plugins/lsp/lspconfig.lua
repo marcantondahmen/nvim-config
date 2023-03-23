@@ -16,8 +16,6 @@ if not typescript_setup then
 	return
 end
 
-local keymap = vim.keymap -- for conciseness
-
 local wk_setup, wk = pcall(require, 'which-key')
 if not wk_setup then
 	return
@@ -25,9 +23,6 @@ end
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
-	-- keybind options
-	local opts = { noremap = true, silent = true, buffer = bufnr }
-
 	-- set keybinds
 	wk.register({
 		['<leader>'] = {
