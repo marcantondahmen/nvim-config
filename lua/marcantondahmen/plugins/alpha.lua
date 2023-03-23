@@ -35,7 +35,7 @@ dashboard.section.header.val = {
 
 -- Set menu
 dashboard.section.buttons.val = {
-	dashboard.button('r', '     Recent   ', ':Telescope oldfiles<CR>'),
+	dashboard.button('r', '     Recent   ', ':Telescope oldfiles<CR>'),
 	dashboard.button('f', '     Find File', ':Telescope find_files<CR>'),
 	dashboard.button('t', '     Find Text', ':Telescope live_grep<CR>'),
 	dashboard.button('q', '     Quit     ', ':qa<CR>'),
