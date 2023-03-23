@@ -1,45 +1,59 @@
+local wk_setup, wk = pcall(require, 'which-key')
+if not wk_setup then
+	return
+end
+
+wk.register({
+	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
+	['<leader>'] = {
+		e = { ':NvimTreeToggle<CR>', 'Open file explorer' },
+		f = {
+			name = '+Telescope',
+			f = { '<cmd>Telescope find_files<cr>', 'Find file' },
+			s = { '<cmd>Telescope live_grep<cr>', 'Find text' },
+			c = { '<cmd>Telescope grep_string<cr>', 'Find string under cursor' },
+			b = { '<cmd>Telescope buffers<cr>', 'List open buffers' },
+			r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
+		},
+		x = {
+			name = '+Trouble',
+			x = { '<cmd>TroubleToggle<cr>', 'Toggle diagnostics' },
+			w = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Toggle workspace diagnostics' },
+			d = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Toggle document diagnostics' },
+			l = { '<cmd>TroubleToggle loclist<cr>', 'Toggle loclist' },
+			q = { '<cmd>TroubleToggle quickfix<cr>', 'Toggle quickfix' },
+		},
+		g = {
+			name = '+Git',
+			u = { '<cmd>Gitui<cr>', 'Open Gitui' },
+			p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview hunk' },
+			r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk' },
+			h = { '<cmd>DiffviewFileHistory %<cr>', 'View history of current file' },
+			d = { '<cmd>DiffviewOpen<cr>', 'Open diff view' },
+			c = { '<cmd>DiffviewClose<cr>', 'Close view' },
+		},
+		s = {
+			name = '+Splits',
+			m = { ':MaximizerToggle<CR>', 'Maximize current pane' },
+			v = { '<C-w>v', 'Split vertically' },
+			h = { '<C-w>s', 'Split horizontally' },
+			e = { '<C-w>=', 'Make panes equal width and height' },
+			x = { ':close<CR>', 'Close current pane' },
+		},
+	},
+})
+
 -- set leader key to space
 vim.g.mapleader = ' '
 
 local keymap = vim.keymap
 
 -- window management
-keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
-keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
-keymap.set('n', '<leader>se', '<C-w>=') -- make split windows equal width & height
-keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
-
 keymap.set('n', '<c-k>', ':wincmd k<CR>', { silent = true, noremap = true })
 keymap.set('n', '<c-j>', ':wincmd j<CR>', { silent = true, noremap = true })
 keymap.set('n', '<c-h>', ':wincmd h<CR>', { silent = true, noremap = true })
 keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
 
--- plugin keybinds
-
 -- barbar
 keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { silent = true, noremap = true })
 keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { silent = true, noremap = true })
-
--- vim-maximizer
-keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>') -- toggle split window maximization
-
--- nvim-tree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>') -- toggle file explorer
-
--- trouble
-keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true, noremap = true })
-keymap.set('n', '<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { silent = true, noremap = true })
-keymap.set('n', '<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>', { silent = true, noremap = true })
-keymap.set('n', '<leader>xl', '<cmd>TroubleToggle loclist<cr>', { silent = true, noremap = true })
-keymap.set('n', '<leader>xq', '<cmd>TroubleToggle quickfix<cr>', { silent = true, noremap = true })
-keymap.set('n', 'gR', '<cmd>TroubleToggle lsp_references<cr>', { silent = true, noremap = true })
-
--- gitui
-keymap.set('n', '<leader>gu', '<cmd>Gitui<cr>')
-
--- telescope
-keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>') -- find files within current working directory, respects .gitignore
-keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>') -- find string in current working directory as you type
-keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>') -- find string under cursor in current working directory
-keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>') -- list open buffers in current neovim instance
-keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>') -- list available help tags

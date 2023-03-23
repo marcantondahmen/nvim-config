@@ -18,31 +18,46 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
+local wk_setup, wk = pcall(require, 'which-key')
+if not wk_setup then
+	return
+end
+
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
-	keymap.set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts) -- show definition, references
-	keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts) -- got to declaration
-	keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', opts) -- see definition and make edits in window
-	keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) -- go to implementation
-	keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts) -- see available code actions
-	keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts) -- smart rename
-	keymap.set('n', '<leader>D', '<cmd>Lspsaga show_line_diagnostics<CR>', opts) -- show  diagnostics for line
-	keymap.set('n', '<leader>d', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts) -- show diagnostics for cursor
-	keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts) -- jump to previous diagnostic in buffer
-	keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts) -- jump to next diagnostic in buffer
-	keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts) -- show documentation for what is under cursor
-	keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<CR>', opts) -- see outline on right hand side
+	wk.register({
+		['<leader>'] = {
+			c = { '<cmd>Lspsaga code_action<CR>', 'Code actions' },
+			rn = { '<cmd>Lspsaga rename<CR>', 'Smart rename' },
+			D = { '<cmd>Lspsaga show_line_diagnostics<CR>', 'Show line diagnostics' },
+			d = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show cursor diagnostics' },
+			o = { '<cmd>Lspsaga outline<CR>', 'Open outline' },
+		},
+		g = {
+			name = 'Code navigation',
+			f = { '<cmd>Lspsaga lsp_finder<CR>', 'Show definition, references' },
+			D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'See definition and make edits in window' },
+			d = { '<cmd>Lspsaga peek_definition<CR>', 'Peek definition' },
+			i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
+			k = { '<cmd>Lspsaga hover_doc<CR>', 'Show documentation for what is under cursor' },
+		},
+	})
 
 	client.server_capabilities.semanticTokensProvider = nil
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == 'tsserver' then
-		keymap.set('n', '<leader>rf', ':TypescriptRenameFile<CR>') -- rename file and update imports
-		keymap.set('n', '<leader>ru', ':TypescriptRemoveUnused<CR>') -- remove unused variables (not in youtube nvim video)
+		wk.register({
+			['<leader>'] = {
+				name = 'Rename/Remove',
+				rf = { ':TypescriptRenameFile<CR>', 'Rename file and update imports' },
+				ru = { ':TypescriptRemoveUnused<CR>', 'Remove unused variables' },
+			},
+		})
 	end
 end
 
