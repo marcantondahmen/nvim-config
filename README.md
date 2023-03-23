@@ -10,7 +10,7 @@ and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/
 
 This config includes the following items:
 
--   Basic options
+-   [Basic options](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/core/options.lua)
 -   [Nord color scheme](https://github.com/shaunsingh/nord.nvim)
 -   [Packer](https://github.com/wbthomason/packer.nvim)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
@@ -18,7 +18,8 @@ This config includes the following items:
 -   [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 -   [Tabline](https://github.com/kdheepak/tabline.nvim)
 -   [Alpha Dashboard](https://github.com/goolord/alpha-nvim)
--   [Gitui](https://github.com/extrawurst/gitui)
+-   [Gitui](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/plugins/gitui.lua)
+-   [diffview](https://github.com/sindrets/diffview.nvim)
 -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 -   [Autocompletion](https://github.com/hrsh7th/nvim-cmp)
 -   [lspconfig](https://github.com/neovim/nvim-lspconfig)
