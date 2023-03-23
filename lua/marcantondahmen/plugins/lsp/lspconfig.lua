@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
 			rn = { '<cmd>Lspsaga rename<CR>', 'Smart rename' },
 			D = { '<cmd>Lspsaga show_line_diagnostics<CR>', 'Show line diagnostics' },
 			d = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show cursor diagnostics' },
-			o = { '<cmd>Lspsaga outline<CR>', 'Open outline' },
+			o = { '<cmd>Lspsaga outline<CR>', 'Toggle outline' },
 		},
 		g = {
 			name = 'Code navigation',

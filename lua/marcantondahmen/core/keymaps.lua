@@ -6,7 +6,7 @@ end
 wk.register({
 	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
-		e = { ':NvimTreeToggle<CR>', 'Open file explorer' },
+		e = { ':NvimTreeToggle<CR>', 'Toggle file explorer' },
 		f = {
 			name = '+Telescope',
 			f = { '<cmd>Telescope find_files<cr>', 'Find file' },
