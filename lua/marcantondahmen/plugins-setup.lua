@@ -68,6 +68,9 @@ return packer.startup(function(use)
 	-- git diff
 	use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
 
+	-- search and replace
+	use({ 'windwp/nvim-spectre' })
+
 	-- autocompletion
 	use('hrsh7th/nvim-cmp') -- completion plugin
 	use('hrsh7th/cmp-buffer') -- source for text in buffer

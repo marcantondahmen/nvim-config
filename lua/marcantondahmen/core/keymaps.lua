@@ -32,13 +32,22 @@ wk.register({
 			d = { '<cmd>DiffviewOpen<cr>', 'Open diff view' },
 			c = { '<cmd>DiffviewClose<cr>', 'Close view' },
 		},
-		s = {
-			name = '+Splits',
+		p = {
+			name = '+Panes',
 			m = { ':MaximizerToggle<CR>', 'Maximize current pane' },
 			v = { '<C-w>v', 'Split vertically' },
 			h = { '<C-w>s', 'Split horizontally' },
 			e = { '<C-w>=', 'Make panes equal width and height' },
 			x = { ':close<CR>', 'Close current pane' },
+		},
+		s = {
+			name = '+Spectre',
+			s = { '<cmd>lua require("spectre").open()<CR>', 'Open spectre' },
+			w = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', 'Search current word' },
+			f = {
+				'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+				'Search word in current file',
+			},
 		},
 	},
 })
