@@ -66,3 +66,5 @@ keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
 -- barbar
 keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { silent = true, noremap = true })
 keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { silent = true, noremap = true })
+keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { silent = true, noremap = true })
+keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { silent = true, noremap = true })

@@ -28,4 +28,22 @@ vim.cmd([[
 	highlight LspSagaRenameBorder guifg=#4C566A
 	highlight LspSagaDiagnosticBorder guifg=#4C566A
 	highlight LSOutlinePreviewBorder guifg=#4C566A
+	highlight BufferCurrent guibg=#81A1C1 guifg=#2E3440
+	highlight BufferCurrentMod guibg=#81A1C1 guifg=#4C566A
+	highlight BufferCurrentIcon guibg=#81A1C1 guifg=#2E3440
+	highlight BufferCurrentSign guibg=#81A1C1 guifg=#2E3440
+	highlight BufferCurrentHINT guibg=#81A1C1 guifg=#BF616A
+	highlight BufferCurrentERROR guibg=#81A1C1 guifg=#BF616A
+	highlight BufferVisible guibg=#3B4252 guifg=#81A1C1
+	highlight BufferVisibleMod guibg=#3B4252 guifg=#8FBCBB
+	highlight BufferVisibleIcon guibg=#3B4252 guifg=#81A1C1
+	highlight BufferVisibleSign guibg=#3B4252 guifg=#81A1C1
+	highlight BufferVisibleHINT guibg=#3B4252 guifg=#BF616A
+	highlight BufferVisibleERROR guibg=#3B4252 guifg=#BF616A
+	highlight BufferInactive guibg=#3B4252 guifg=#81A1C1
+	highlight BufferInactiveMod guibg=#3B4252 guifg=#8FBCBB
+	highlight BufferInactiveIcon guibg=#3B4252 guifg=#81A1C1
+	highlight BufferInactiveSign guibg=#3B4252 guifg=#81A1C1
+	highlight BufferInactiveHINT guibg=#3B4252 guifg=#BF616A
+	highlight BufferInactiveERROR guibg=#3B4252 guifg=#BF616A
 ]])
