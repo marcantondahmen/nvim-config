@@ -37,6 +37,7 @@ This config includes the following items:
 -   [Replace with register](https://github.com/inkarkat/vim-ReplaceWithRegister)
 -   [Vim maximizer](https://github.com/szw/vim-maximizer)
 -   [Comment plugin](https://github.com/numToStr/Comment.nvim)
+-   [editorconfig](https://github.com/gpanders/editorconfig.nvim)
 
 ## Installation
 
