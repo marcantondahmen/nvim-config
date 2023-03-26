@@ -49,6 +49,8 @@ wk.register({
 				'Search word in current file',
 			},
 		},
+		q = { '<cmd>qa<cr>', 'Quit NeoVim' },
+		w = { '<cmd>w<cr>', 'Save buffer' },
 	},
 })
 
@@ -56,15 +58,20 @@ wk.register({
 vim.g.mapleader = ' '
 
 local keymap = vim.keymap
+local options = { silent = true, noremap = true }
 
 -- window management
-keymap.set('n', '<c-k>', ':wincmd k<CR>', { silent = true, noremap = true })
-keymap.set('n', '<c-j>', ':wincmd j<CR>', { silent = true, noremap = true })
-keymap.set('n', '<c-h>', ':wincmd h<CR>', { silent = true, noremap = true })
-keymap.set('n', '<c-l>', ':wincmd l<CR>', { silent = true, noremap = true })
+keymap.set('n', '<c-k>', ':wincmd k<CR>', options)
+keymap.set('n', '<c-j>', ':wincmd j<CR>', options)
+keymap.set('n', '<c-h>', ':wincmd h<CR>', options)
+keymap.set('n', '<c-l>', ':wincmd l<CR>', options)
 
 -- barbar
-keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { silent = true, noremap = true })
-keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { silent = true, noremap = true })
-keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { silent = true, noremap = true })
-keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { silent = true, noremap = true })
+keymap.set('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
+keymap.set('n', '<TAB>', '<Cmd>BufferNext<CR>', options)
+keymap.set('n', '<C-,>', '<Cmd>BufferMovePrevious<CR>', options)
+keymap.set('n', '<C-.>', '<Cmd>BufferMoveNext<CR>', options)
+
+-- quit insert mode without esc
+keymap.set('i', 'jk', '<ESC>', options)
+keymap.set('i', 'kj', '<ESC>', options)
