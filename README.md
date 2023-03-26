@@ -11,6 +11,7 @@ and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/
 This config includes the following items:
 
 -   [Basic options](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/core/options.lua)
+-   [Keymaps](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/core/keymaps.lua)
 -   [Nord color scheme](https://github.com/shaunsingh/nord.nvim)
 -   [Packer](https://github.com/wbthomason/packer.nvim)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
