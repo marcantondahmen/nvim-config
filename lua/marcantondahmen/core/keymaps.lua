@@ -31,6 +31,7 @@ wk.register({
 			h = { '<cmd>DiffviewFileHistory %<cr>', 'View history of current file' },
 			d = { '<cmd>DiffviewOpen<cr>', 'Open diff view' },
 			c = { '<cmd>DiffviewClose<cr>', 'Close view' },
+			s = { '<cmd>Telescope git_status<cr>', 'Status' },
 		},
 		p = {
 			name = '+Panes',
