@@ -4,12 +4,18 @@ if not toggleterm_setup then
 end
 
 toggleterm.setup({
-	size = 20,
+	size = function(term)
+		if term.direction == 'horizontal' then
+			return 15
+		elseif term.direction == 'vertical' then
+			return vim.o.columns * 0.4
+		end
+	end,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = -10,
+	shading_factor = 0,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
@@ -28,13 +34,23 @@ toggleterm.setup({
 
 local Terminal = require('toggleterm.terminal').Terminal
 
-local phpunit = Terminal:new({ cmd = 'phpunit', hidden = true, close_on_exit = false, direction = 'float' })
+local phpunit = Terminal:new({
+	cmd = 'phpunit',
+	hidden = true,
+	close_on_exit = false,
+	direction = 'vertical',
+})
 
 function PHPUNIT()
 	phpunit:toggle()
 end
 
-local psalm = Terminal:new({ cmd = 'psalm', hidden = true, close_on_exit = false, direction = 'float' })
+local psalm = Terminal:new({
+	cmd = '/usr/local/bin/psalm',
+	hidden = true,
+	close_on_exit = false,
+	direction = 'vertical',
+})
 
 function PSALM()
 	psalm:toggle()

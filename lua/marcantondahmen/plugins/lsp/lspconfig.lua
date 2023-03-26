@@ -93,6 +93,24 @@ lspconfig['tailwindcss'].setup({
 	on_attach = on_attach,
 })
 
+-- configure PHP servers
+lspconfig['intelephense'].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		intelephense = {
+			diagnostics = {
+				undefinedConstants = false,
+			},
+		},
+	},
+})
+
+lspconfig['psalm'].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure emmet language server
 lspconfig['emmet_ls'].setup({
 	capabilities = capabilities,
