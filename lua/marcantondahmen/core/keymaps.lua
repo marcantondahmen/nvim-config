@@ -25,7 +25,7 @@ wk.register({
 		},
 		g = {
 			name = '+Git',
-			u = { '<cmd>Gitui<cr>', 'Open Gitui' },
+			u = { '<cmd>lua GITUI()<cr>', 'Open Gitui' },
 			p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview hunk' },
 			r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk' },
 			h = { '<cmd>DiffviewFileHistory %<cr>', 'View history of current file' },

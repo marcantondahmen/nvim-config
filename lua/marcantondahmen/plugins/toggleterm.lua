@@ -15,7 +15,7 @@ toggleterm.setup({
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = 0,
+	shading_factor = -10,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
@@ -26,8 +26,13 @@ toggleterm.setup({
 		border = 'curved',
 		winblend = 0,
 		highlights = {
-			border = 'Normal',
+			border = 'FloatBorder',
 			background = 'Normal',
+		},
+	},
+	highlights = {
+		FloatBorder = {
+			guifg = vim.g.custom_colors.border,
 		},
 	},
 })
@@ -54,4 +59,15 @@ local psalm = Terminal:new({
 
 function PSALM()
 	psalm:toggle()
+end
+
+local gitui = Terminal:new({
+	cmd = 'gitui',
+	hidden = true,
+	close_on_exit = true,
+	direction = 'float',
+})
+
+function GITUI()
+	gitui:toggle()
 end

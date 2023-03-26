@@ -47,3 +47,8 @@ vim.cmd([[
 	highlight BufferInactiveHINT guibg=#3B4252 guifg=#BF616A
 	highlight BufferInactiveERROR guibg=#3B4252 guifg=#BF616A
 ]])
+
+-- set global color variable to be used by other plugins
+vim.g.custom_colors = {
+	border = '#4C566A',
+}
