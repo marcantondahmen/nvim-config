@@ -40,6 +40,9 @@ return packer.startup(function(use)
 	-- dashboard
 	use('goolord/alpha-nvim')
 
+	-- terminal
+	use({ 'akinsho/toggleterm.nvim', tag = '*' })
+
 	-- maximizes and restores current window
 	use('szw/vim-maximizer')
 
