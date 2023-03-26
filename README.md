@@ -53,6 +53,28 @@ Or using `https`:
 git clone https://github.com/marcantondahmen/nvim-config.git ~/.config/nvim
 ```
 
+### Dependencies
+
+The following dependecies have to be installed in order to make all plugins work correctly:
+
+-   ripgrep
+-   fd
+-   sed
+-   wget
+-   Python3 provider
+-   node neovim package
+
+For macOS run:
+
+```bash
+brew install ripgrep
+brew install fd
+brew install gnu-sed
+brew install wget
+python3 -m pip install --user --upgrade pynvim
+npm install -g neovim
+```
+
 ## Additional Resources
 
 Here are some helpful links and resources in order to improve this config:
