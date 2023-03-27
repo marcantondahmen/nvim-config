@@ -44,3 +44,4 @@ opt.iskeyword:append('-')
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
 opt.showmode = false
 opt.swapfile = false
+opt.fixeol = true
