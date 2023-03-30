@@ -68,7 +68,7 @@ return packer.startup(function(use)
 	use('nvim-lualine/lualine.nvim')
 
 	-- buffers and tabs
-	use({ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' })
+	use({ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons', tag = 'v1.5.0', lock = true })
 
 	-- fuzzy finding w/ telescope
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }) -- dependency for better sorting performance
