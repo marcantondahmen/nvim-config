@@ -21,7 +21,8 @@ vim.cmd([[
 	highlight NvimTreeSpecialFile guifg=#81A1C1 
 	highlight NvimTreeImageFile guifg=#81A1C1 
 	highlight NvimTreeFolderName guifg=#81A1C1 
-	highlight NvimTreeOpenName guifg=#81A1C1 
+	highlight NvimTreeOpenFolderName guifg=#81A1C1 
+	highlight NvimTreeOpenedFolderName guifg=#81A1C1 
 	highlight NvimTreeEmptyFolderName guifg=#81A1C1 
 	highlight NvimTreeStatusLine guifg=#4C566A
 	highlight TelescopePromptBorder guifg=#4C566A
