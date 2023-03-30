@@ -14,6 +14,7 @@ wk.register({
 			c = { '<cmd>Telescope grep_string<cr>', 'Find string under cursor' },
 			b = { '<cmd>Telescope buffers<cr>', 'List open buffers' },
 			r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
+			n = { '<cmd>Telescope notify<cr>', 'Notify history' },
 		},
 		x = {
 			name = '+Trouble',
