@@ -9,12 +9,21 @@ vim.g.nord_bold = false
 require('nord').set()
 
 -- https://github.com/shaunsingh/nord.nvim/blob/master/lua/nord/theme.lua
+-- run ":so $VIMRUNTIME/syntax/hitest.vim" to see all highlight groups
 vim.cmd([[
 	colorscheme nord
 
 	highlight NormalMode guifg=#4C566A guibg=#D8DEE9
 	highlight ReplaceMode guifg=#4C566A guibg=#D8DEE9
 	highlight FloatBorder guifg=#4C566A
+	highlight NvimTreeNormal guifg=#81A1C1 
+	highlight NvimTreeNormalNC guifg=#81A1C1 
+	highlight NvimTreeSpecialFile guifg=#81A1C1 
+	highlight NvimTreeImageFile guifg=#81A1C1 
+	highlight NvimTreeFolderName guifg=#81A1C1 
+	highlight NvimTreeOpenName guifg=#81A1C1 
+	highlight NvimTreeEmptyFolderName guifg=#81A1C1 
+	highlight NvimTreeStatusLine guifg=#4C566A
 	highlight TelescopePromptBorder guifg=#4C566A
 	highlight TelescopeResultsBorder guifg=#4C566A
 	highlight TelescopePreviewBorder guifg=#4C566A
