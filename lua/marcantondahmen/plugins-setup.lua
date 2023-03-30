@@ -61,6 +61,9 @@ return packer.startup(function(use)
 	-- vs-code like icons
 	use('nvim-tree/nvim-web-devicons')
 
+	-- notify
+	use('rcarriga/nvim-notify')
+
 	-- statusline
 	use('nvim-lualine/lualine.nvim')
 
