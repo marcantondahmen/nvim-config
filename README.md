@@ -15,6 +15,7 @@ This config includes the following items:
 -   [Nord color scheme](https://github.com/shaunsingh/nord.nvim)
 -   [Packer](https://github.com/wbthomason/packer.nvim)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
+-   [Folding](lua/marcantondahmen/plugins/fold.lua)
 -   [Icons](https://github.com/nvim-tree/nvim-web-devicons)
 -   [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 -   [Tabline](https://github.com/kdheepak/tabline.nvim)
