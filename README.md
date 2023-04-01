@@ -66,6 +66,7 @@ The following dependecies have to be installed in order to make all plugins work
 -   wget
 -   Python3 provider
 -   node neovim package
+-   unzip (probably only WSL)
 
 For macOS run:
 
