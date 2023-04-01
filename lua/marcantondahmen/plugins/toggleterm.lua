@@ -3,6 +3,11 @@ if not toggleterm_setup then
 	return
 end
 
+local terminal_setup, toggletermTerminal = pcall(require, 'toggleterm.terminal')
+if not terminal_setup then
+	return
+end
+
 toggleterm.setup({
 	size = function(term)
 		if term.direction == 'horizontal' then
@@ -37,7 +42,7 @@ toggleterm.setup({
 	},
 })
 
-local Terminal = require('toggleterm.terminal').Terminal
+local Terminal = toggletermTerminal.Terminal
 
 local phpunit = Terminal:new({
 	cmd = 'phpunit',
@@ -70,4 +75,15 @@ local gitui = Terminal:new({
 
 function GITUI()
 	gitui:toggle()
+end
+
+local selfUpdate = Terminal:new({
+	cmd = '(cd ~/.config/nvim/ && git pull && nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync")',
+	hidden = true,
+	close_on_exit = false,
+	direction = 'horizontal',
+})
+
+function SELF_UPDATE()
+	selfUpdate:toggle()
 end
