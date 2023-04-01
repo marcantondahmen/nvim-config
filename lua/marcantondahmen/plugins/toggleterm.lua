@@ -77,13 +77,13 @@ function GITUI()
 	gitui:toggle()
 end
 
-local selfUpdate = Terminal:new({
-	cmd = '(cd ~/.config/nvim/ && git pull && nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync")',
+local pullConfig = Terminal:new({
+	cmd = '(cd ~/.config/nvim/ && git pull)',
 	hidden = true,
 	close_on_exit = true,
-	direction = 'horizontal',
+	direction = 'vertical',
 })
 
-function SELF_UPDATE()
-	selfUpdate:toggle()
+function PULL_CONFIG()
+	pullConfig:toggle()
 end
