@@ -10,8 +10,8 @@ and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/
 
 This config includes the following items:
 
--   [Basic options](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/core/options.lua)
--   [Keymaps](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/core/keymaps.lua)
+-   [Basic options](lua/marcantondahmen/core/options.lua)
+-   [Keymaps](lua/marcantondahmen/core/keymaps.lua)
 -   [Nord color scheme](https://github.com/shaunsingh/nord.nvim)
 -   [Packer](https://github.com/wbthomason/packer.nvim)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
@@ -23,7 +23,7 @@ This config includes the following items:
 -   [Notify](https://github.com/rcarriga/nvim-notify)
 -   [Spectre](https://github.com/nvim-pack/nvim-spectre)
 -   [Alpha Dashboard](https://github.com/goolord/alpha-nvim)
--   [Gitui](https://github.com/marcantondahmen/nvim-config/blob/master/lua/marcantondahmen/plugins/gitui.lua)
+-   [Gitui](lua/marcantondahmen/plugins/gitui.lua)
 -   [diffview](https://github.com/sindrets/diffview.nvim)
 -   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 -   [tagalong](https://github.com/AndrewRadev/tagalong.vim)
