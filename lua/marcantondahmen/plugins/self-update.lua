@@ -1,5 +1,5 @@
 local function checkForUpdates()
-	local check = io.popen('(cd ~/.config/nvim/ && git fetch --dry-run)')
+	local check = io.popen('(cd ~/.config/nvim/ && git fetch origin --dry-run)')
 	local output = check:read('*a')
 
 	check:close()
