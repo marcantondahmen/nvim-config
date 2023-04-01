@@ -80,7 +80,7 @@ end
 local selfUpdate = Terminal:new({
 	cmd = '(cd ~/.config/nvim/ && git pull && nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync")',
 	hidden = true,
-	close_on_exit = false,
+	close_on_exit = true,
 	direction = 'horizontal',
 })
 
