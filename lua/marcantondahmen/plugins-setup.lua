@@ -108,6 +108,16 @@ return packer.startup(function(use)
 	use('jose-elias-alvarez/typescript.nvim') -- additional functionality for typescript server (e.g. rename file & update imports)
 	use('onsails/lspkind.nvim') -- vs-code like icons for autocompletion
 
+	-- navbuddy
+	use({
+		'SmiteshP/nvim-navbuddy',
+		requires = {
+			'neovim/nvim-lspconfig',
+			'SmiteshP/nvim-navic',
+			'MunifTanjim/nui.nvim',
+		},
+	})
+
 	-- essential plugins
 	use('tpope/vim-surround') -- add, delete, change surroundings (it's awesome)
 	use('inkarkat/vim-ReplaceWithRegister') -- replace with register contents using motion (gr + motion)

@@ -61,6 +61,7 @@ wk.register({
 		},
 		q = { '<cmd>BufferClose<cr>', 'Close buffer' },
 		w = { '<cmd>w<cr>', 'Save buffer' },
+		n = { '<cmd>Navbuddy<cr>', 'Open Navbuddy' },
 	},
 })
 
