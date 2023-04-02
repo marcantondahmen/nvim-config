@@ -7,6 +7,7 @@ local function pullCallback(id, output, name)
 	vim.notify(table.concat(output, '\n'))
 	vim.fn.timer_start(500, function()
 		require('packer').sync()
+		vim.notify('Please restart NeoVim to apply updates!', 'info')
 	end)
 end
 
