@@ -13,7 +13,7 @@ end
 local function fetchCallback(id, output, name)
 	local status = table.concat(output, ' ')
 
-	if status == '' then
+	if status ~= '' then
 		vim.fn.timer_start(500, function()
 			vim.fn.jobstart(gitCmdStr('pull'), {
 				stdout_buffered = true,
