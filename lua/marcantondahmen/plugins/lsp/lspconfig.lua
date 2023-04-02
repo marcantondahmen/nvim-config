@@ -104,6 +104,9 @@ lspconfig['intelephense'].setup({
 			},
 		},
 	},
+	init_options = {
+		globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense',
+	},
 })
 
 lspconfig['psalm'].setup({
