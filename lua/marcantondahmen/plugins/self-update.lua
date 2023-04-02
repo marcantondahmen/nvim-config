@@ -12,7 +12,7 @@ end
 local function checkForUpdates()
 	local status = git(config, 'fetch origin --dry-run')
 
-	if status == '' then
+	if status ~= '' then
 		vim.fn.timer_start(500, function()
 			local pull = git(config, 'pull')
 			vim.notify(pull, 'info')
