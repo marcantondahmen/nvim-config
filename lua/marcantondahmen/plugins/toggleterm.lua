@@ -76,14 +76,3 @@ local gitui = Terminal:new({
 function GITUI()
 	gitui:toggle()
 end
-
-local pullConfig = Terminal:new({
-	cmd = '(cd ~/.config/nvim/ && git pull)',
-	hidden = true,
-	close_on_exit = true,
-	direction = 'vertical',
-})
-
-function PULL_CONFIG()
-	pullConfig:toggle()
-end
