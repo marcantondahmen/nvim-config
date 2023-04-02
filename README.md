@@ -69,8 +69,11 @@ The following dependecies have to be installed in order to make all plugins work
 -   Python3 provider
 -   node neovim package
 -   unzip (probably only WSL)
+-   PHP (for Composer)
+-   Composer (for Psalm)
+-   Gitui
 
-For macOS run:
+In order to install the basic dependecies, assuming that [Gitui](https://github.com/extrawurst/gitui), PHP and Composer are installed anyways, run the following commands on macOS for example:
 
 ```bash
 brew install ripgrep
