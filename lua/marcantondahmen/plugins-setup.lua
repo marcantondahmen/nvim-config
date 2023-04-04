@@ -43,6 +43,9 @@ return packer.startup(function(use)
 	-- terminal
 	use({ 'akinsho/toggleterm.nvim', tag = '*' })
 
+	-- auto session
+	use('rmagatti/auto-session')
+
 	-- maximizes and restores current window
 	use('szw/vim-maximizer')
 
