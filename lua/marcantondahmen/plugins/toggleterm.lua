@@ -24,7 +24,7 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = 'horizontal',
+	direction = 'float',
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
@@ -46,7 +46,7 @@ local Terminal = toggletermTerminal.Terminal
 
 local phpunit = Terminal:new({
 	cmd = 'phpunit',
-	hidden = true,
+	hidden = false,
 	close_on_exit = false,
 	direction = 'vertical',
 })
@@ -57,7 +57,7 @@ end
 
 local psalm = Terminal:new({
 	cmd = '/usr/local/bin/psalm',
-	hidden = true,
+	hidden = false,
 	close_on_exit = false,
 	direction = 'vertical',
 })
@@ -68,7 +68,7 @@ end
 
 local gitui = Terminal:new({
 	cmd = 'gitui',
-	hidden = true,
+	hidden = false,
 	close_on_exit = true,
 	direction = 'float',
 })
@@ -76,3 +76,6 @@ local gitui = Terminal:new({
 function GITUI()
 	gitui:toggle()
 end
+
+vim.cmd('autocmd! TermOpen term://* nnoremap <buffer><LeftRelease> <LeftRelease>i')
+vim.cmd('autocmd! BufEnter term://* startinsert')
