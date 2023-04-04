@@ -1,6 +1,7 @@
 # Nvim Config
 
 ![](images/dashboard.png)
+![](images/editor.png)
 
 This is the personal NeoVim configuration of Marc Anton Dahmen.
 It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8)
@@ -94,3 +95,4 @@ Here are some helpful links and resources in order to improve this config:
 ## Fonts
 
 Good looking fonts that also works well with symbols are **JetBrainsMono Nerd Font** and **Hack Nerd Font** that can be downloaded [here](https://www.nerdfonts.com/font-downloads).
+Note, that on **macOS**, nerd fonts can be installed using `brew`.
