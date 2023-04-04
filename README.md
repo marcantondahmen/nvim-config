@@ -93,4 +93,4 @@ Here are some helpful links and resources in order to improve this config:
 
 ## Fonts
 
-A good looking font that also works well with symbols is the **Hack Nerd Font** that can be downloaded [here](https://www.nerdfonts.com/font-downloads).
+Good looking fonts that also works well with symbols are **JetBrainsMono Nerd Font** and **Hack Nerd Font** that can be downloaded [here](https://www.nerdfonts.com/font-downloads).
