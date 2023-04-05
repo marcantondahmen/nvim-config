@@ -71,6 +71,9 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap
 local options = { silent = true, noremap = true }
 
+-- clear search highlight
+keymap.set('n', '<esc>', ':noh<cr>', options)
+
 -- window management
 keymap.set('n', '<c-k>', ':wincmd k<CR>', options)
 keymap.set('n', '<c-j>', ':wincmd j<CR>', options)
