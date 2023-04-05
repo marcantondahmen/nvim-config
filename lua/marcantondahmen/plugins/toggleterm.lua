@@ -40,6 +40,9 @@ toggleterm.setup({
 			guifg = vim.g.custom_colors.border,
 		},
 	},
+	on_close = function()
+		vim.cmd('NvimTreeRefresh')
+	end,
 })
 
 local Terminal = toggletermTerminal.Terminal
