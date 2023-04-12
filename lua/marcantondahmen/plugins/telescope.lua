@@ -22,6 +22,7 @@ telescope.setup({
 				['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
 			},
 		},
+		borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 	},
 })
 
