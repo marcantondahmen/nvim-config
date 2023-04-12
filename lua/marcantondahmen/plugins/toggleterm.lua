@@ -80,5 +80,16 @@ function GitUI()
 	gitui:toggle()
 end
 
+local gitlog = Terminal:new({
+	cmd = 'git log -n 200 --graph --all --oneline --decorate',
+	hidden = false,
+	close_on_exit = false,
+	direction = 'vertical',
+})
+
+function GitLog()
+	gitlog:toggle()
+end
+
 vim.cmd('autocmd! TermOpen term://* nnoremap <buffer><LeftRelease> <LeftRelease>i')
 vim.cmd('autocmd! BufEnter term://* startinsert')
