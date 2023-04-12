@@ -3,6 +3,7 @@ local state = require('telescope.actions.state')
 local finders = require('telescope.finders')
 local pickers = require('telescope.pickers')
 local sorters = require('telescope.sorters')
+local themes = require('telescope.themes')
 local Terminal = require('toggleterm.terminal').Terminal
 
 local getNpmScripts = function()
@@ -78,10 +79,26 @@ return require('telescope').register_extension({
 				vim.cmd('startinsert!')
 			end
 
+			local dropdown = themes.get_dropdown({
+				borderchars = {
+					prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+					results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+					preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+				},
+				layout_strategy = 'center',
+				layout_config = {
+					height = function(_, _, max_lines)
+						return math.min(max_lines, 15)
+					end,
+					width = function(_, max_columns, _)
+						return math.min(max_columns, 50)
+					end,
+				},
+			})
+
 			pickers
-				.new(opts, {
-					prompt_title = 'Filter',
-					results_title = 'Scripts',
+				.new(vim.tbl_deep_extend('force', opts, dropdown), {
+					prompt_title = 'Scripts',
 					finder = finders.new_table({
 						results = scripts,
 						entry_maker = function(entry)
@@ -92,12 +109,6 @@ return require('telescope').register_extension({
 							}
 						end,
 					}),
-					layout_strategy = 'vertical',
-					layout_config = {
-						height = 16,
-						width = 50,
-						prompt_position = 'top',
-					},
 					sorting_strategy = 'ascending',
 					sorter = sorters.get_generic_fuzzy_sorter(),
 					attach_mappings = function(prompt_bufnr, map)
@@ -108,7 +119,7 @@ return require('telescope').register_extension({
 								cmd = selection.value[2],
 								hidden = false,
 								close_on_exit = false,
-								direction = 'vertical',
+								direction = 'float',
 								on_stdout = insertMode,
 								on_exit = insertMode,
 							}):toggle()

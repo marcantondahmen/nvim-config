@@ -15,6 +15,7 @@ wk.register({
 			b = { '<cmd>Telescope buffers<cr>', 'List open buffers' },
 			r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
 			n = { '<cmd>Telescope notify<cr>', 'Notify history' },
+			x = { '<cmd>Telescope scripts<cr>', 'Run script' },
 		},
 		x = {
 			name = '+Trouble',
@@ -63,7 +64,6 @@ wk.register({
 		q = { '<cmd>BufferClose<cr>', 'Close buffer' },
 		w = { '<cmd>w<cr>', 'Save buffer' },
 		n = { '<cmd>Navbuddy<cr>', 'Open Navbuddy' },
-		z = { '<cmd>Telescope scripts<cr>', 'Run script' },
 	},
 })
 
