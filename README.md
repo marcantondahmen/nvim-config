@@ -23,6 +23,7 @@ This config includes the following items:
 -   [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 -   [Tabline](https://github.com/kdheepak/tabline.nvim)
 -   [ToggleTerm](https://github.com/akinsho/toggleterm.nvim)
+-   [Script Runner](lua/telescope/_extensions/scripts.lua)
 -   [Notify](https://github.com/rcarriga/nvim-notify)
 -   [Spectre](https://github.com/nvim-pack/nvim-spectre)
 -   [Alpha Dashboard](https://github.com/goolord/alpha-nvim)
