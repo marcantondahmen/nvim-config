@@ -74,6 +74,9 @@ return require('telescope').register_extension({
 			opts = opts or {}
 
 			local scripts = getScripts()
+			local insertMode = function()
+				vim.cmd('startinsert!')
+			end
 
 			pickers
 				.new(opts, {
@@ -106,9 +109,8 @@ return require('telescope').register_extension({
 								hidden = false,
 								close_on_exit = false,
 								direction = 'vertical',
-								on_exit = function()
-									vim.cmd('startinsert!')
-								end,
+								on_stdout = insertMode,
+								on_exit = insertMode,
 							}):toggle()
 						end
 
