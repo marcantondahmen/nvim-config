@@ -54,7 +54,7 @@ local phpunit = Terminal:new({
 	direction = 'vertical',
 })
 
-function PHPUNIT()
+function PHPUnit()
 	phpunit:toggle()
 end
 
@@ -65,7 +65,7 @@ local psalm = Terminal:new({
 	direction = 'vertical',
 })
 
-function PSALM()
+function Psalm()
 	psalm:toggle()
 end
 
@@ -76,7 +76,7 @@ local gitui = Terminal:new({
 	direction = 'float',
 })
 
-function GITUI()
+function GitUI()
 	gitui:toggle()
 end
 

@@ -26,7 +26,7 @@ wk.register({
 		},
 		g = {
 			name = '+Git',
-			u = { '<cmd>lua GITUI()<cr>', 'Open Gitui' },
+			u = { '<cmd>lua GitUI()<cr>', 'Open Gitui' },
 			p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview hunk' },
 			r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk' },
 			h = { '<cmd>DiffviewFileHistory %<cr>', 'View history of current file' },
@@ -55,8 +55,8 @@ wk.register({
 			name = '+Terminal',
 			p = {
 				name = '+PHP',
-				u = { '<cmd>lua PHPUNIT()<cr>', 'PHP Unit' },
-				s = { '<cmd>lua PSALM()<cr>', 'Psalm' },
+				u = { '<cmd>lua PHPUnit()<cr>', 'PHP Unit' },
+				s = { '<cmd>lua Psalm()<cr>', 'Psalm' },
 			},
 		},
 		q = { '<cmd>BufferClose<cr>', 'Close buffer' },
