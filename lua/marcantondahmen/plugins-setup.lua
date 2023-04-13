@@ -52,6 +52,12 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 
+	-- docblocks
+	use({
+		'kkoomen/vim-doge',
+		run = ':call doge#install()',
+	})
+
 	-- indent guides
 	use('lukas-reineke/indent-blankline.nvim')
 
