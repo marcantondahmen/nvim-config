@@ -101,6 +101,9 @@ lspconfig['intelephense'].setup({
 		intelephense = {
 			diagnostics = {
 				undefinedConstants = false,
+				undefinedTypes = false,
+				typeErrors = false,
+				unusedSymbols = false,
 			},
 		},
 	},
