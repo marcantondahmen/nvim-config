@@ -54,8 +54,9 @@ return packer.startup(function(use)
 
 	-- docblocks
 	use({
-		'kkoomen/vim-doge',
-		run = ':call doge#install()',
+		'danymat/neogen',
+		requires = 'nvim-treesitter/nvim-treesitter',
+		tag = '*',
 	})
 
 	-- indent guides

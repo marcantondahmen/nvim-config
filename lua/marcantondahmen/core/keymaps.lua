@@ -6,7 +6,7 @@ end
 wk.register({
 	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
-		b = { ':DogeGenerate<cr>', 'Generate docblock' },
+		b = { ':Neogen<cr>', 'Generate docblock' },
 		e = { ':NvimTreeFocus<CR>', 'Focus file explorer' },
 		f = {
 			name = '+Telescope',
