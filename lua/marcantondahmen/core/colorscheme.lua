@@ -56,6 +56,8 @@ vim.cmd([[
 	highlight BufferInactiveSign guibg=#3B4252 guifg=#81A1C1
 	highlight BufferInactiveHINT guibg=#3B4252 guifg=#BF616A
 	highlight BufferInactiveERROR guibg=#3B4252 guifg=#BF616A
+	highlight QuickFixLine guibg=#E5E9F0 guifg=#434C5E
+	highlight qfLineNr guibg=#EBCB8B guifg=#3B4252 
 ]])
 
 -- set global color variable to be used by other plugins
