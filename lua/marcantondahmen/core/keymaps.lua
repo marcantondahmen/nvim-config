@@ -45,6 +45,9 @@ wk.register({
 			e = { '<C-w>=', 'Make panes equal width and height' },
 			x = { ':close<CR>', 'Close current pane' },
 		},
+		r = {
+			r = { '*:%s///gc<left><left><left>', 'Replace word in buffer' },
+		},
 		s = {
 			name = '+Spectre',
 			s = { '<cmd>lua require("spectre").open()<CR>', 'Open spectre' },
@@ -92,3 +95,6 @@ keymap.set('n', '<C-.>', '<Cmd>BufferMoveNext<CR>', options)
 -- quit insert mode without esc
 keymap.set('i', 'jk', '<ESC>', options)
 keymap.set('i', 'kj', '<ESC>', options)
+
+-- replace selection in buffer
+keymap.set('v', 'r', 'y:%s*<c-r>"**gc<left><left><left>', { silent = true, noremap = false })
