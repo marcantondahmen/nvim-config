@@ -33,8 +33,6 @@ treesitter.setup({
 		'gitignore',
 		'regex',
 		'php',
-		'phpdoc',
-		'diff',
 	},
 	-- auto install above language parsers
 	auto_install = true,
