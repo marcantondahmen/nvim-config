@@ -17,6 +17,7 @@ wk.register({
 			r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
 			n = { '<cmd>Telescope notify<cr>', 'Notify history' },
 			x = { '<cmd>Telescope scripts<cr>', 'Run script' },
+			k = { '<cmd>Telescope keymaps<cr>', 'List keymaps' },
 		},
 		x = {
 			name = '+Trouble',
