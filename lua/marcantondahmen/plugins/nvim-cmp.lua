@@ -16,6 +16,12 @@ if not lspkind_status then
 	return
 end
 
+-- import neogen plugin safely
+local neogen_status, neogen = pcall(require, 'neogen')
+if not neogen_status then
+	return
+end
+
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require('luasnip/loaders/from_vscode').lazy_load()
 
@@ -35,6 +41,30 @@ cmp.setup({
 		['<C-Space>'] = cmp.mapping.complete(), -- show completion suggestions
 		['<C-e>'] = cmp.mapping.abort(), -- close completion window
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
+		['<Tab>'] = cmp.mapping(function(fallback)
+			if luasnip.expandable() then
+				luasnip.expand()
+			elseif cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.jumpable(1) then
+				luasnip.jump(1)
+			elseif neogen.jumpable() then
+				neogen.jump_next()
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			elseif neogen.jumpable(true) then
+				neogen.jump_prev()
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
