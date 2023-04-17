@@ -1,14 +1,48 @@
-vim.g.nord_contrast = false
-vim.g.nord_borders = true
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-vim.g.nord_uniform_diff_background = true
-vim.g.nord_bold = false
+local status, nord = pcall(require, 'nord')
+if not status then
+	return
+end
 
--- Load the colorscheme
-require('nord').set()
+nord.setup({
+	transparent = false, -- Enable this to disable setting the background color
+	terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+	diff = { mode = 'fg' }, -- enables/disables colorful backgrounds when used in diff mode. values : [bg|fg]
+	borders = true, -- Enable the border between verticaly split windows visible
+	errors = { mode = 'fg' }, -- Display mode for errors and diagnostics
+	-- values : [bg|fg|none]
+	styles = {
+		-- Style to be applied to different syntax groups
+		-- Value is any valid attr-list value for `:help nvim_set_hl`
+		comments = { italic = false },
+		keywords = {},
+		functions = {},
+		variables = {},
 
--- https://github.com/shaunsingh/nord.nvim/blob/master/lua/nord/theme.lua
+		-- To customize lualine/bufferline
+		bufferline = {
+			current = {},
+			modified = { italic = true },
+		},
+	},
+
+	-- colorblind mode
+	-- see https://github.com/EdenEast/nightfox.nvim#colorblind
+	-- simulation mode has not been implemented yet.
+	colorblind = {
+		enable = false,
+		preserve_background = false,
+		severity = {
+			protan = 0.0,
+			deutan = 0.0,
+			tritan = 0.0,
+		},
+	},
+
+	-- You can override specific highlights to use other groups or a hex color
+	-- function will be called with all highlights and the colorScheme table
+	on_highlights = function(highlights, colors) end,
+})
+
 -- run ":so $VIMRUNTIME/syntax/hitest.vim" to see all highlight groups
 vim.cmd([[
 	colorscheme nord
@@ -16,6 +50,8 @@ vim.cmd([[
 	highlight NormalMode guifg=#4C566A guibg=#D8DEE9
 	highlight ReplaceMode guifg=#4C566A guibg=#D8DEE9
 	highlight FloatBorder guifg=#4C566A
+	highlight DefinitionBorder guifg=#4C566A
+
 	highlight NvimTreeNormal guifg=#81A1C1 
 	highlight NvimTreeNormalNC guifg=#81A1C1 
 	highlight NvimTreeSpecialFile guifg=#81A1C1 
@@ -24,40 +60,46 @@ vim.cmd([[
 	highlight NvimTreeOpenFolderName guifg=#81A1C1 
 	highlight NvimTreeOpenedFolderName guifg=#81A1C1 
 	highlight NvimTreeEmptyFolderName guifg=#81A1C1 
-	highlight NvimTreeStatusLine guifg=#4C566A
+	highlight NvimTreeStatusLineNC guifg=#4C566A
+	highlight NvimTreeIndentMarker guifg=#4C566A
+	highlight NvimTreeRootFolder guifg=#81A1C1
+
 	highlight TelescopePromptBorder guifg=#4C566A
 	highlight TelescopeResultsBorder guifg=#4C566A
 	highlight TelescopePreviewBorder guifg=#4C566A
-	highlight NvimTreeIndentMarker guifg=#4C566A
+	highlight TelescopeNormal guifg=#81A1C1
+	highlight TelescopeTitle guifg=#4C566A
+	highlight TelescopeSelection guibg=#3B4252 guifg=#D8DEE9
+
 	highlight LspFloatWinBorder guifg=#4C566A
 	highlight LspSagaDefPreviewBorder guifg=#4C566A
 	highlight LspSagaCodeActionBorder guifg=#4C566A
 	highlight LspSagaLspFinderBorder guifg=#4C566A
-	highlight DefinitionBorder guifg=#4C566A
 	highlight LspSagaHoverBorder guifg=#4C566A
 	highlight LspSagaRenameBorder guifg=#4C566A
 	highlight LspSagaDiagnosticBorder guifg=#4C566A
 	highlight LSOutlinePreviewBorder guifg=#4C566A
-	highlight BufferCurrent guibg=#81A1C1 guifg=#2E3440
-	highlight BufferCurrentMod guibg=#81A1C1 guifg=#4C566A
-	highlight BufferCurrentIcon guibg=#81A1C1 guifg=#2E3440
-	highlight BufferCurrentSign guibg=#81A1C1 guifg=#2E3440
-	highlight BufferCurrentHINT guibg=#81A1C1 guifg=#BF616A
-	highlight BufferCurrentERROR guibg=#81A1C1 guifg=#BF616A
-	highlight BufferVisible guibg=#3B4252 guifg=#81A1C1
-	highlight BufferVisibleMod guibg=#3B4252 guifg=#8FBCBB
-	highlight BufferVisibleIcon guibg=#3B4252 guifg=#81A1C1
-	highlight BufferVisibleSign guibg=#3B4252 guifg=#81A1C1
-	highlight BufferVisibleHINT guibg=#3B4252 guifg=#BF616A
-	highlight BufferVisibleERROR guibg=#3B4252 guifg=#BF616A
-	highlight BufferInactive guibg=#3B4252 guifg=#81A1C1
-	highlight BufferInactiveMod guibg=#3B4252 guifg=#8FBCBB
-	highlight BufferInactiveIcon guibg=#3B4252 guifg=#81A1C1
-	highlight BufferInactiveSign guibg=#3B4252 guifg=#81A1C1
-	highlight BufferInactiveHINT guibg=#3B4252 guifg=#BF616A
-	highlight BufferInactiveERROR guibg=#3B4252 guifg=#BF616A
-	highlight QuickFixLine guibg=#E5E9F0 guifg=#434C5E
-	highlight qfLineNr guibg=#EBCB8B guifg=#3B4252 
+
+	highlight BufferCurrent guibg=#3B4252 guifg=#D8DEE9
+	highlight BufferCurrentMod guibg=#3B4252 guifg=#D8DEE9
+	highlight BufferCurrentIcon guibg=#3B4252 guifg=#D8DEE9
+	highlight BufferCurrentSign guibg=#3B4252 guifg=#D8DEE9
+	highlight BufferCurrentHINT guibg=#3B4252 guifg=#81A1C1
+	highlight BufferCurrentERROR guibg=#3B4252 guifg=#BF616A
+	highlight link BufferVisible Comment
+	highlight link BufferVisibleMod Comment
+	highlight link BufferVisibleIcon Comment
+	highlight link BufferVisibleSign Comment
+	highlight BufferVisibleHINT guibg=#2E3440 guifg=#81A1C1
+	highlight BufferVisibleERROR guibg=#2E3440 guifg=#BF616A
+	highlight link BufferInactive Comment 
+	highlight link BufferInactiveMod Comment 
+	highlight link BufferInactiveIcon Comment 
+	highlight link BufferInactiveSign Comment 
+	highlight BufferInactiveHINT guibg=#2E3440 guifg=#81A1C1
+	highlight BufferInactiveERROR guibg=#2E3440 guifg=#BF616A
+
+	highlight QuickFixLine guibg=#D8DEE9 guifg=#4C566A
 ]])
 
 -- set global color variable to be used by other plugins

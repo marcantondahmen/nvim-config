@@ -13,7 +13,7 @@ This config includes the following items:
 
 -   [Basic options](lua/marcantondahmen/core/options.lua)
 -   [Keymaps](lua/marcantondahmen/core/keymaps.lua)
--   [Nord color scheme](https://github.com/shaunsingh/nord.nvim)
+-   [Nord color scheme](https://github.com/gbprod/nord.nvim)
 -   [Packer](https://github.com/wbthomason/packer.nvim)
 -   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
 -   [Folding](lua/marcantondahmen/plugins/fold.lua)

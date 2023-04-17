@@ -42,8 +42,6 @@ local on_attach = function(client, bufnr)
 		},
 	})
 
-	client.server_capabilities.semanticTokensProvider = nil
-
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == 'tsserver' then
 		wk.register({

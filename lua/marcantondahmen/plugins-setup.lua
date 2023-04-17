@@ -35,7 +35,7 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim')
 
 	-- nord colorscheme
-	use('shaunsingh/nord.nvim')
+	use('gbprod/nord.nvim')
 
 	-- dashboard
 	use('goolord/alpha-nvim')
