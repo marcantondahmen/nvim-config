@@ -9,10 +9,10 @@ treesitter.setup({
 	-- enable syntax highlighting
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = { 'php' },
 	},
 	-- enable indentation
-	indent = { enable = true },
+	indent = { enable = false },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
 	autotag = { enable = true },
 	-- ensure these language parsers are installed
@@ -33,6 +33,7 @@ treesitter.setup({
 		'gitignore',
 		'regex',
 		'php',
+		'phpdoc',
 	},
 	-- auto install above language parsers
 	auto_install = true,
