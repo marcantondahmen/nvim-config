@@ -86,16 +86,16 @@ vim.cmd([[
 	highlight BufferCurrentSign guibg=#3B4252 guifg=#D8DEE9
 	highlight BufferCurrentHINT guibg=#3B4252 guifg=#81A1C1
 	highlight BufferCurrentERROR guibg=#3B4252 guifg=#BF616A
-	highlight link BufferVisible Comment
-	highlight link BufferVisibleMod Comment
-	highlight link BufferVisibleIcon Comment
-	highlight link BufferVisibleSign Comment
+	highlight BufferVisible guibg=#2E3440 guifg=#616E88 
+	highlight BufferVisibleMod guibg=#2E3440 guifg=#616E88
+	highlight BufferVisibleIcon guibg=#2E3440 guifg=#616E88
+	highlight BufferVisibleSign guibg=#2E3440 guifg=#616E88
 	highlight BufferVisibleHINT guibg=#2E3440 guifg=#81A1C1
 	highlight BufferVisibleERROR guibg=#2E3440 guifg=#BF616A
-	highlight link BufferInactive Comment 
-	highlight link BufferInactiveMod Comment 
-	highlight link BufferInactiveIcon Comment 
-	highlight link BufferInactiveSign Comment 
+	highlight BufferInactive guibg=#2E3440 guifg=#616E88 
+	highlight BufferInactiveMod guibg=#2E3440 guifg=#616E88  
+	highlight BufferInactiveIcon guibg=#2E3440 guifg=#616E88 
+	highlight BufferInactiveSign guibg=#2E3440 guifg=#616E88 
 	highlight BufferInactiveHINT guibg=#2E3440 guifg=#81A1C1
 	highlight BufferInactiveERROR guibg=#2E3440 guifg=#BF616A
 
