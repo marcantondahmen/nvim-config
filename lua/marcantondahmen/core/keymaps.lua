@@ -7,7 +7,7 @@ wk.register({
 	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
 		b = { ':Neogen<cr>', 'Generate docblock' },
-		e = { ':NvimTreeFocus<CR>', 'Focus file explorer' },
+		e = { ':lua TreeFocus()<CR>', 'Focus file explorer' },
 		f = {
 			name = '+Telescope',
 			f = { '<cmd>Telescope find_files<cr>', 'Find file' },

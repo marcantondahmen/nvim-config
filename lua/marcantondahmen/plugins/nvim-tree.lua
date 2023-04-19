@@ -1,11 +1,21 @@
 -- import nvim-tree plugin safely
-local setup, nvimtree = pcall(require, 'nvim-tree')
-if not setup then
+local tree_status, nvimtree = pcall(require, 'nvim-tree')
+if not tree_status then
 	return
 end
 
-local config, nvimtree_config = pcall(require, 'nvim-tree.config')
-if not config then
+local conf_status, config = pcall(require, 'nvim-tree.config')
+if not conf_status then
+	return
+end
+
+local api_status, api = pcall(require, 'nvim-tree.api')
+if not api_status then
+	return
+end
+
+local bufferline_status, bufferline = pcall(require, 'bufferline.api')
+if not bufferline_status then
 	return
 end
 
@@ -13,13 +23,38 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local tree_cb = nvimtree_config.nvim_tree_callback
+local tree_cb = config.nvim_tree_callback
+local width = 36
+
+function TreeFocus()
+	bufferline.set_offset(width + 1, 'File Explorer')
+	api.tree.find_file({ open = true, focus = true, update_root = false })
+end
+
+function TreeClose()
+	api.tree.close()
+	print('test')
+	bufferline.set_offset(0)
+end
+
+local function on_attach(bufnr)
+	local function opts(desc)
+		return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	api.config.mappings.default_on_attach(bufnr)
+
+	-- user mappings
+	vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+	vim.keymap.set('n', 'q', TreeClose, opts('Close'))
+end
 
 -- configure nvim-tree
 nvimtree.setup({
+	on_attach = on_attach,
 	hijack_cursor = true,
 	view = {
-		width = 40,
+		width = width,
 		mappings = {
 			custom_only = false,
 			list = {
@@ -145,8 +180,7 @@ local function open_nvim_tree(data)
 		vim.api.nvim_del_autocmd(data.id)
 
 		vim.schedule(function()
-			require('nvim-tree.api').tree.open()
-
+			TreeFocus()
 			vim.cmd('wincmd p')
 		end)
 	end
