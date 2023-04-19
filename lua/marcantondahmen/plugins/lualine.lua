@@ -9,8 +9,9 @@ lualine.setup({
 	options = {
 		theme = 'nord',
 		component_separators = { left = '', right = '' },
+		globalstatus = true,
 		disabled_filetypes = {
-			statusline = { 'NvimTree' },
+			statusline = {},
 			winbar = {},
 		},
 	},
