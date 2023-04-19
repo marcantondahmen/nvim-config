@@ -100,6 +100,7 @@ vim.cmd([[
 	highlight BufferInactiveERROR guibg=#2E3440 guifg=#BF616A
 
 	highlight QuickFixLine guibg=#D8DEE9 guifg=#4C566A
+	highlight Folded guibg=#2E3440 guifg=#616E88 gui=italic
 ]])
 
 -- set global color variable to be used by other plugins
