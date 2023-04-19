@@ -9,43 +9,45 @@ and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/
 
 ## Included
 
-This config includes the following items:
+This config includes the following plugins:
+
+-   [alpha-nvim](https://github.com/goolord/alpha-nvim) dashboard
+-   [auto-session](https://github.com/rmagatti/auto-session/) session manager
+-   [Comment.nvim](https://github.com/numToStr/Comment.nvim) comment plugin
+-   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
+-   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
+-   [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) indent guides
+-   [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
+-   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) status line
+-   [neogen](https://github.com/danymat/neogen) docblocks
+-   [nord.nvim](https://github.com/gbprod/nord.nvim) color scheme
+-   [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) formatters
+-   [nvim-autopairs](https://github.com/windwp/nvim-autopairs) auto pairing
+-   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) autocompletion
+-   [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) language server config
+-   [nvim-navbuddy](https://github.com/SmiteshP/nvim-navbuddy) symbols navigation
+-   [nvim-notify](https://github.com/rcarriga/nvim-notify) notifications
+-   [nvim-spectre](https://github.com/nvim-pack/nvim-spectre) project wide search and replace
+-   [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) file explorer
+-   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting
+-   [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) icons
+-   [packer.nvim](https://github.com/wbthomason/packer.nvim) package manager
+-   [tagalong.nvim](https://github.com/AndrewRadev/tagalong.vim) update tags
+-   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) fuzzy-serch menus
+-   [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) terminal
+-   [trouble.nvim](https://github.com/folke/trouble.nvim) diagnostics overview
+-   [vim-maximizer](https://github.com/szw/vim-maximizer) maximize panes
+-   [vim-ReplaceWithRegister](https://github.com/inkarkat/vim-ReplaceWithRegister) better replace functionality
+-   [vim-surround](https://github.com/tpope/vim-surround) surround plugin
+-   [which-key.nvim](https://github.com/folke/which-key.nvim) keymaps help
+
+There are also some custom settings and extensions:
 
 -   [Basic options](lua/marcantondahmen/core/options.lua)
 -   [Keymaps](lua/marcantondahmen/core/keymaps.lua)
--   [Nord color scheme](https://github.com/gbprod/nord.nvim)
--   [Packer](https://github.com/wbthomason/packer.nvim)
--   [Nvim Tree](https://github.com/nvim-tree/nvim-tree.lua)
 -   [Folding](lua/marcantondahmen/plugins/fold.lua)
--   [Auto Session](https://github.com/rmagatti/auto-session/)
--   [Navbuddy](https://github.com/SmiteshP/nvim-navbuddy)
--   [Icons](https://github.com/nvim-tree/nvim-web-devicons)
--   [Lualine](https://github.com/nvim-lualine/lualine.nvim)
--   [Tabline](https://github.com/kdheepak/tabline.nvim)
--   [ToggleTerm](https://github.com/akinsho/toggleterm.nvim)
 -   [Script Runner](lua/telescope/_extensions/scripts.lua)
--   [Notify](https://github.com/rcarriga/nvim-notify)
--   [Spectre](https://github.com/nvim-pack/nvim-spectre)
--   [Alpha Dashboard](https://github.com/goolord/alpha-nvim)
 -   [Gitui](lua/marcantondahmen/plugins/gitui.lua)
--   [diffview](https://github.com/sindrets/diffview.nvim)
--   [Telescope](https://github.com/nvim-telescope/telescope.nvim)
--   [tagalong](https://github.com/AndrewRadev/tagalong.vim)
--   [Autocompletion](https://github.com/hrsh7th/nvim-cmp)
--   [lspconfig](https://github.com/neovim/nvim-lspconfig)
--   [lspsaga](https://github.com/glepnir/lspsaga.nvim)
--   [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
--   [null-ls, Prettier](https://github.com/jose-elias-alvarez/null-ls.nvim)
--   [trouble](https://github.com/folke/trouble.nvim)
--   [which-key](https://github.com/folke/which-key.nvim)
--   [autopairs](https://github.com/windwp/nvim-autopairs)
--   [Indent guides](https://github.com/lukas-reineke/indent-blankline.nvim)
--   [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
--   [Vim surround](https://github.com/tpope/vim-surround)
--   [Replace with register](https://github.com/inkarkat/vim-ReplaceWithRegister)
--   [Vim maximizer](https://github.com/szw/vim-maximizer)
--   [Comment plugin](https://github.com/numToStr/Comment.nvim)
--   [Docblocks](https://github.com/danymat/neogen)
 
 ## Installation
 
