@@ -45,3 +45,10 @@ opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the 
 opt.showmode = false
 opt.swapfile = false
 opt.fixeol = true
+
+vim.cmd([[
+	augroup cmdline
+		autocmd!
+		autocmd CmdlineLeave : echo ''
+	augroup end
+]])
