@@ -35,7 +35,7 @@ dashboard.section.header.val = {
 
 -- Set menu
 dashboard.section.buttons.val = {
-	dashboard.button('s', '     Restore Session', ':RestoreSession<CR>'),
+	dashboard.button('s', '     Restore Session', ':SessionRestore<CR>'),
 	dashboard.button('r', '     Recent Files   ', ':Telescope oldfiles<CR>'),
 	dashboard.button('f', '     Find File      ', ':Telescope find_files<CR>'),
 	dashboard.button('t', '     Find Text      ', ':Telescope live_grep<CR>'),
