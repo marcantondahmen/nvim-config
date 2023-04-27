@@ -7,4 +7,5 @@ signature.setup({
 	handler_opts = {
 		border = 'single', -- double, rounded, single, shadow, none, or a table of borders
 	},
+	hint_prefix = '',
 })
