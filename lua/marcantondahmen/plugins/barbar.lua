@@ -19,13 +19,6 @@ require('bufferline').setup({
 
 	-- Enables / disables diagnostic symbols
 	diagnostics = {
-		-- you can use a list
-		{ enabled = true, icon = '' }, -- ERROR
-		{ enabled = false }, -- WARN
-		{ enabled = false }, -- INFO
-		{ enabled = true, icon = '' }, -- HINT
-
-		-- OR `vim.diagnostic.severity`
 		[vim.diagnostic.severity.ERROR] = { enabled = true, icon = '' },
 		[vim.diagnostic.severity.WARN] = { enabled = false },
 		[vim.diagnostic.severity.INFO] = { enabled = false },
@@ -50,12 +43,12 @@ require('bufferline').setup({
 	highlight_inactive_file_icons = false,
 
 	-- Enable highlighting visible buffers
-	highlight_visible = true,
+	highlight_visible = false,
 
 	-- Enable/disable icons
 	-- if set to 'numbers', will show buffer index in the tabline
 	-- if set to 'both', will show buffer index and icons in the tabline
-	icons = false,
+	icons = true,
 
 	-- If set, the icon color will follow its corresponding buffer
 	-- highlight group. By default, the Buffer*Icon group is linked to the
@@ -76,7 +69,7 @@ require('bufferline').setup({
 	insert_at_start = false,
 
 	-- Sets the maximum padding width with which to surround each tab
-	maximum_padding = 1,
+	maximum_padding = 6,
 
 	-- Sets the minimum padding width with which to surround each tab
 	minimum_padding = 1,
