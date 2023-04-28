@@ -1,13 +1,25 @@
 # Nvim Config
 
-![](images/dashboard.png)
-![](images/editor.png)
-
 This is the personal NeoVim configuration of Marc Anton Dahmen.
 It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8)
 and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
 
-## Included
+## Themes
+
+This config includes two themes &mdash; [Tokyo Night (Storm)](https://github.com/folke/tokyonight.nvim)
+and [Nord](https://github.com/gbprod/nord.nvim). Since it is not possible to load both themes at the same time,
+the unused one can be simply commented out in the [init.lua](init.lua) file.
+
+### Terminal Color Scheme
+
+Matching terminal color schemes can be found here:
+
+-   [Tokyo Night (Storm) for iTerm](https://github.com/folke/tokyonight.nvim/blob/main/extras/iterm/tokyonight_storm.itermcolors)
+-   [Tokyo Night (Storm) for Windows Terminal](https://github.com/folke/tokyonight.nvim/blob/main/extras/windows_terminal/tokyonight_storm.json)
+-   [Nord for iTerm](https://github.com/nordtheme/iterm2)
+-   [Nord for Windows Terminal](https://compiledexperience.com/blog/posts/windows-terminal-nord)
+
+## Included Plugins
 
 This config includes the following plugins:
 
@@ -21,7 +33,6 @@ This config includes the following plugins:
 -   [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
 -   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) status line
 -   [neogen](https://github.com/danymat/neogen) docblocks
--   [nord.nvim](https://github.com/gbprod/nord.nvim) color scheme
 -   [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) formatters
 -   [nvim-autopairs](https://github.com/windwp/nvim-autopairs) auto pairing
 -   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) autocompletion
