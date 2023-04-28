@@ -24,16 +24,15 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 local tree_cb = config.nvim_tree_callback
-local width = 40
+local width = 30
 
 function TreeFocus()
-	bufferline.set_offset(width + 1, 'Files', 'BufferVisible')
+	bufferline.set_offset(width + 1, '', 'BufferVisible')
 	api.tree.find_file({ open = true, focus = true, update_root = false })
 end
 
 function TreeClose()
 	api.tree.close()
-	print('test')
 	bufferline.set_offset(0)
 end
 
