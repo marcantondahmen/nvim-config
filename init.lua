@@ -1,7 +1,10 @@
 require('marcantondahmen.plugins-setup')
 require('marcantondahmen.core.options')
+
+-- require('marcantondahmen.core.colorschemes.nord')
+require('marcantondahmen.core.colorschemes.tokyonight')
+
 require('marcantondahmen.core.keymaps')
-require('marcantondahmen.core.colorscheme')
 require('marcantondahmen.plugins.devicons')
 require('marcantondahmen.plugins.comment')
 require('marcantondahmen.plugins.nvim-tree')

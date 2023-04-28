@@ -37,7 +37,7 @@ toggleterm.setup({
 	},
 	highlights = {
 		FloatBorder = {
-			guifg = vim.g.custom_colors.border,
+			guifg = vim.g.theme_settings.FloatBorder,
 		},
 	},
 	on_close = function()

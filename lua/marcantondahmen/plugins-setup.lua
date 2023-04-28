@@ -34,8 +34,9 @@ return packer.startup(function(use)
 	-- lua functions that many plugins use
 	use('nvim-lua/plenary.nvim')
 
-	-- nord colorscheme
+	-- color schemes
 	use('gbprod/nord.nvim')
+	use('folke/tokyonight.nvim')
 
 	-- dashboard
 	use('goolord/alpha-nvim')

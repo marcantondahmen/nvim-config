@@ -7,7 +7,7 @@ end
 lualine.setup({
 	-- https://github.com/nvim-lualine/lualine.nvim#component-options
 	options = {
-		theme = 'nord',
+		theme = vim.g.theme_settings.LuaLineTheme,
 		component_separators = { left = '', right = '' },
 		globalstatus = true,
 		disabled_filetypes = {
