@@ -11,7 +11,7 @@ lualine.setup({
 		component_separators = { left = '', right = '' },
 		globalstatus = true,
 		disabled_filetypes = {
-			statusline = {},
+			statusline = { 'alpha' },
 			winbar = {},
 		},
 	},
