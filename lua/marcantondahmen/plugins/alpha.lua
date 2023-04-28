@@ -52,3 +52,4 @@ dashboard.section.footer.val = {
 alpha.setup(dashboard.opts)
 
 vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
+vim.cmd([[ autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2 ]])
