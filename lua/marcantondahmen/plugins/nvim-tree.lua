@@ -24,7 +24,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 local tree_cb = config.nvim_tree_callback
-local width = 30
+local width = 40
 
 function TreeFocus()
 	bufferline.set_offset(width + 1, '', 'BufferVisible')

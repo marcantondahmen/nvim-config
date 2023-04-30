@@ -17,7 +17,7 @@ diff.setup({
 		},
 		win_config = { -- See ':h diffview-config-win_config'
 			position = 'left',
-			width = 30,
+			width = 40,
 			win_opts = {},
 		},
 	},
