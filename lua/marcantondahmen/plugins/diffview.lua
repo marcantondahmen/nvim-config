@@ -24,11 +24,9 @@ diff.setup({
 	hooks = {
 		view_opened = function(view)
 			vim.cmd('set showtabline=0')
-			vim.cmd('set laststatus=0')
 		end,
 		view_closed = function(view)
 			vim.cmd('set showtabline=2')
-			vim.cmd('set laststatus=3')
 		end,
 	},
 	keymaps = {

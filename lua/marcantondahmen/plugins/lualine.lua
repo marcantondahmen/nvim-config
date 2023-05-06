@@ -4,6 +4,29 @@ if not status then
 	return
 end
 
+local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
+
+local nofile = {
+	sections = {
+		lualine_a = { 'mode' },
+		lualine_b = { 'branch', 'diff', 'diagnostics' },
+		lualine_c = { '' },
+		lualine_x = { '' },
+		lualine_y = { pwd },
+		lualine_z = { 'progress' },
+	},
+	filetypes = {
+		'NvimTree',
+		'TelescopePrompt',
+		'spectre_panel',
+		'toggleterm',
+		'Navbuddy',
+		'DiffviewFiles',
+		'DiffviewFileHistory',
+		'lspsagaoutline',
+	},
+}
+
 lualine.setup({
 	-- https://github.com/nvim-lualine/lualine.nvim#component-options
 	options = {
@@ -14,9 +37,6 @@ lualine.setup({
 		disabled_filetypes = {
 			statusline = { 'alpha' },
 			winbar = {},
-		},
-		ignore_focus = {
-			'NvimTree',
 		},
 	},
 	sections = {
@@ -34,7 +54,8 @@ lualine.setup({
 			},
 		},
 		lualine_x = { 'filetype' },
-		lualine_y = { 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")' },
+		lualine_y = { pwd },
 		lualine_z = { 'progress' },
 	},
+	extensions = { nofile },
 })
