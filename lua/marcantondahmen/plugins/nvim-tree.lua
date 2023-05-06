@@ -52,6 +52,9 @@ end
 nvimtree.setup({
 	on_attach = on_attach,
 	hijack_cursor = true,
+	update_focused_file = {
+		enable = true,
+	},
 	view = {
 		width = width,
 		mappings = {
