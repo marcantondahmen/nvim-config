@@ -11,7 +11,7 @@ local nofile = {
 		lualine_a = { 'mode' },
 		lualine_b = { 'branch', 'diff', 'diagnostics' },
 		lualine_c = { '' },
-		lualine_x = { '' },
+		lualine_x = { 'filetype' },
 		lualine_y = { pwd },
 		lualine_z = { 'progress' },
 	},
@@ -43,9 +43,17 @@ local function troubleMode()
 	return table.concat(words, ' ')
 end
 
-local trouble = nofile
-trouble.filetypes = { 'Trouble' }
-trouble.sections.lualine_c = { troubleMode }
+local trouble = {
+	sections = {
+		lualine_a = nofile.sections.lualine_a,
+		lualine_b = nofile.sections.lualine_b,
+		lualine_c = { troubleMode },
+		lualine_x = nofile.sections.lualine_x,
+		lualine_y = nofile.sections.lualine_y,
+		lualine_z = nofile.sections.lualine_z,
+	},
+	filetypes = { 'Trouble' },
+}
 
 lualine.setup({
 	-- https://github.com/nvim-lualine/lualine.nvim#component-options
