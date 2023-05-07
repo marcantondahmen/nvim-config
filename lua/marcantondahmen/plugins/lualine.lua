@@ -27,6 +27,26 @@ local nofile = {
 	},
 }
 
+local function troubleMode()
+	local trouble_status, config = pcall(require, 'trouble.config')
+	if not trouble_status then
+		return ''
+	end
+
+	local opts = config.options
+
+	local words = vim.split(opts.mode, '[%W]')
+	for i, word in ipairs(words) do
+		words[i] = word:sub(1, 1):upper() .. word:sub(2)
+	end
+
+	return table.concat(words, ' ')
+end
+
+local trouble = nofile
+trouble.filetypes = { 'Trouble' }
+trouble.sections.lualine_c = { troubleMode }
+
 lualine.setup({
 	-- https://github.com/nvim-lualine/lualine.nvim#component-options
 	options = {
@@ -57,5 +77,5 @@ lualine.setup({
 		lualine_y = { pwd },
 		lualine_z = { 'progress' },
 	},
-	extensions = { nofile },
+	extensions = { nofile, trouble },
 })
