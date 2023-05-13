@@ -1,4 +1,6 @@
 -- Set barbar's options
+-- Note that this configuration only works with version 1.5.0
+-- where the actual plugin was still named "bufferline".
 require('bufferline').setup({
 	-- Enable/disable animations
 	animation = true,
