@@ -6,5 +6,5 @@ end
 colors.setup({
 	render = 'first_column', -- or 'foreground', 'background' or 'first_column'
 	enable_named_colors = true,
-	enable_tailwind = true,
+	enable_tailwind = false,
 })
