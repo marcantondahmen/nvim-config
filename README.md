@@ -28,7 +28,6 @@ This config includes the following plugins:
 -   [alpha-nvim](https://github.com/goolord/alpha-nvim) dashboard
 -   [auto-session](https://github.com/rmagatti/auto-session/) session manager
 -   [barbar.nvim](https://github.com/romgrk/barbar.nvim) bufferline
--   [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) colorize color values
 -   [Comment.nvim](https://github.com/numToStr/Comment.nvim) comment plugin
 -   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 -   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
@@ -40,6 +39,7 @@ This config includes the following plugins:
 -   [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) formatters
 -   [nvim-autopairs](https://github.com/windwp/nvim-autopairs) auto pairing
 -   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) autocompletion
+-   [nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) highlight colors
 -   [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) language server config
 -   [nvim-navbuddy](https://github.com/SmiteshP/nvim-navbuddy) symbols navigation
 -   [nvim-notify](https://github.com/rcarriga/nvim-notify) notifications
