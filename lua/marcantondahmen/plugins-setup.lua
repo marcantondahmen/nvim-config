@@ -63,6 +63,9 @@ return packer.startup(function(use)
 	-- indent guides
 	use('lukas-reineke/indent-blankline.nvim')
 
+	-- colorizer
+	use({ 'norcalli/nvim-colorizer.lua' })
+
 	-- file explorer
 	use('nvim-tree/nvim-tree.lua')
 

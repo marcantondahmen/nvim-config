@@ -28,6 +28,7 @@ This config includes the following plugins:
 -   [alpha-nvim](https://github.com/goolord/alpha-nvim) dashboard
 -   [auto-session](https://github.com/rmagatti/auto-session/) session manager
 -   [barbar.nvim](https://github.com/romgrk/barbar.nvim) bufferline
+-   [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) colorize color values
 -   [Comment.nvim](https://github.com/numToStr/Comment.nvim) comment plugin
 -   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 -   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
