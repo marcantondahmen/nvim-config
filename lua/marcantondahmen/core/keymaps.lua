@@ -28,7 +28,8 @@ wk.register({
 		},
 		x = {
 			name = '+Trouble',
-			x = { '<cmd>TroubleToggle<cr>', 'Toggle diagnostics' },
+			x = { '<cmd>Trouble<cr>', 'Focus/open diagnostics' },
+			c = { '<cmd>TroubleClose<cr>', 'Close diagnostics' },
 			w = { '<cmd>TroubleToggle workspace_diagnostics<cr>', 'Toggle workspace diagnostics' },
 			d = { '<cmd>TroubleToggle document_diagnostics<cr>', 'Toggle document diagnostics' },
 			l = { '<cmd>TroubleToggle loclist<cr>', 'Toggle loclist' },
