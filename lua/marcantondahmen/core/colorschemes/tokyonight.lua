@@ -34,6 +34,10 @@ require('tokyonight').setup({
 	---@param highlights Highlights
 	---@param colors ColorScheme
 	on_highlights = function(hl, c)
+		hl.WinSeparator = {
+			fg = c.bg_dark,
+			bg = c.none,
+		}
 		hl.BufferInactiveERROR = {
 			bg = util.darken(c.bg_highlight, 0.4),
 			fg = util.darken(c.error, 0.8),
@@ -51,4 +55,14 @@ vim.cmd([[colorscheme tokyonight]])
 vim.g.theme_settings = {
 	FloatBorder = '#29a4bd',
 	LuaLineTheme = 'tokyonight',
+}
+
+vim.opt.fillchars = {
+	horiz = '█',
+	horizup = '█',
+	horizdown = '█',
+	vert = '┃',
+	vertleft = '█',
+	vertright = '█',
+	verthoriz = '█',
 }

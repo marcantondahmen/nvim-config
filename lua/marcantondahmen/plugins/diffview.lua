@@ -18,7 +18,16 @@ diff.setup({
 		win_config = { -- See ':h diffview-config-win_config'
 			position = 'left',
 			width = 40,
-			win_opts = {},
+			win_opts = {
+				winhighlight = 'WinSeparator:NvimTreeWinSeparator,Normal:NvimTreeNormal,SignColumn:NvimTreeNormal',
+			},
+		},
+	},
+	file_history_panel = {
+		win_config = {
+			win_opts = {
+				winhighlight = 'Normal:NvimTreeNormal,SignColumn:NvimTreeNormal',
+			},
 		},
 	},
 	hooks = {
