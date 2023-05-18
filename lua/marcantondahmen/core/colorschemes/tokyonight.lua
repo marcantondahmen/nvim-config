@@ -1,3 +1,5 @@
+local util = require('tokyonight.util')
+
 require('tokyonight').setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings
@@ -31,7 +33,16 @@ require('tokyonight').setup({
 	--- function will be called with a Highlights and ColorScheme table
 	---@param highlights Highlights
 	---@param colors ColorScheme
-	on_highlights = function(hl, c) end,
+	on_highlights = function(hl, c)
+		hl.BufferInactiveERROR = {
+			bg = util.darken(c.bg_highlight, 0.4),
+			fg = util.darken(c.error, 0.8),
+		}
+		hl.BufferInactiveHINT = {
+			bg = util.darken(c.bg_highlight, 0.4),
+			fg = util.darken(c.hint, 0.8),
+		}
+	end,
 })
 
 vim.cmd([[colorscheme tokyonight]])
