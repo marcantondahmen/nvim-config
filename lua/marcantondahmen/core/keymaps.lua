@@ -89,11 +89,21 @@ local options = { silent = true, noremap = true }
 -- clear search highlight
 keymap.set('n', '<esc>', ':noh<cr>', options)
 
+-- move and center
+keymap.set('n', 'n', 'nzz', options)
+keymap.set('n', 'N', 'Nzz', options)
+keymap.set('n', '<c-d>', '<c-d>zz', options)
+keymap.set('n', '<c-u>', '<c-u>zz', options)
+
 -- window management
 keymap.set('n', '<c-k>', ':wincmd k<CR>', options)
 keymap.set('n', '<c-j>', ':wincmd j<CR>', options)
 keymap.set('n', '<c-h>', ':wincmd h<CR>', options)
 keymap.set('n', '<c-l>', ':wincmd l<CR>', options)
+keymap.set('n', '<c-up>', ':wincmd k<CR>', options)
+keymap.set('n', '<c-down>', ':wincmd j<CR>', options)
+keymap.set('n', '<c-left>', ':wincmd h<CR>', options)
+keymap.set('n', '<c-right>', ':wincmd l<CR>', options)
 
 -- barbar
 keymap.set('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
