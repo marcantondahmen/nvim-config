@@ -46,6 +46,9 @@ require('tokyonight').setup({
 			bg = util.darken(c.bg_highlight, 0.4),
 			fg = util.darken(c.hint, 0.8),
 		}
+		hl.WhichKeyFloat = {
+			bg = c.bg_highlight,
+		}
 	end,
 })
 
