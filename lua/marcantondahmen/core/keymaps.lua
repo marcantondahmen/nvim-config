@@ -92,6 +92,8 @@ keymap.set('n', '<esc>', ':noh<cr>', options)
 -- move and center
 keymap.set('n', 'n', 'nzz', options)
 keymap.set('n', 'N', 'Nzz', options)
+keymap.set('n', 'H', 'Hzz', options)
+keymap.set('n', 'L', 'Lzz', options)
 keymap.set('n', '<c-d>', '<c-d>zz', options)
 keymap.set('n', '<c-u>', '<c-u>zz', options)
 
