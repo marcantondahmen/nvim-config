@@ -3,18 +3,6 @@ if not wk_setup then
 	return
 end
 
-function ToggleMaximize()
-	if vim.g.isMaximized then
-		vim.g.isMaximized = false
-		vim.cmd('set showtabline=2')
-	else
-		vim.g.isMaximized = true
-		vim.cmd('set showtabline=0')
-	end
-
-	vim.cmd('MaximizerToggle!')
-end
-
 wk.register({
 	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
