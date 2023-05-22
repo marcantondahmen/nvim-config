@@ -72,7 +72,7 @@ lualine.setup({
 			{
 				'filename',
 				file_status = true, -- displays file status (readonly status, modified status)
-				path = 4, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3: Absolute path, with tilde as the home directory, 4: Filename and parent dir, with tilde as the home directory
+				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3: Absolute path, with tilde as the home directory, 4: Filename and parent dir, with tilde as the home directory
 				symbols = {
 					modified = '●', -- Text to show when the file is modified.
 					readonly = '󰍶', -- Text to show when the file is non-modifiable or readonly.
