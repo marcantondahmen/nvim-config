@@ -38,14 +38,6 @@ require('tokyonight').setup({
 			fg = c.bg_dark,
 			bg = c.none,
 		}
-		hl.BufferInactiveERROR = {
-			bg = util.darken(c.bg_highlight, 0.4),
-			fg = util.darken(c.error, 0.8),
-		}
-		hl.BufferInactiveHINT = {
-			bg = util.darken(c.bg_highlight, 0.4),
-			fg = util.darken(c.hint, 0.8),
-		}
 		hl.WhichKeyFloat = {
 			bg = c.bg_highlight,
 		}
