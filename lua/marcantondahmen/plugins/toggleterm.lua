@@ -80,6 +80,17 @@ function GitUI()
 	gitui:toggle()
 end
 
+local lazydocker = Terminal:new({
+	cmd = 'lazydocker',
+	hidden = false,
+	close_on_exit = true,
+	direction = 'float',
+})
+
+function LazyDocker()
+	lazydocker:toggle()
+end
+
 local gitlog = Terminal:new({
 	cmd = 'git log -n 200 --graph --all --oneline --decorate',
 	hidden = false,

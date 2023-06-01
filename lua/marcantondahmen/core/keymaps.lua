@@ -73,6 +73,7 @@ wk.register({
 				u = { '<cmd>lua PHPUnit()<cr>', 'PHP Unit' },
 				s = { '<cmd>lua Psalm()<cr>', 'Psalm' },
 			},
+			d = { '<cmd>lua LazyDocker()<cr>', 'Lazydocker' },
 		},
 		q = { '<cmd>BufferClose<cr>', 'Close buffer' },
 		w = { '<cmd>w<cr>', 'Save buffer' },

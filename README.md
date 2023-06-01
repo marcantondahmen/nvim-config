@@ -63,7 +63,8 @@ There are also some custom settings and extensions:
 -   [Keymaps](lua/marcantondahmen/core/keymaps.lua)
 -   [Folding](lua/marcantondahmen/plugins/fold.lua)
 -   [Script Runner](lua/telescope/_extensions/scripts.lua)
--   [Gitui](lua/marcantondahmen/plugins/gitui.lua)
+-   [Gitui](lua/marcantondahmen/plugins/toggleterm.lua#L72)
+-   [Lazydocker](lua/marcantondahmen/plugins/toggleterm.lua#L83)
 
 ## Installation
 
@@ -93,8 +94,10 @@ The following dependecies have to be installed in order to make all plugins work
 -   PHP (for Composer)
 -   Composer (for Psalm)
 -   Gitui
+-   Lazydocker
 
-In order to install the basic dependecies, assuming that [Gitui](https://github.com/extrawurst/gitui), PHP and Composer are installed anyways, run the following commands on macOS for example:
+In order to install the basic dependecies, assuming that [Gitui](https://github.com/extrawurst/gitui), [Lazydocker](https://github.com/jesseduffield/lazydocker),
+PHP and Composer are installed anyways, run the following commands on macOS for example:
 
 ```bash
 brew install ripgrep
