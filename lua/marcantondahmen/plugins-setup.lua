@@ -27,7 +27,7 @@ if not status then
 end
 
 -- add list of plugins to install
-return packer.startup(function(use)
+local startup = function(use)
 	-- packer can manage itself
 	use('wbthomason/packer.nvim')
 
@@ -178,4 +178,11 @@ return packer.startup(function(use)
 	if packer_bootstrap then
 		require('packer').sync()
 	end
-end)
+end
+
+return packer.startup({
+	startup,
+	config = {
+		max_jobs = 10,
+	},
+})
