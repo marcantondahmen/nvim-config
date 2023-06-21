@@ -59,7 +59,7 @@ function PHPUnit()
 end
 
 local psalm = Terminal:new({
-	cmd = '/usr/local/bin/psalm',
+	cmd = 'psalm',
 	hidden = false,
 	close_on_exit = false,
 	direction = 'vertical',
