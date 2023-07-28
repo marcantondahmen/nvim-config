@@ -5,6 +5,7 @@ require('marcantondahmen.core.options')
 require('marcantondahmen.core.colorschemes.tokyonight')
 
 require('marcantondahmen.core.keymaps')
+require('marcantondahmen.plugins.tmux-navigation')
 require('marcantondahmen.plugins.devicons')
 require('marcantondahmen.plugins.comment')
 require('marcantondahmen.plugins.nvim-tree')

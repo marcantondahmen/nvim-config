@@ -50,6 +50,9 @@ local startup = function(use)
 	-- maximizes and restores current window
 	use('szw/vim-maximizer')
 
+	-- tmux navigation
+	use('alexghergh/nvim-tmux-navigation')
+
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 

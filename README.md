@@ -44,6 +44,7 @@ This config includes the following plugins:
 -   [nvim-navbuddy](https://github.com/SmiteshP/nvim-navbuddy) symbols navigation
 -   [nvim-notify](https://github.com/rcarriga/nvim-notify) notifications
 -   [nvim-spectre](https://github.com/nvim-pack/nvim-spectre) project wide search and replace
+-   [nvim-tmux-navigation](https://github.com/alexghergh/nvim-tmux-navigation) navigate between NeoVim and Tmux panes
 -   [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) file explorer
 -   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting
 -   [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) icons
@@ -106,6 +107,25 @@ brew install gnu-sed
 brew install wget
 python3 -m pip install --user --upgrade pynvim
 npm install -g neovim
+```
+
+## Tmux
+
+In order to be able to navigate between Tmux and NeoVim panes, the following configuration has to be added to `~/.config/tmux/tmux.conf`:
+
+```bash
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+
+bind-key -n 'M-Up' if-shell "$is_vim" 'send-keys M-Up' 'select-pane -U'
+bind-key -n 'M-Left' if-shell "$is_vim" 'send-keys M-Left' 'select-pane -L'
+bind-key -n 'M-Down' if-shell "$is_vim" 'send-keys M-Down' 'select-pane -D'
+bind-key -n 'M-Right' if-shell "$is_vim" 'send-keys M-Right' 'select-pane -R'
+
+bind-key -T copy-mode-vi 'M-Up' select-pane -U
+bind-key -T copy-mode-vi 'M-Left' select-pane -L
+bind-key -T copy-mode-vi 'M-Down' select-pane -D
+bind-key -T copy-mode-vi 'M-Right' select-pane -R
 ```
 
 ## Additional Resources
