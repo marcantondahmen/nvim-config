@@ -36,6 +36,7 @@ This config includes the following plugins:
 -   [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
 -   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) status line
 -   [neogen](https://github.com/danymat/neogen) docblocks
+-   [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown preview in browser
 -   [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) formatters
 -   [nvim-autopairs](https://github.com/windwp/nvim-autopairs) auto pairing
 -   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) autocompletion

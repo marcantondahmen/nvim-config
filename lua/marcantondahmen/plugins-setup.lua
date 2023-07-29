@@ -63,6 +63,14 @@ local startup = function(use)
 		tag = '*',
 	})
 
+	-- markdown preview
+	use({
+		'iamcco/markdown-preview.nvim',
+		run = function()
+			vim.fn['mkdp#util#install']()
+		end,
+	})
+
 	-- indent guides
 	use('lukas-reineke/indent-blankline.nvim')
 

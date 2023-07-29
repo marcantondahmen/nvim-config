@@ -77,6 +77,7 @@ wk.register({
 		},
 		q = { '<cmd>BufferClose<cr>', 'Close buffer' },
 		w = { '<cmd>w<cr>', 'Save buffer' },
+		m = { '<cmd>MarkdownPreview<cr>', 'Preview Markdown buffer browser' },
 		n = { '<cmd>Navbuddy<cr>', 'Open Navbuddy' },
 	},
 })
