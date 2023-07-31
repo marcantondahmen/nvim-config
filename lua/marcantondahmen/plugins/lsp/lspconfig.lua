@@ -34,7 +34,7 @@ local on_attach = function(client, bufnr)
 		},
 		g = {
 			name = 'Code navigation',
-			f = { '<cmd>Lspsaga lsp_finder<CR>', 'Show definition, references' },
+			f = { '<cmd>Lspsaga finder<CR>', 'Show definition, references' },
 			D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'See definition and make edits in window' },
 			d = { '<cmd>Lspsaga peek_definition<CR>', 'Peek definition' },
 			i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
