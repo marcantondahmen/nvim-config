@@ -92,10 +92,10 @@ function LazyDocker()
 end
 
 local gitlog = Terminal:new({
-	cmd = 'git log -n 200 --graph --all --oneline --decorate',
+	cmd = "git log --graph --decorate --branches --color --pretty=format:'%>|(15)%C(blue)%h   %C(auto)%d %Creset%s %C(#737aa2)- %cr%C(#545c7e), %ce%Creset'",
 	hidden = false,
 	close_on_exit = false,
-	direction = 'vertical',
+	direction = 'float',
 })
 
 function GitLog()
