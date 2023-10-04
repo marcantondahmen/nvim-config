@@ -33,7 +33,7 @@
 	"LuaSnip": { "commit": "e81cbe6" },
 	"diffview.nvim": { "commit": "e91110d" },
 	"nvim-web-devicons": { "commit": "efbfed0" },
-	"tokyonight.nvim": { "commit": "1ee1101" },
+	"tokyonight.nvim": { "commit": "4412daf" },
 	"nvim-treesitter": { "commit": "db0ccd92" },
 	"mason-lspconfig.nvim": { "commit": "e86a4c8" },
 	"lspsaga.nvim": { "commit": "b1b43c1" },
