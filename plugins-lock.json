@@ -45,6 +45,7 @@
 	"nvim-navbuddy": { "commit": "244a4cd" },
 	"toggleterm.nvim": { "commit": "b90a138" },
 	"plenary.nvim": { "commit": "267282a" },
+	"nvim-lsp-file-operations": { "commit": "0ae13ac" },
 	"nvim-cmp": { "commit": "c4e491a" },
 	"vim-ReplaceWithRegister": { "commit": "aad1e8f" },
 	"markdown-preview.nvim": { "commit": "02cc387" },

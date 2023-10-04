@@ -33,6 +33,7 @@ This config includes the following plugins:
 -   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 -   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
 -   [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) indent guides
+-   [nvim-lsp-file-operations](https://github.com/antosha417/nvim-lsp-file-operations) lsp file operations for nvim-tree
 -   [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) signature help
 -   [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
 -   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) status line

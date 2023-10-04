@@ -150,13 +150,20 @@ local startup = function(use)
 	use({ 'hrsh7th/cmp-nvim-lsp', commit = lock['cmp-nvim-lsp'] }) -- for autocompletion
 	use({
 		'glepnir/lspsaga.nvim',
-		branch = 'main',
 		requires = {
 			{ 'nvim-tree/nvim-web-devicons' },
 			{ 'nvim-treesitter/nvim-treesitter' },
 		},
 		commit = lock['lspsaga.nvim'],
 	}) -- enhanced lsp uis
+	use({
+		'antosha417/nvim-lsp-file-operations',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-tree.lua',
+		},
+		commit = lock['nvim-lsp-file-operations'],
+	})
 	use({ 'onsails/lspkind.nvim', commit = lock['lspkind.nvim'] }) -- vs-code like icons for autocompletion
 	use({ 'pmizio/typescript-tools.nvim', commit = lock['typescript-tools.nvim'] })
 
