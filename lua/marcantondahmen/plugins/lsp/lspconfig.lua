@@ -1,29 +1,27 @@
 -- import lspconfig plugin safely
-local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
-if not lspconfig_status then
+local lspconfigStatus, lspconfig = pcall(require, 'lspconfig')
+if not lspconfigStatus then
 	return
 end
 
 -- import cmp-nvim-lsp plugin safely
-local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not cmp_nvim_lsp_status then
+local cmpNvimLspStatus, cmpNvimLsp = pcall(require, 'cmp_nvim_lsp')
+if not cmpNvimLspStatus then
 	return
 end
 
--- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, 'typescript')
-if not typescript_setup then
+-- import typescript-tools plugin safely
+local tsToolsStatus, tsTools = pcall(require, 'typescript-tools')
+if not tsToolsStatus then
 	return
 end
 
-local wk_setup, wk = pcall(require, 'which-key')
-if not wk_setup then
+local wkStatus, wk = pcall(require, 'which-key')
+if not wkStatus then
 	return
 end
 
--- enable keybinds only for when lsp server available
-local on_attach = function(client, bufnr)
-	-- set keybinds
+local keymaps = function()
 	wk.register({
 		['<leader>'] = {
 			c = { '<cmd>Lspsaga code_action<CR>', 'Code actions' },
@@ -41,21 +39,15 @@ local on_attach = function(client, bufnr)
 			k = { '<cmd>Lspsaga hover_doc<CR>', 'Show documentation for what is under cursor' },
 		},
 	})
+end
 
-	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == 'tsserver' then
-		wk.register({
-			['<leader>'] = {
-				name = 'Rename/Remove',
-				rf = { ':TypescriptRenameFile<CR>', 'Rename file and update imports' },
-				ru = { ':TypescriptRemoveUnused<CR>', 'Remove unused variables' },
-			},
-		})
-	end
+-- enable keybinds only for when lsp server available
+local on_attach = function(client, bufnr)
+	keymaps()
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
-local capabilities = cmp_nvim_lsp.default_capabilities()
+local capabilities = cmpNvimLsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
@@ -72,11 +64,19 @@ lspconfig['html'].setup({
 })
 
 -- configure typescript server with plugin
-typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
-	},
+tsTools.setup({
+	capabilities = capabilities,
+	on_attach = function()
+		keymaps()
+
+		wk.register({
+			['<leader>'] = {
+				name = 'Imports',
+				io = { ':TSToolsOrganizeImports<CR>', 'Sort and remove unused imports' },
+				ia = { ':TSToolsAddMissingImports<CR>', 'Add missing imports' },
+			},
+		})
+	end,
 })
 
 -- configure css server

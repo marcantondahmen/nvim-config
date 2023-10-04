@@ -157,8 +157,8 @@ local startup = function(use)
 		},
 		commit = lock['lspsaga.nvim'],
 	}) -- enhanced lsp uis
-	use({ 'jose-elias-alvarez/typescript.nvim', commit = lock['typescript.nvim'] }) -- additional functionality for typescript server (e.g. rename file & update imports)
 	use({ 'onsails/lspkind.nvim', commit = lock['lspkind.nvim'] }) -- vs-code like icons for autocompletion
+	use({ 'pmizio/typescript-tools.nvim', commit = lock['typescript-tools.nvim'] })
 
 	-- signature help
 	use({ 'ray-x/lsp_signature.nvim', commit = lock['lsp_signature.nvim'] })

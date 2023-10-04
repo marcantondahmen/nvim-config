@@ -54,6 +54,7 @@ This config includes the following plugins:
 -   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) fuzzy-serch menus
 -   [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) terminal
 -   [trouble.nvim](https://github.com/folke/trouble.nvim) diagnostics overview
+-   [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) TypeScript support
 -   [vim-maximizer](https://github.com/szw/vim-maximizer) maximize panes
 -   [vim-ReplaceWithRegister](https://github.com/inkarkat/vim-ReplaceWithRegister) better replace functionality
 -   [vim-surround](https://github.com/tpope/vim-surround) surround plugin
