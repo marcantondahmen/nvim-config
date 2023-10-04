@@ -29,6 +29,7 @@ This config includes the following plugins:
 -   [auto-session](https://github.com/rmagatti/auto-session/) session manager
 -   [barbar.nvim](https://github.com/romgrk/barbar.nvim) bufferline
 -   [Comment.nvim](https://github.com/numToStr/Comment.nvim) comment plugin
+-   [conform.nvim](https://github.com/stevearc/conform.nvim) formatting
 -   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 -   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
 -   [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) indent guides
@@ -37,7 +38,6 @@ This config includes the following plugins:
 -   [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) status line
 -   [neogen](https://github.com/danymat/neogen) docblocks
 -   [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown preview in browser
--   [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) formatters
 -   [nvim-autopairs](https://github.com/windwp/nvim-autopairs) auto pairing
 -   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) autocompletion
 -   [nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors) highlight colors

@@ -140,6 +140,10 @@ local startup = function(use)
 	-- managing & installing lsp servers, linters & formatters
 	use({ 'williamboman/mason.nvim', commit = lock['mason.nvim'] }) -- in charge of managing lsp servers, linters & formatters
 	use({ 'williamboman/mason-lspconfig.nvim', commit = lock['mason-lspconfig.nvim'] }) -- bridges gap b/w mason & lspconfig
+	use({ 'WhoIsSethDaniel/mason-tool-installer.nvim', commit = lock['mason-tool-installer.nvim'] })
+
+	-- formatter configs
+	use({ 'stevearc/conform.nvim', commit = lock['conform.nvim'] })
 
 	-- configuring lsp servers
 	use({ 'neovim/nvim-lspconfig', commit = lock['nvim-lspconfig'] }) -- easily configure language servers
@@ -176,10 +180,6 @@ local startup = function(use)
 
 	-- tag renaming
 	use({ 'AndrewRadev/tagalong.vim', commit = lock['tagalong.vim'] })
-
-	-- formatting & linting
-	use({ 'jose-elias-alvarez/null-ls.nvim', commit = lock['null-ls.nvim'] }) -- configure formatters & linters
-	use({ 'jayp0521/mason-null-ls.nvim', commit = lock['mason-null-ls.nvim'] }) -- bridges gap b/w mason & null-ls
 
 	-- trouble
 	use({
