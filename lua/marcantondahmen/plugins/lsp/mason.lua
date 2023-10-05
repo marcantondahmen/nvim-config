@@ -44,5 +44,7 @@ masonToolInstaller.setup({
 		'prettier',
 		'stylua',
 		'php-cs-fixer',
+		'shfmt',
+		'sql-formatter',
 	},
 })
