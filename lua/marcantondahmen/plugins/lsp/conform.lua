@@ -30,4 +30,4 @@ conform.setup({
 	},
 })
 
-require('conform.formatters.sql_formatter').args = { '-l', 'postgresql', '$FILENAME' }
+require('conform.formatters.sql_formatter').args = { '-l', 'postgresql' }
