@@ -4,11 +4,6 @@ if not tree_status then
 	return
 end
 
-local conf_status, config = pcall(require, 'nvim-tree.config')
-if not conf_status then
-	return
-end
-
 local api_status, api = pcall(require, 'nvim-tree.api')
 if not api_status then
 	return
@@ -23,7 +18,6 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local tree_cb = config.nvim_tree_callback
 local width = 40
 
 function TreeFocus()
@@ -45,25 +39,24 @@ local function on_attach(bufnr)
 
 	-- user mappings
 	vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+	vim.keymap.set('n', 'h', api.tree.toggle_hidden_filter, opts('Toggle hidden filter'))
+	vim.keymap.set('n', 'i', api.tree.toggle_gitignore_filter, opts('Toggle gitignore filter'))
 	vim.keymap.set('n', 'q', TreeClose, opts('Close'))
+
+	-- remove default for H
+	vim.keymap.del('n', 'H', { buffer = bufnr })
 end
 
 -- configure nvim-tree
 nvimtree.setup({
 	on_attach = on_attach,
 	hijack_cursor = true,
+	reload_on_bufenter = true,
 	update_focused_file = {
 		enable = true,
 	},
 	view = {
 		width = width,
-		mappings = {
-			custom_only = false,
-			list = {
-				{ key = 'v', cb = tree_cb('vsplit') },
-				{ key = 's', cb = tree_cb('split') },
-			},
-		},
 	},
 	renderer = {
 		full_name = false,

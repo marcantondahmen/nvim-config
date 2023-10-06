@@ -40,7 +40,7 @@
 	"lspsaga.nvim": { "commit": "b1b43c1" },
 	"neogen": { "commit": "cb1f384" },
 	"barbar.nvim": { "commit": "d0b39de" },
-	"nvim-tree.lua": { "commit": "4bd30f0" },
+	"nvim-tree.lua": { "commit": "7dcda5d" },
 	"nvim-highlight-colors": { "commit": "2315470" },
 	"nvim-navbuddy": { "commit": "244a4cd" },
 	"toggleterm.nvim": { "commit": "b90a138" },
