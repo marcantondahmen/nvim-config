@@ -72,7 +72,7 @@ tsTools.setup({
 		wk.register({
 			['<leader>'] = {
 				name = 'Imports',
-				io = { ':TSToolsOrganizeImports<CR>', 'Sort and remove unused imports' },
+				ir = { ':TSToolsRemoveUnusedImports <CR>', 'Remove unused imports' },
 				ia = { ':TSToolsAddMissingImports<CR>', 'Add missing imports' },
 			},
 		})
