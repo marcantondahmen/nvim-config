@@ -111,3 +111,6 @@ keymap.set('i', 'kj', '<ESC>', options)
 
 -- replace selection in buffer
 keymap.set('v', 'r', 'y:%s*<c-r>"**gc<left><left><left>', { silent = true, noremap = false })
+
+-- replace selection in project
+keymap.set('v', '<C-r>', '<esc><cmd>lua require("spectre").open_visual()<CR>', { silent = true, noremap = false })
