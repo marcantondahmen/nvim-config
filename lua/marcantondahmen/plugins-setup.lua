@@ -57,6 +57,7 @@ local startup = function(use)
 
 	-- lua functions that many plugins use
 	use({ 'nvim-lua/plenary.nvim', commit = lock['plenary.nvim'] })
+	use({ 'MunifTanjim/nui.nvim', commit = lock['nui.nvim'] })
 
 	-- color schemes
 	use({ 'gbprod/nord.nvim', commit = lock['nord.nvim'] })
