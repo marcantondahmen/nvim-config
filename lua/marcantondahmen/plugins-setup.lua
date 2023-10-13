@@ -172,6 +172,7 @@ local startup = function(use)
 	use({ 'ray-x/lsp_signature.nvim', commit = lock['lsp_signature.nvim'] })
 
 	-- navbuddy
+	use({ 'SmiteshP/nvim-navic', commit = lock['nvim-navic'] })
 	use({
 		'SmiteshP/nvim-navbuddy',
 		requires = {
