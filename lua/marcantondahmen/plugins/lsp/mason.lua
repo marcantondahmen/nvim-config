@@ -41,7 +41,7 @@ masonLspconfig.setup({
 
 masonToolInstaller.setup({
 	ensure_installed = {
-		'prettier',
+		'prettierd',
 		'stylua',
 		'php-cs-fixer',
 		'shfmt',
