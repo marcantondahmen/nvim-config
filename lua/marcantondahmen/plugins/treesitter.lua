@@ -9,7 +9,7 @@ treesitter.setup({
 	-- enable syntax highlighting
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = { 'php' },
+		additional_vim_regex_highlighting = false,
 	},
 	-- enable indentation
 	indent = { enable = true },
@@ -21,6 +21,7 @@ treesitter.setup({
 		'javascript',
 		'typescript',
 		'tsx',
+		'jsdoc',
 		'yaml',
 		'html',
 		'css',
