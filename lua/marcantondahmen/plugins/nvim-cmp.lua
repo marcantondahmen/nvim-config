@@ -33,11 +33,20 @@ require('luasnip/loaders/from_vscode').lazy_load()
 
 vim.opt.completeopt = 'menu,menuone,noselect'
 
+local border = cmp.config.window.bordered({
+	border = 'single',
+	winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+})
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
+	},
+	window = {
+		completion = border,
+		documentation = border,
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-k>'] = cmp.mapping.select_prev_item(), -- previous suggestion

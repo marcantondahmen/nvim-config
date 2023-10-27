@@ -1,5 +1,3 @@
-local util = require('tokyonight.util')
-
 require('tokyonight').setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings
@@ -26,18 +24,18 @@ require('tokyonight').setup({
 
 	--- You can override specific color groups to use other groups or a hex color
 	--- function will be called with a ColorScheme table
-	---@param colors ColorScheme
-	on_colors = function(colors) end,
+	on_colors = function(colors)
+		colors.border_highlight = colors.dark3
+	end,
 
 	--- You can override specific highlights to use other groups or a hex color
 	--- function will be called with a Highlights and ColorScheme table
-	---@param highlights Highlights
-	---@param colors ColorScheme
 	on_highlights = function(hl, c)
 		hl.WinSeparator = {
 			fg = c.bg_dark,
 			bg = c.none,
 		}
+
 		hl.WhichKeyFloat = {
 			bg = c.bg_highlight,
 		}
@@ -48,7 +46,6 @@ vim.cmd([[colorscheme tokyonight]])
 
 -- set global color variable to be used by other plugins
 vim.g.theme_settings = {
-	FloatBorder = '#29a4bd',
 	LuaLineTheme = 'tokyonight',
 }
 

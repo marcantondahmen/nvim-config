@@ -105,6 +105,5 @@ vim.cmd([[
 
 -- set global color variable to be used by other plugins
 vim.g.theme_settings = {
-	FloatBorder = '#4C566A',
 	LuaLineTheme = 'nord',
 }
