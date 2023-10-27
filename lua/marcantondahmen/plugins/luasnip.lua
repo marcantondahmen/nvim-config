@@ -16,6 +16,77 @@ luasnip.add_snippets('all', {
 	}),
 })
 
+luasnip.add_snippets('php', {
+	s({ trig = '<@', name = 'Automad Statement' }, {
+		t({ '<@ ' }),
+		i(1),
+		t({ ' @>' }),
+	}),
+	s({ trig = '@', name = 'Automad Variable' }, {
+		t({ '@{ ' }),
+		i(1),
+		t({ ' }' }),
+	}),
+	s({ trig = '#', name = 'Automad Comment' }, {
+		t({ '<# ' }),
+		i(1),
+		t({ ' #>' }),
+	}),
+	s({ trig = '@pagelist', name = 'foreach in pagelist' }, {
+		t({ '<@ foreach in pagelist @>', '	' }),
+		i(1),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@pagelistelse', name = 'foreach in pagelist else' }, {
+		t({ '<@ foreach in pagelist @>', '	' }),
+		i(1),
+		t({ '', '<@ else @>', '	' }),
+		i(2),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@if', name = 'if ...' }, {
+		t({ '<@ if ' }),
+		i(1),
+		t({ ' @>', '	' }),
+		i(2),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@ifelse', name = 'if ... else ...' }, {
+		t({ '<@ if ' }),
+		i(1),
+		t({ ' @>', '	' }),
+		i(2),
+		t({ '', '<@ else @>', '	' }),
+		i(3),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@with', name = 'with ...' }, {
+		t({ '<@ with ' }),
+		i(1),
+		t({ ' @>', '	' }),
+		i(2),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@withelse', name = 'with ... else ...' }, {
+		t({ '<@ with ' }),
+		i(1),
+		t({ ' @>', '	' }),
+		i(2),
+		t({ '', '<@ else @>', '	' }),
+		i(3),
+		t({ '', '<@ end @>' }),
+	}),
+	s({ trig = '@for', name = 'for ... to ...' }, {
+		t({ '<@ for ' }),
+		i(1),
+		t({ ' to ' }),
+		i(2),
+		t({ ' @>', '	' }),
+		i(3),
+		t({ '', '<@ end @>' }),
+	}),
+})
+
 luasnip.add_snippets('typescript', {
 	s(
 		{ trig = 'class', name = 'HTML class attribute', dscr = 'Add class attribute', priority = 2000 },
