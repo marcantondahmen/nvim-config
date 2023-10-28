@@ -56,7 +56,7 @@ cmp.setup({
 		['<C-Space>'] = cmp.mapping.complete(), -- show completion suggestions
 		['<C-e>'] = cmp.mapping.abort(), -- close completion window
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
-		['<Tab>'] = cmp.mapping(function(fallback)
+		['<S-Down>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expandable() then
@@ -71,7 +71,7 @@ cmp.setup({
 				fallback()
 			end
 		end, { 'i', 's' }),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
+		['<S-Up>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
