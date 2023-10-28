@@ -17,3 +17,5 @@ saga.setup({
 		enable = false,
 	},
 })
+
+vim.cmd('highlight SagaVirtLine guifg=#3b4261')

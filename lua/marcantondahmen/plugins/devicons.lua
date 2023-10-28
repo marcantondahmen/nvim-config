@@ -6,3 +6,5 @@ end
 icons.setup({
 	color_icons = false,
 })
+
+vim.cmd('highlight DevIconDefault guifg=#a9b1d6')

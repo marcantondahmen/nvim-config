@@ -20,7 +20,7 @@ toggleterm.setup({
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
-	shading_factor = -10,
+	shading_factor = 0,
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
@@ -92,7 +92,7 @@ function LazyDocker()
 end
 
 local gitlog = Terminal:new({
-	cmd = "git log --graph --decorate --branches --color --pretty=format:'%>|(15)%C(blue)%h   %C(auto)%d %Creset%s %C(#737aa2)- %cr%C(#545c7e), %ce%Creset'",
+	cmd = "git log --graph --decorate --branches --color --pretty=format:'%>|(15)%C(blue)%h%C(auto)%d %Creset%s %C(#1abc9c)%cr%C(#545c7e) %ce%Creset'",
 	hidden = false,
 	close_on_exit = false,
 	direction = 'float',
