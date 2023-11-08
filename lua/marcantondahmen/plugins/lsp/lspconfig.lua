@@ -83,6 +83,17 @@ tsTools.setup({
 lspconfig['cssls'].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		css = { validate = true, lint = {
+			unknownAtRules = 'ignore',
+		} },
+		scss = { validate = true, lint = {
+			unknownAtRules = 'ignore',
+		} },
+		less = { validate = true, lint = {
+			unknownAtRules = 'ignore',
+		} },
+	},
 })
 
 -- configure tailwindcss server
