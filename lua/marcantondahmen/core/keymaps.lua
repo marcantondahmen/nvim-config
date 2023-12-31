@@ -6,6 +6,7 @@ end
 wk.register({
 	gR = { '<cmd>TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
+		a = { ':Neogen<cr>', 'Generate docblock' },
 		b = {
 			name = '+Buffers',
 			p = { ':BufferPin<cr>', 'Pin/unpin buffer' },
@@ -13,7 +14,6 @@ wk.register({
 			c = { ':BufferCloseAllButCurrentOrPinned<cr>', 'Close all but current or pinned' },
 			r = { ':BufferCloseBuffersRight<cr>', 'Close all to the right' },
 		},
-		d = { ':Neogen<cr>', 'Generate docblock' },
 		e = { ':lua TreeFocus()<CR>', 'Focus file explorer' },
 		f = {
 			name = '+Telescope',
