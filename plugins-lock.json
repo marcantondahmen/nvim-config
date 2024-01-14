@@ -19,7 +19,7 @@
 	"auto-session": { "commit": "7afbb14" },
 	"gitsigns.nvim": { "commit": "4aaacbf" },
 	"indent-blankline.nvim": { "commit": "4541d69" },
-	"nvim-ts-autotag": { "commit": "6be1192" },
+	"nvim-ts-autotag": { "commit": "8515e48" },
 	"telescope.nvim": { "commit": "776b509" },
 	"tagalong.vim": { "commit": "d12622b" },
 	"trouble.nvim": { "commit": "f1168fe" },
