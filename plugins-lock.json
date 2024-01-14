@@ -35,7 +35,7 @@
 	"tokyonight.nvim": { "commit": "76a5283" },
 	"nvim-treesitter": { "commit": "db0ccd92" },
 	"mason-lspconfig.nvim": { "commit": "e86a4c8" },
-	"lspsaga.nvim": { "commit": "b1b43c1" },
+	"lspsaga.nvim": { "commit": "3112b7a" },
 	"neogen": { "commit": "cb1f384" },
 	"barbar.nvim": { "commit": "d0b39de" },
 	"nvim-tree.lua": { "commit": "7dcda5d" },

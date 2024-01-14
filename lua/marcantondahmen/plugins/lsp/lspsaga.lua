@@ -16,6 +16,9 @@ saga.setup({
 	symbol_in_winbar = {
 		enable = false,
 	},
+	ui = {
+		border = 'single',
+	},
 })
 
 vim.cmd('highlight SagaVirtLine guifg=#3b4261')
