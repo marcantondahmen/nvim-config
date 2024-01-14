@@ -22,7 +22,7 @@
 	"nvim-ts-autotag": { "commit": "6be1192" },
 	"telescope.nvim": { "commit": "776b509" },
 	"tagalong.vim": { "commit": "d12622b" },
-	"trouble.nvim": { "commit": "40aad00" },
+	"trouble.nvim": { "commit": "f1168fe" },
 	"lsp_signature.nvim": { "commit": "58d4e81" },
 	"Comment.nvim": { "commit": "176e85e" },
 	"vim-maximizer": { "commit": "2e54952" },
