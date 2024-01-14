@@ -4,5 +4,6 @@ if not status then
 end
 
 ibl.setup({
-	scope = { enabled = true },
+	indent = { highlight = { 'LineNr' } },
+	scope = { enabled = true, highlight = { 'NonText' } },
 })
