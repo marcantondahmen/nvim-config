@@ -21,7 +21,7 @@
 	"indent-blankline.nvim": { "commit": "4541d69" },
 	"nvim-ts-autotag": { "commit": "8515e48" },
 	"telescope.nvim": { "commit": "776b509" },
-	"tagalong.vim": { "commit": "d12622b" },
+	"tagalong.vim": { "commit": "5a2bbf2" },
 	"trouble.nvim": { "commit": "f1168fe" },
 	"lsp_signature.nvim": { "commit": "58d4e81" },
 	"Comment.nvim": { "commit": "176e85e" },
