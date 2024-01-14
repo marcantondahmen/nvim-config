@@ -17,7 +17,7 @@
 	"typescript-tools.nvim": { "commit": "094e4f4" },
 	"lspkind.nvim": { "commit": "57610d5" },
 	"auto-session": { "commit": "7afbb14" },
-	"gitsigns.nvim": { "commit": "5d73da7" },
+	"gitsigns.nvim": { "commit": "4aaacbf" },
 	"indent-blankline.nvim": { "commit": "4541d69" },
 	"nvim-ts-autotag": { "commit": "6be1192" },
 	"telescope.nvim": { "commit": "776b509" },
