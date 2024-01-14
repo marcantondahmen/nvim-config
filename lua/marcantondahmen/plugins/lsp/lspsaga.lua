@@ -18,6 +18,7 @@ saga.setup({
 	},
 	ui = {
 		border = 'single',
+		code_action = '󰌵',
 	},
 })
 
