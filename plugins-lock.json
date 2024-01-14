@@ -38,7 +38,7 @@
 	"lspsaga.nvim": { "commit": "3112b7a" },
 	"neogen": { "commit": "cb1f384" },
 	"barbar.nvim": { "commit": "d0b39de" },
-	"nvim-tree.lua": { "commit": "7dcda5d" },
+	"nvim-tree.lua": { "commit": "f24afa2" },
 	"nvim-highlight-colors": { "commit": "2315470" },
 	"nvim-navic": { "commit": "0ffa7ff" },
 	"nvim-navbuddy": { "commit": "244a4cd" },
