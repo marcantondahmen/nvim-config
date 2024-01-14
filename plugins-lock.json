@@ -18,7 +18,7 @@
 	"lspkind.nvim": { "commit": "57610d5" },
 	"auto-session": { "commit": "7afbb14" },
 	"gitsigns.nvim": { "commit": "4aaacbf" },
-	"indent-blankline.nvim": { "commit": "4541d69" },
+	"indent-blankline.nvim": { "commit": "12e9204" },
 	"nvim-ts-autotag": { "commit": "8515e48" },
 	"telescope.nvim": { "commit": "776b509" },
 	"tagalong.vim": { "commit": "5a2bbf2" },
