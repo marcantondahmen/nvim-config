@@ -28,6 +28,7 @@ This config includes the following plugins:
 -   [alpha-nvim](https://github.com/goolord/alpha-nvim) dashboard
 -   [auto-session](https://github.com/rmagatti/auto-session/) session manager
 -   [barbar.nvim](https://github.com/romgrk/barbar.nvim) bufferline
+-   [barbecue.nvim](https://github.com/utilyre/barbecue.nvim) symbols breadcrumbs
 -   [Comment.nvim](https://github.com/numToStr/Comment.nvim) comment plugin
 -   [conform.nvim](https://github.com/stevearc/conform.nvim) formatting
 -   [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view

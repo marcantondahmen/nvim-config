@@ -1,4 +1,5 @@
 {
+	"barbecue.nvim": { "commit": "d38a2a0" },
 	"telescope-fzf-native.nvim": { "commit": "9bc8237" },
 	"packer.nvim": { "commit": "1d0cf98" },
 	"nvim-notify": { "commit": "ea9c8ce" },

@@ -118,6 +118,16 @@ local startup = function(use)
 	-- buffers and tabs
 	use({ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons', commit = lock['barbar.nvim'] })
 
+	-- winbar
+	use({
+		'utilyre/barbecue.nvim',
+		commit = lock['barbecue.nvim'],
+		requires = {
+			'SmiteshP/nvim-navic',
+			'nvim-tree/nvim-web-devicons', -- optional dependency
+		},
+	})
+
 	-- fuzzy finding w/ telescope
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', commit = lock['telescope-fzf-native.nvim'] }) -- dependency for better sorting performance
 	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x', commit = lock['telescope.nvim'] }) -- fuzzy finder

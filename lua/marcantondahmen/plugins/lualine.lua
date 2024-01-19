@@ -9,7 +9,7 @@ local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
 local nofile = {
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff', 'diagnostics' },
+		lualine_b = { 'branch', 'diff' },
 		lualine_c = { '' },
 		lualine_x = { 'filetype' },
 		lualine_y = { pwd },
@@ -68,11 +68,13 @@ lualine.setup({
 		},
 	},
 	sections = {
+		lualine_a = { 'mode' },
+		lualine_b = { 'branch', 'diff' },
 		lualine_c = {
 			{
 				'filename',
 				file_status = true, -- displays file status (readonly status, modified status)
-				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3: Absolute path, with tilde as the home directory, 4: Filename and parent dir, with tilde as the home directory
+				path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3: Absolute path, with tilde as the home directory, 4: Filename and parent dir, with tilde as the home directory
 				symbols = {
 					modified = '●', -- Text to show when the file is modified.
 					readonly = '󰍶', -- Text to show when the file is non-modifiable or readonly.
@@ -80,6 +82,7 @@ lualine.setup({
 					newfile = 'New', -- Text to show for newly created file before first write
 				},
 			},
+			'diagnostics',
 		},
 		lualine_x = { 'filetype' },
 		lualine_y = { pwd },
