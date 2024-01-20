@@ -30,6 +30,14 @@ function TreeClose()
 	bufferline.set_offset(0)
 end
 
+function TreeFocusOrClose()
+	if api.tree.is_tree_buf() then
+		TreeClose()
+	else
+		TreeFocus()
+	end
+end
+
 local function on_attach(bufnr)
 	local function opts(desc)
 		return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }

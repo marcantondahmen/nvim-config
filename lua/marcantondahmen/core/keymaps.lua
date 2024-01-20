@@ -14,7 +14,7 @@ wk.register({
 			c = { ':BufferCloseAllButCurrentOrPinned<cr>', 'Close all but current or pinned' },
 			r = { ':BufferCloseBuffersRight<cr>', 'Close all to the right' },
 		},
-		e = { ':lua TreeFocus()<CR>', 'Focus file explorer' },
+		e = { ':lua TreeFocusOrClose()<CR>', 'Focus or close file explorer' },
 		f = {
 			name = '+Telescope',
 			f = { '<cmd>Telescope find_files<cr>', 'Find file' },
