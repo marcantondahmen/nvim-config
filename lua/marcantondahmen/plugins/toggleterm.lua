@@ -91,15 +91,15 @@ function LazyDocker()
 	lazydocker:toggle()
 end
 
-local gitlog = Terminal:new({
-	cmd = "git log --graph --decorate --branches --color --pretty=format:'%>|(15)%C(blue)%h%C(auto)%d %Creset%s %C(#1abc9c)%cr%C(#545c7e) %ce%Creset'",
+local tig = Terminal:new({
+	cmd = 'tig',
 	hidden = false,
 	close_on_exit = false,
 	direction = 'float',
 })
 
-function GitLog()
-	gitlog:toggle()
+function Tig()
+	tig:toggle()
 end
 
 vim.cmd('autocmd! TermOpen term://* nnoremap <buffer><LeftRelease> <LeftRelease>i')

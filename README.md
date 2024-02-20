@@ -70,6 +70,7 @@ There are also some custom settings and extensions:
 -   [Script Runner](lua/telescope/_extensions/scripts.lua)
 -   [Gitui](lua/marcantondahmen/plugins/toggleterm.lua#L72)
 -   [Lazydocker](lua/marcantondahmen/plugins/toggleterm.lua#L83)
+-   [Tig](lua/marcantondahmen/plugins/toggleterm.lua#L94)
 
 ## Installation
 
@@ -100,9 +101,10 @@ The following dependecies have to be installed in order to make all plugins work
 -   Composer (for Psalm)
 -   Gitui
 -   Lazydocker
+-   Tig
 
 In order to install the basic dependecies, assuming that [Gitui](https://github.com/extrawurst/gitui), [Lazydocker](https://github.com/jesseduffield/lazydocker),
-PHP and Composer are installed anyways, run the following commands on macOS for example:
+[Tig](https://jonas.github.io/tig/), PHP and Composer are installed anyways, run the following commands on macOS for example:
 
 ```bash
 brew install ripgrep
