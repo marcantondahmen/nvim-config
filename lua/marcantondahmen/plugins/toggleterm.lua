@@ -94,7 +94,7 @@ end
 local tig = Terminal:new({
 	cmd = 'tig',
 	hidden = false,
-	close_on_exit = false,
+	close_on_exit = true,
 	direction = 'float',
 })
 
