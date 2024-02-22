@@ -38,8 +38,8 @@ dashboard.section.buttons.val = {
 	dashboard.button('s', '     Restore Session', ':SessionRestore<CR>'),
 	dashboard.button('r', '     Recent Files   ', ':Telescope oldfiles<CR>'),
 	dashboard.button('f', '     Find File      ', ':Telescope find_files<CR>'),
-	dashboard.button('t', '     Find Text      ', ':Telescope live_grep<CR>'),
-	dashboard.button('q', '     Quit           ', ':qa<CR>'),
+	dashboard.button('t', '󱎸     Find Text      ', ':Telescope live_grep<CR>'),
+	dashboard.button('q', '     Quit           ', ':qa<CR>'),
 }
 
 local cwd = vim.fn.getcwd()
