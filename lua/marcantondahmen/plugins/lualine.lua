@@ -6,10 +6,12 @@ end
 
 local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
 
+local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
+
 local nofile = {
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff' },
+		lualine_b = gitInfo,
 		lualine_c = { '' },
 		lualine_x = { 'filetype' },
 		lualine_y = { pwd },
@@ -69,7 +71,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } },
+		lualine_b = gitInfo,
 		lualine_c = {
 			{
 				'filename',
