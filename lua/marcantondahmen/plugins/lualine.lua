@@ -69,7 +69,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff' },
+		lualine_b = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } },
 		lualine_c = {
 			{
 				'filename',
