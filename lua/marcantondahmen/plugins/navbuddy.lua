@@ -39,7 +39,7 @@ navbuddy.setup({
 		icons = {
 			leaf = '  ',
 			leaf_selected = ' → ',
-			branch = ' ',
+			branch = '  ',
 		},
 	},
 	icons = {
