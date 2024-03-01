@@ -1,7 +1,5 @@
 -- Set barbar's options
--- Note that this configuration only works with version 1.5.0
--- where the actual plugin was still named "bufferline".
-require('bufferline').setup({
+require('barbar').setup({
 	-- Enable/disable animations
 	animation = true,
 
@@ -18,14 +16,6 @@ require('bufferline').setup({
 	--  - left-click: go to buffer
 	--  - middle-click: delete buffer
 	clickable = true,
-
-	-- Enables / disables diagnostic symbols
-	diagnostics = {
-		[vim.diagnostic.severity.ERROR] = { enabled = true, icon = '' },
-		[vim.diagnostic.severity.WARN] = { enabled = false },
-		[vim.diagnostic.severity.INFO] = { enabled = false },
-		[vim.diagnostic.severity.HINT] = { enabled = true, icon = '' },
-	},
 
 	-- Excludes buffers from the tabline
 	exclude_ft = { 'alpha' },
@@ -47,23 +37,52 @@ require('bufferline').setup({
 	-- Enable highlighting visible buffers
 	highlight_visible = false,
 
-	-- Enable/disable icons
-	-- if set to 'numbers', will show buffer index in the tabline
-	-- if set to 'both', will show buffer index and icons in the tabline
-	icons = true,
+	icons = {
+		-- Configure the base icons on the bufferline.
+		-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
+		buffer_index = false,
+		buffer_number = false,
+		button = '󰅖',
+		-- Enables / disables diagnostic symbols
+		diagnostics = {
+			[vim.diagnostic.severity.ERROR] = { enabled = true, icon = '' },
+			[vim.diagnostic.severity.WARN] = { enabled = false },
+			[vim.diagnostic.severity.INFO] = { enabled = false },
+			[vim.diagnostic.severity.HINT] = { enabled = true, icon = '' },
+		},
+		gitsigns = {
+			added = { enabled = false },
+			changed = { enabled = false },
+			deleted = { enabled = false },
+		},
+		filetype = {
+			-- Sets the icon's highlight group.
+			-- If false, will use nvim-web-devicons colors
+			custom_colors = false,
 
-	-- If set, the icon color will follow its corresponding buffer
-	-- highlight group. By default, the Buffer*Icon group is linked to the
-	-- Buffer* group (see Highlighting below). Otherwise, it will take its
-	-- default value as defined by devicons.
-	icon_custom_colors = false,
+			-- Requires `nvim-web-devicons` if `true`
+			enabled = true,
+		},
+		separator = { left = '', right = '' },
 
-	-- Configure icons on the bufferline.
-	icon_separator_active = '',
-	icon_separator_inactive = '',
-	icon_close_tab = '󰅖',
-	icon_close_tab_modified = '●',
-	icon_pinned = '車',
+		-- If true, add an additional separator at the end of the buffer list
+		separator_at_end = false,
+
+		-- Configure the icons on the bufferline when modified or pinned.
+		-- Supports all the base icon options.
+		modified = { button = '●' },
+		pinned = { button = '', filename = true },
+
+		-- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
+		preset = 'default',
+
+		-- Configure the icons on the bufferline based on the visibility of a buffer.
+		-- Supports all the base icon options, plus `modified` and `pinned`.
+		alternate = { separator = { left = '', right = '' } },
+		current = { separator = { left = '', right = '' } },
+		inactive = { separator = { left = '', right = '' } },
+		visible = { separator = { left = '', right = '' } },
+	},
 
 	-- If true, new buffers will be inserted at the start/end of the list.
 	-- Default is to insert after current buffer.
@@ -93,4 +112,11 @@ require('bufferline').setup({
 	-- Sets the name of unnamed buffers. By default format is "[Buffer X]"
 	-- where X is the buffer number. But only a static string is accepted here.
 	no_name_title = nil,
+
+	-- Set the filetypes which barbar will offset itself for
+	sidebar_filetypes = {
+		-- Use the default values: {event = 'BufWinLeave', text = nil}
+		-- NvimTree offset is calculate in the nvim-tree config and therefore is
+		-- is not enabled here.
+	},
 })

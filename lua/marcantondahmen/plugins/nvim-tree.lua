@@ -9,8 +9,8 @@ if not api_status then
 	return
 end
 
-local bufferline_status, bufferline = pcall(require, 'bufferline.api')
-if not bufferline_status then
+local barbar_status, barbar = pcall(require, 'barbar.api')
+if not barbar_status then
 	return
 end
 
@@ -21,13 +21,13 @@ vim.g.loaded_netrwPlugin = 1
 local width = 40
 
 function TreeFocus()
-	bufferline.set_offset(width + 1, '', 'BufferVisible')
 	api.tree.find_file({ open = true, focus = true, update_root = false })
+	barbar.set_offset(width + 1, '', 'BufferVisible')
 end
 
 function TreeClose()
 	api.tree.close()
-	bufferline.set_offset(0)
+	barbar.set_offset(0)
 end
 
 function TreeFocusOrClose()
