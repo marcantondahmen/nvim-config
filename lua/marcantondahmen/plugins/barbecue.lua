@@ -5,7 +5,7 @@ end
 
 -- https://github.com/utilyre/barbecue.nvim#-configuration
 barbecue.setup({
-	exclude_filetypes = { 'toggleterm' },
+	exclude_filetypes = { 'toggleterm', '' },
 	show_dirname = true,
 	show_basename = true,
 	show_modified = true,
