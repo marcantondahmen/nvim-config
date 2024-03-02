@@ -31,6 +31,11 @@ require('tokyonight').setup({
 	--- You can override specific highlights to use other groups or a hex color
 	--- function will be called with a Highlights and ColorScheme table
 	on_highlights = function(hl, c)
+		hl.BufferScrollArrow = {
+			fg = c.fg_dark,
+			bg = c.none,
+		}
+
 		hl.WinSeparator = {
 			fg = c.bg_dark,
 			bg = c.none,

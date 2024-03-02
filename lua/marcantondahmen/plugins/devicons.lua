@@ -7,4 +7,4 @@ icons.setup({
 	color_icons = false,
 })
 
-vim.cmd('highlight DevIconDefault guifg=#a9b1d6')
+vim.api.nvim_set_hl(0, 'DevIconDefault', { link = 'Normal' })
