@@ -131,11 +131,20 @@ nvimtree.setup({
 			error = '',
 		},
 	},
-	-- disable window_picker for
-	-- explorer to work well with
-	-- window splits
 	actions = {
+		file_popup = {
+			open_win_config = {
+				col = 1,
+				row = 1,
+				relative = 'cursor',
+				border = 'single',
+				style = 'minimal',
+			},
+		},
 		open_file = {
+			-- disable window_picker for
+			-- explorer to work well with
+			-- window splits
 			window_picker = {
 				enable = false,
 			},
