@@ -136,7 +136,7 @@ local startup = function(use)
 	use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', commit = lock['diffview.nvim'] })
 
 	-- search and replace
-	use({ 'windwp/nvim-spectre', commit = lock['nvim-spectre'] })
+	use({ 'nvim-pack/nvim-spectre', commit = lock['nvim-spectre'] })
 
 	-- autocompletion
 	use({ 'hrsh7th/nvim-cmp', commit = lock['nvim-cmp'] }) -- completion plugin
