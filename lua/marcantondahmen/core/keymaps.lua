@@ -58,7 +58,8 @@ wk.register({
 			r = { '*:%s///gc<left><left><left>', 'Replace word in buffer' },
 		},
 		s = {
-			name = '+Spectre',
+			name = '+Search/Replace',
+			d = { '<cmd>lua Sad()<cr>', 'Run sad' },
 			s = { '<cmd>lua require("spectre").open()<CR>', 'Open spectre' },
 			w = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', 'Search current word' },
 			f = {
@@ -113,4 +114,4 @@ keymap.set('i', 'kj', '<ESC>', options)
 keymap.set('v', 'r', 'y:%s*<c-r>"**gc<left><left><left>', { silent = true, noremap = false })
 
 -- replace selection in project
-keymap.set('v', '<C-r>', '<esc><cmd>lua require("spectre").open_visual()<CR>', { silent = true, noremap = false })
+keymap.set('v', '<C-r>', '<esc><cmd>lua SadVisual()<CR>', { silent = true, noremap = false })

@@ -11,7 +11,7 @@ end
 toggleterm.setup({
 	size = function(term)
 		if term.direction == 'horizontal' then
-			return 15
+			return vim.o.lines * 0.5
 		elseif term.direction == 'vertical' then
 			return vim.o.columns * 0.4
 		end
@@ -100,6 +100,41 @@ local tig = Terminal:new({
 
 function Tig()
 	tig:toggle()
+end
+
+local function sad(search)
+	local replace = vim.fn.input('Replace: ')
+
+	local sadTerm = Terminal:new({
+		cmd = 'fd | sad -u 0 ' .. search .. ' ' .. replace,
+		hidden = false,
+		close_on_exit = true,
+		direction = 'horizontal',
+	})
+
+	sadTerm:toggle()
+end
+
+function Sad()
+	local search = vim.fn.input('Search: ')
+	sad(search)
+end
+
+function SadVisual()
+	local orig = vim.fn.getreg('r')
+	local mode = vim.fn.mode()
+
+	if mode ~= 'v' and mode ~= 'V' then
+		vim.cmd([[normal! gv]])
+	end
+
+	vim.cmd([[silent! normal! "rygv]])
+
+	local selection = vim.fn.getreg('r')
+
+	vim.fn.setreg('r', orig)
+
+	sad(selection)
 end
 
 vim.cmd('autocmd! TermOpen term://* nnoremap <buffer><LeftRelease> <LeftRelease>i')
