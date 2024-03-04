@@ -71,6 +71,7 @@ There are also some custom settings and extensions:
 -   [Gitui](lua/marcantondahmen/plugins/toggleterm.lua#L72)
 -   [Lazydocker](lua/marcantondahmen/plugins/toggleterm.lua#L83)
 -   [Tig](lua/marcantondahmen/plugins/toggleterm.lua#L94)
+-   [sad](lua/marcantondahmen/plugins/toggleterm.lua#L105)
 
 ## Installation
 
@@ -91,26 +92,33 @@ git clone https://github.com/marcantondahmen/nvim-config.git ~/.config/nvim
 The following dependecies have to be installed in order to make all plugins work correctly:
 
 -   ripgrep
--   fd
 -   sed
 -   wget
--   Python3 provider
--   node neovim package
+-   [fd](https://github.com/sharkdp/fd)
+-   [fzf](https://github.com/junegunn/fzf)
+-   [sad](https://github.com/ms-jpq/sad)
+-   Python3 provider (see below)
+-   node neovim package (see below)
 -   unzip (probably only WSL)
+-   [Gitui](https://github.com/extrawurst/gitui)
+-   [Lazydocker](https://github.com/jesseduffield/lazydocker)
+-   [Tig](https://jonas.github.io/tig/)
 -   PHP (for Composer)
 -   Composer (for Psalm)
--   Gitui
--   Lazydocker
--   Tig
 
-In order to install the basic dependecies, assuming that [Gitui](https://github.com/extrawurst/gitui), [Lazydocker](https://github.com/jesseduffield/lazydocker),
-[Tig](https://jonas.github.io/tig/), PHP and Composer are installed anyways, run the following commands on macOS for example:
+In order to install the basic dependecies, assuming that PHP and Composer are installed anyways, run the following commands on macOS for example:
 
 ```bash
 brew install ripgrep
 brew install fd
+brew install fzf
+$(brew --prefix)/opt/fzf/install
 brew install gnu-sed
+brew install sad
 brew install wget
+brew install gitui
+brew install tig
+brew install lazydocker
 python3 -m pip install --user --upgrade pynvim
 npm install -g neovim
 ```
