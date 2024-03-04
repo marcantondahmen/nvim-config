@@ -106,7 +106,7 @@ local function sad(search)
 	local replace = vim.fn.input('Replace: ')
 
 	local sadTerm = Terminal:new({
-		cmd = 'fd | sad -u 0 ' .. search .. ' ' .. replace,
+		cmd = 'fd | sad -u 0 "' .. search .. '" "' .. replace .. '"',
 		hidden = false,
 		close_on_exit = true,
 		direction = 'horizontal',
