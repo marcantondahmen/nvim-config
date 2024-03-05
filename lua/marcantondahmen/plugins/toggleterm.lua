@@ -106,7 +106,14 @@ local function sad(search)
 	local replace = vim.fn.input('Replace: ')
 
 	local sadTerm = Terminal:new({
-		cmd = 'fd | sad -u 0 "' .. search .. '" "' .. replace .. '"',
+		cmd = 'fd --type f | '
+			.. 'sad -u 0 '
+			.. "--fzf=\"--header='Tab to select or CTRL-A to toggle all' --layout=reverse --preview-window='50%,border-left' --bind='ctrl-a:toggle-all'\" "
+			.. '-p="bat --color=always --theme=base16 --style=plain" "'
+			.. search
+			.. '" "'
+			.. replace
+			.. '"',
 		hidden = false,
 		close_on_exit = true,
 		direction = 'horizontal',

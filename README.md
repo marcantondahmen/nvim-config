@@ -97,6 +97,7 @@ The following dependecies have to be installed in order to make all plugins work
 -   [fd](https://github.com/sharkdp/fd)
 -   [fzf](https://github.com/junegunn/fzf)
 -   [sad](https://github.com/ms-jpq/sad)
+-   [bat](https://github.com/sharkdp/bat)
 -   Python3 provider (see below)
 -   node neovim package (see below)
 -   unzip (probably only WSL)
@@ -115,6 +116,7 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install
 brew install gnu-sed
 brew install sad
+brew install bat
 brew install wget
 brew install gitui
 brew install tig
