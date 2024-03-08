@@ -26,6 +26,10 @@ wk.register({
 			x = { '<cmd>Telescope scripts<cr>', 'Run script' },
 			k = { '<cmd>Telescope keymaps<cr>', 'List keymaps' },
 		},
+		i = {
+			name = '+Imports',
+			-- Keymaps added by lsp
+		},
 		x = {
 			name = '+Trouble',
 			x = { '<cmd>Trouble<cr>', 'Focus/open diagnostics' },
@@ -55,17 +59,15 @@ wk.register({
 			x = { ':close<CR>', 'Close current pane' },
 		},
 		r = {
+			name = '+Replace',
+			s = { '<cmd>lua Sad()<cr>', 'Search and replace in project' },
+			w = { '<cmd>lua SadWord()<cr>', 'Replace current word in project' },
 			r = { '*:%s///gc<left><left><left>', 'Replace word in buffer' },
 		},
 		s = {
-			name = '+Search/Replace',
-			d = { '<cmd>lua Sad()<cr>', 'Run sad' },
+			name = '+Spectre',
 			s = { '<cmd>lua require("spectre").open()<CR>', 'Open spectre' },
 			w = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', 'Search current word' },
-			f = {
-				'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-				'Search word in current file',
-			},
 		},
 		t = {
 			name = '+Terminal',

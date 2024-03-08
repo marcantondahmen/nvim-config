@@ -108,8 +108,12 @@ local function sad(search)
 	local sadTerm = Terminal:new({
 		cmd = 'fd --type f | '
 			.. 'sad -u 0 '
-			.. "--fzf=\"--header='Tab to select or CTRL-A to toggle all' --layout=reverse --preview-window='50%,border-left' --bind='ctrl-a:toggle-all'\" "
-			.. '-p="bat --color=always --theme=base16 --style=plain" "'
+			.. '--fzf="--header-first --header=\'Replace '
+			.. search
+			.. ' with '
+			.. replace
+			.. "' --layout=reverse --preview-window='50%,border-left' --bind='ctrl-a:toggle-all'\" "
+			.. '-p="bat --color=always --theme=base16 --style=plain --tabs=4" "'
 			.. search
 			.. '" "'
 			.. replace
@@ -124,7 +128,14 @@ end
 
 function Sad()
 	local search = vim.fn.input('Search: ')
+
 	sad(search)
+end
+
+function SadWord()
+	local word = vim.fn.expand('<cword>')
+
+	sad(word)
 end
 
 function SadVisual()
