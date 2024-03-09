@@ -20,12 +20,14 @@ telescope.setup({
 				['<C-k>'] = actions.move_selection_previous, -- move to prev result
 				['<C-j>'] = actions.move_selection_next, -- move to next result
 				['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+				['<esc>'] = actions.close,
 			},
 		},
 		borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-		prompt_prefix = '  ',
-		selection_caret = ' ',
-		entry_prefix = ' ',
+		prompt_prefix = '󰁕 ',
+		selection_caret = ' ',
+		entry_prefix = '  ',
+		multi_icon = '',
 	},
 })
 
