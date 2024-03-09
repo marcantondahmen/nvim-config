@@ -51,9 +51,23 @@ trouble.setup({
 	use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 })
 
+-- Close trouble when leaving Neovim.
 vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
 	pattern = '*',
 	callback = function()
 		trouble.close()
+	end,
+})
+
+-- Automatically open trouble's quickfix list instead of the default one.
+-- See https://github.com/folke/trouble.nvim/issues/70#issuecomment-1315718808
+vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
+	pattern = 'quickfix',
+	callback = function()
+		vim.defer_fn(function()
+			vim.cmd('cclose')
+			trouble.close()
+			trouble.open('quickfix')
+		end, 0)
 	end,
 })
