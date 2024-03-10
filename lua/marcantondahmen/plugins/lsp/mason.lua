@@ -46,5 +46,6 @@ masonToolInstaller.setup({
 		'php-cs-fixer',
 		'shfmt',
 		'sql-formatter',
+		'mdformat',
 	},
 })

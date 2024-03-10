@@ -14,7 +14,7 @@ conform.setup({
 		html = { 'prettier' },
 		json = { 'prettier' },
 		yaml = { 'prettier' },
-		markdown = { 'prettier' },
+		markdown = { 'mdformat' },
 		lua = { 'stylua' },
 		php = { 'php_cs_fixer' },
 		sh = { 'shfmt' },
