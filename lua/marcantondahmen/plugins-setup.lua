@@ -38,13 +38,13 @@ local plugins = {
 
 	-- color schemes
 	-- { 'gbprod/nord.nvim' },
-	{ 'folke/tokyonight.nvim' },
+	{ 'folke/tokyonight.nvim', as = 'tokyonight' },
 
 	-- dashboard
 	{ 'goolord/alpha-nvim' },
 
 	-- terminal
-	{ 'akinsho/toggleterm.nvim' },
+	{ 'akinsho/toggleterm.nvim', as = 'toggleterm' },
 
 	-- auto session
 	{ 'rmagatti/auto-session' },
@@ -56,7 +56,7 @@ local plugins = {
 	{ 'alexghergh/nvim-tmux-navigation' },
 
 	-- commenting with gc
-	{ 'numToStr/Comment.nvim' },
+	{ 'numToStr/Comment.nvim', as = 'comment' },
 
 	-- docblocks
 	{
@@ -68,19 +68,20 @@ local plugins = {
 	{ 'preservim/vim-pencil' },
 	{
 		'iamcco/markdown-preview.nvim',
+		as = 'markdown-preview',
 		run = function()
 			vim.fn['mkdp#util#install']()
 		end,
 	},
 
 	-- indent guides
-	{ 'lukas-reineke/indent-blankline.nvim' },
+	{ 'lukas-reineke/indent-blankline.nvim', as = 'indent-blankline' },
 
 	-- highlight colors
 	{ 'brenoprata10/nvim-highlight-colors' },
 
 	-- file explorer
-	{ 'nvim-tree/nvim-tree.lua' },
+	{ 'nvim-tree/nvim-tree.lua', as = 'nvim-tree' },
 
 	-- vs-code like icons
 	{ 'nvim-tree/nvim-web-devicons' },
@@ -89,15 +90,15 @@ local plugins = {
 	{ 'rcarriga/nvim-notify' },
 
 	-- statusline
-	{ 'nvim-lualine/lualine.nvim' },
+	{ 'nvim-lualine/lualine.nvim', as = 'lualine' },
 
 	-- buffers and tabs
-	{ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' },
+	{ 'romgrk/barbar.nvim', as = 'barbar', requires = 'nvim-web-devicons' },
 
 	-- winbar
 	{
 		'utilyre/barbecue.nvim',
-
+		as = 'barbecue',
 		requires = {
 			'SmiteshP/nvim-navic',
 			'nvim-tree/nvim-web-devicons', -- optional dependency
@@ -105,11 +106,11 @@ local plugins = {
 	},
 
 	-- fuzzy finding w/ telescope
-	{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }, -- dependency for better sorting performance
-	{ 'nvim-telescope/telescope.nvim' }, -- fuzzy finder
+	{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', as = 'telescope-fzf-native' }, -- dependency for better sorting performance
+	{ 'nvim-telescope/telescope.nvim', as = 'telescope' }, -- fuzzy finder
 
 	-- git diff
-	{ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' },
+	{ 'sindrets/diffview.nvim', as = 'diffview', requires = 'nvim-lua/plenary.nvim' },
 
 	-- search and replace
 	{ 'nvim-pack/nvim-spectre' },
@@ -120,23 +121,24 @@ local plugins = {
 	{ 'hrsh7th/cmp-path' }, -- source for file system paths
 
 	-- snippets
-	{ 'L3MON4D3/LuaSnip' }, -- snippet engine
+	{ 'L3MON4D3/LuaSnip', as = 'luasnip' }, -- snippet engine
 	{ 'saadparwaiz1/cmp_luasnip' }, -- for autocompletion
 	{ 'rafamadriz/friendly-snippets' }, -- useful snippets
 
 	-- managing & installing lsp servers, linters & formatters
-	{ 'williamboman/mason.nvim' }, -- in charge of managing lsp servers, linters & formatters
-	{ 'williamboman/mason-lspconfig.nvim' }, -- bridges gap b/w mason & lspconfig
-	{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+	{ 'williamboman/mason.nvim', as = 'mason' }, -- in charge of managing lsp servers, linters & formatters
+	{ 'williamboman/mason-lspconfig.nvim', as = 'mason-lspconfig' }, -- bridges gap b/w mason & lspconfig
+	{ 'WhoIsSethDaniel/mason-tool-installer.nvim', as = 'mason-tool-installer' },
 
 	-- formatter configs
-	{ 'stevearc/conform.nvim' },
+	{ 'stevearc/conform.nvim', as = 'conform' },
 
 	-- configuring lsp servers
 	{ 'neovim/nvim-lspconfig' }, -- easily configure language servers
 	{ 'hrsh7th/cmp-nvim-lsp' }, -- for autocompletion
 	{
 		'glepnir/lspsaga.nvim',
+		as = 'lspsaga',
 		requires = {
 			{ 'nvim-tree/nvim-web-devicons' },
 			{ 'nvim-treesitter/nvim-treesitter' },
@@ -149,11 +151,11 @@ local plugins = {
 			'nvim-tree/nvim-tree.lua',
 		},
 	},
-	{ 'onsails/lspkind.nvim' }, -- vs-code like icons for autocompletion
-	{ 'pmizio/typescript-tools.nvim' },
+	{ 'onsails/lspkind.nvim', as = 'lspkind' }, -- vs-code like icons for autocompletion
+	{ 'pmizio/typescript-tools.nvim', as = 'typescript-tools' },
 
 	-- signature help
-	{ 'ray-x/lsp_signature.nvim' },
+	{ 'ray-x/lsp_signature.nvim', as = 'lsp-signature' },
 
 	-- navbuddy
 	{ 'SmiteshP/nvim-navic' },
@@ -161,8 +163,6 @@ local plugins = {
 		'SmiteshP/nvim-navbuddy',
 		requires = {
 			'neovim/nvim-lspconfig',
-			'SmiteshP/nvim-navic',
-			'MunifTanjim/nui.nvim',
 		},
 	},
 
@@ -171,17 +171,19 @@ local plugins = {
 	{ 'inkarkat/vim-ReplaceWithRegister' }, -- replace with register contents using motion (gr + motion)
 
 	-- tag renaming
-	{ 'AndrewRadev/tagalong.vim' },
+	{ 'AndrewRadev/tagalong.vim', as = 'tagalong' },
 
 	-- trouble
 	{
 		'folke/trouble.nvim',
+		as = 'trouble',
 		requires = 'nvim-tree/nvim-web-devicons',
 	},
 
 	-- which-key
 	{
 		'folke/which-key.nvim',
+		as = 'which-key',
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
@@ -203,7 +205,7 @@ local plugins = {
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }, -- autoclose tags
 
 	-- git integration
-	{ 'lewis6991/gitsigns.nvim' }, -- show line modifications on left hand side
+	{ 'lewis6991/gitsigns.nvim', as = 'gitsigns' }, -- show line modifications on left hand side
 }
 
 -- read lock file
@@ -237,7 +239,6 @@ local startup = function(use)
 
 		if plugin.as then
 			name = plugin.as
-			print(name)
 		end
 
 		plugin['commit'] = lock[name]
