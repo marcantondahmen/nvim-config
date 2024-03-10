@@ -37,4 +37,5 @@ require('marcantondahmen.plugins.indent-blankline')
 require('marcantondahmen.plugins.barbecue')
 require('marcantondahmen.plugins.spectre')
 require('marcantondahmen.plugins.auto-session')
-require('marcantondahmen.plugins.self-update')
+
+require('marcantondahmen.self-update')

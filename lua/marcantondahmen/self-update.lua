@@ -7,7 +7,7 @@ local function pullCallback(id, output, name)
 	vim.notify(table.concat(output, '\n'))
 	vim.fn.timer_start(500, function()
 		vim.cmd('source ' .. vim.fn.stdpath('config') .. '/lua/marcantondahmen/plugins-setup.lua | PackerSync')
-		vim.notify('Please restart NeoVim to apply updates!', vim.log.levels.INFO)
+		vim.notify('Please restart Neovim to apply updates!', vim.log.levels.INFO)
 	end)
 end
 
