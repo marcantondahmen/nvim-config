@@ -127,10 +127,13 @@ npm install -g neovim
 
 ## Updating `plugins-lock.json`
 
-This config uses a lock-file to prevent breaking changes on re-installs or config updates.
-In order to update a plugin, simply remove the `commit` option when loading it in `plugins-setup.lua` and
-re-create the lockfile after synchronizing the plugins by running `:PackerSnapshot plugins-lock.json` inside NeoVim.
-Afterwards add the commit option back to the plugin definition.
+This config uses a lock file to prevent breaking changes on re-installs or config updates.
+In order to update a plugin, simply update its commit hash inside the `plugins-lock.json`.
+When adding a new plugin, run the following Neovim command to update the lock file:
+
+```
+PackerSnapshot plugins-lock.json
+```
 
 ## Tmux
 
