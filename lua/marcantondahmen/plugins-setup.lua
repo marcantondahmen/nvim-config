@@ -9,6 +9,7 @@ local ensure_packer = function()
 	end
 	return false
 end
+
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
@@ -25,6 +26,184 @@ local status, packer = pcall(require, 'packer')
 if not status then
 	return
 end
+
+-- configure plugin list
+local plugins = {
+	-- packer can manage itself
+	{ 'wbthomason/packer.nvim' },
+
+	-- lua functions that many plugins use
+	{ 'nvim-lua/plenary.nvim' },
+	{ 'MunifTanjim/nui.nvim' },
+
+	-- color schemes
+	-- { 'gbprod/nord.nvim' },
+	{ 'folke/tokyonight.nvim' },
+
+	-- dashboard
+	{ 'goolord/alpha-nvim' },
+
+	-- terminal
+	{ 'akinsho/toggleterm.nvim' },
+
+	-- auto session
+	{ 'rmagatti/auto-session' },
+
+	-- maximizes and restores current window
+	{ 'szw/vim-maximizer' },
+
+	-- tmux navigation
+	{ 'alexghergh/nvim-tmux-navigation' },
+
+	-- commenting with gc
+	{ 'numToStr/Comment.nvim' },
+
+	-- docblocks
+	{
+		'danymat/neogen',
+		requires = 'nvim-treesitter/nvim-treesitter',
+	},
+
+	-- markdown preview
+	{
+		'iamcco/markdown-preview.nvim',
+		run = function()
+			vim.fn['mkdp#util#install']()
+		end,
+	},
+
+	-- indent guides
+	{ 'lukas-reineke/indent-blankline.nvim' },
+
+	-- highlight colors
+	{ 'brenoprata10/nvim-highlight-colors' },
+
+	-- file explorer
+	{ 'nvim-tree/nvim-tree.lua' },
+
+	-- vs-code like icons
+	{ 'nvim-tree/nvim-web-devicons' },
+
+	-- notify
+	{ 'rcarriga/nvim-notify' },
+
+	-- statusline
+	{ 'nvim-lualine/lualine.nvim' },
+
+	-- buffers and tabs
+	{ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' },
+
+	-- winbar
+	{
+		'utilyre/barbecue.nvim',
+
+		requires = {
+			'SmiteshP/nvim-navic',
+			'nvim-tree/nvim-web-devicons', -- optional dependency
+		},
+	},
+
+	-- fuzzy finding w/ telescope
+	{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }, -- dependency for better sorting performance
+	{ 'nvim-telescope/telescope.nvim' }, -- fuzzy finder
+
+	-- git diff
+	{ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' },
+
+	-- search and replace
+	{ 'nvim-pack/nvim-spectre' },
+
+	-- autocompletion
+	{ 'hrsh7th/nvim-cmp' }, -- completion plugin
+	{ 'hrsh7th/cmp-buffer' }, -- source for text in buffer
+	{ 'hrsh7th/cmp-path' }, -- source for file system paths
+
+	-- snippets
+	{ 'L3MON4D3/LuaSnip' }, -- snippet engine
+	{ 'saadparwaiz1/cmp_luasnip' }, -- for autocompletion
+	{ 'rafamadriz/friendly-snippets' }, -- useful snippets
+
+	-- managing & installing lsp servers, linters & formatters
+	{ 'williamboman/mason.nvim' }, -- in charge of managing lsp servers, linters & formatters
+	{ 'williamboman/mason-lspconfig.nvim' }, -- bridges gap b/w mason & lspconfig
+	{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+
+	-- formatter configs
+	{ 'stevearc/conform.nvim' },
+
+	-- configuring lsp servers
+	{ 'neovim/nvim-lspconfig' }, -- easily configure language servers
+	{ 'hrsh7th/cmp-nvim-lsp' }, -- for autocompletion
+	{
+		'glepnir/lspsaga.nvim',
+		requires = {
+			{ 'nvim-tree/nvim-web-devicons' },
+			{ 'nvim-treesitter/nvim-treesitter' },
+		},
+	}, -- enhanced lsp uis
+	{
+		'antosha417/nvim-lsp-file-operations',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-tree.lua',
+		},
+	},
+	{ 'onsails/lspkind.nvim' }, -- vs-code like icons for autocompletion
+	{ 'pmizio/typescript-tools.nvim' },
+
+	-- signature help
+	{ 'ray-x/lsp_signature.nvim' },
+
+	-- navbuddy
+	{ 'SmiteshP/nvim-navic' },
+	{
+		'SmiteshP/nvim-navbuddy',
+		requires = {
+			'neovim/nvim-lspconfig',
+			'SmiteshP/nvim-navic',
+			'MunifTanjim/nui.nvim',
+		},
+	},
+
+	-- essential plugins
+	{ 'tpope/vim-surround' }, -- add, delete, change surroundings (it's awesome)
+	{ 'inkarkat/vim-ReplaceWithRegister' }, -- replace with register contents using motion (gr + motion)
+
+	-- tag renaming
+	{ 'AndrewRadev/tagalong.vim' },
+
+	-- trouble
+	{
+		'folke/trouble.nvim',
+		requires = 'nvim-tree/nvim-web-devicons',
+	},
+
+	-- which-key
+	{
+		'folke/which-key.nvim',
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require('which-key').setup()
+		end,
+	},
+
+	-- treesitter configuration
+	{
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	},
+
+	-- auto closing
+	{ 'windwp/nvim-autopairs' }, -- autoclose parens, brackets, quotes, etc...
+	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }, -- autoclose tags
+
+	-- git integration
+	{ 'lewis6991/gitsigns.nvim' }, -- show line modifications on left hand side
+}
 
 -- read lock file
 local readLockFile = function()
@@ -52,188 +231,17 @@ end
 local startup = function(use)
 	local lock = readLockFile()
 
-	-- packer can manage itself
-	use({ 'wbthomason/packer.nvim', commit = lock['packer.nvim'] })
+	for _, plugin in ipairs(plugins) do
+		local name = string.gsub(plugin[1], '(.*/)(.*)', '%2')
 
-	-- lua functions that many plugins use
-	use({ 'nvim-lua/plenary.nvim', commit = lock['plenary.nvim'] })
-	use({ 'MunifTanjim/nui.nvim', commit = lock['nui.nvim'] })
+		if plugin.as then
+			name = plugin.as
+			print(name)
+		end
 
-	-- color schemes
-	use({ 'gbprod/nord.nvim', commit = lock['nord.nvim'] })
-	use({ 'folke/tokyonight.nvim', commit = lock['tokyonight.nvim'] })
-
-	-- dashboard
-	use({ 'goolord/alpha-nvim', commit = lock['alpha-nvim'] })
-
-	-- terminal
-	use({ 'akinsho/toggleterm.nvim', commit = lock['toggleterm.nvim'] })
-
-	-- auto session
-	use({ 'rmagatti/auto-session', commit = lock['auto-session'] })
-
-	-- maximizes and restores current window
-	use({ 'szw/vim-maximizer', commit = lock['vim-maximizer'] })
-
-	-- tmux navigation
-	use({ 'alexghergh/nvim-tmux-navigation', commit = lock['nvim-tmux-navigation'] })
-
-	-- commenting with gc
-	use({ 'numToStr/Comment.nvim', commit = lock['Comment.nvim'] })
-
-	-- docblocks
-	use({
-		'danymat/neogen',
-		requires = 'nvim-treesitter/nvim-treesitter',
-		commit = lock['neogen'],
-	})
-
-	-- markdown preview
-	use({
-		'iamcco/markdown-preview.nvim',
-		run = function()
-			vim.fn['mkdp#util#install']()
-		end,
-		commit = lock['markdown-preview.nvim'],
-	})
-
-	-- indent guides
-	use({ 'lukas-reineke/indent-blankline.nvim', commit = lock['indent-blankline.nvim'] })
-
-	-- highlight colors
-	use({ 'brenoprata10/nvim-highlight-colors', commit = lock['nvim-highlight-colors'] })
-
-	-- file explorer
-	use({ 'nvim-tree/nvim-tree.lua', commit = lock['nvim-tree.lua'] })
-
-	-- vs-code like icons
-	use({ 'nvim-tree/nvim-web-devicons', commit = lock['nvim-web-devicons'] })
-
-	-- notify
-	use({ 'rcarriga/nvim-notify', commit = lock['nvim-notify'] })
-
-	-- statusline
-	use({ 'nvim-lualine/lualine.nvim', commit = lock['lualine.nvim'] })
-
-	-- buffers and tabs
-	use({ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons', commit = lock['barbar.nvim'] })
-
-	-- winbar
-	use({
-		'utilyre/barbecue.nvim',
-		commit = lock['barbecue.nvim'],
-		requires = {
-			'SmiteshP/nvim-navic',
-			'nvim-tree/nvim-web-devicons', -- optional dependency
-		},
-	})
-
-	-- fuzzy finding w/ telescope
-	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', commit = lock['telescope-fzf-native.nvim'] }) -- dependency for better sorting performance
-	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x', commit = lock['telescope.nvim'] }) -- fuzzy finder
-
-	-- git diff
-	use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', commit = lock['diffview.nvim'] })
-
-	-- search and replace
-	use({ 'nvim-pack/nvim-spectre', commit = lock['nvim-spectre'] })
-
-	-- autocompletion
-	use({ 'hrsh7th/nvim-cmp', commit = lock['nvim-cmp'] }) -- completion plugin
-	use({ 'hrsh7th/cmp-buffer', commit = lock['cmp-buffer'] }) -- source for text in buffer
-	use({ 'hrsh7th/cmp-path', commit = lock['cmp-path'] }) -- source for file system paths
-
-	-- snippets
-	use({ 'L3MON4D3/LuaSnip', commit = lock['LuaSnip'] }) -- snippet engine
-	use({ 'saadparwaiz1/cmp_luasnip', commit = lock['cmp_luasnip'] }) -- for autocompletion
-	use({ 'rafamadriz/friendly-snippets', commit = lock['friendly-snippets'] }) -- useful snippets
-
-	-- managing & installing lsp servers, linters & formatters
-	use({ 'williamboman/mason.nvim', commit = lock['mason.nvim'] }) -- in charge of managing lsp servers, linters & formatters
-	use({ 'williamboman/mason-lspconfig.nvim', commit = lock['mason-lspconfig.nvim'] }) -- bridges gap b/w mason & lspconfig
-	use({ 'WhoIsSethDaniel/mason-tool-installer.nvim', commit = lock['mason-tool-installer.nvim'] })
-
-	-- formatter configs
-	use({ 'stevearc/conform.nvim', commit = lock['conform.nvim'] })
-
-	-- configuring lsp servers
-	use({ 'neovim/nvim-lspconfig', commit = lock['nvim-lspconfig'] }) -- easily configure language servers
-	use({ 'hrsh7th/cmp-nvim-lsp', commit = lock['cmp-nvim-lsp'] }) -- for autocompletion
-	use({
-		'glepnir/lspsaga.nvim',
-		requires = {
-			{ 'nvim-tree/nvim-web-devicons' },
-			{ 'nvim-treesitter/nvim-treesitter' },
-		},
-		commit = lock['lspsaga.nvim'],
-	}) -- enhanced lsp uis
-	use({
-		'antosha417/nvim-lsp-file-operations',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-tree.lua',
-		},
-		commit = lock['nvim-lsp-file-operations'],
-	})
-	use({ 'onsails/lspkind.nvim', commit = lock['lspkind.nvim'] }) -- vs-code like icons for autocompletion
-	use({ 'pmizio/typescript-tools.nvim', commit = lock['typescript-tools.nvim'] })
-
-	-- signature help
-	use({ 'ray-x/lsp_signature.nvim', commit = lock['lsp_signature.nvim'] })
-
-	-- navbuddy
-	use({ 'SmiteshP/nvim-navic', commit = lock['nvim-navic'] })
-	use({
-		'SmiteshP/nvim-navbuddy',
-		requires = {
-			'neovim/nvim-lspconfig',
-			'SmiteshP/nvim-navic',
-			'MunifTanjim/nui.nvim',
-		},
-		commit = lock['nvim-navbuddy'],
-	})
-
-	-- essential plugins
-	use({ 'tpope/vim-surround', commit = lock['vim-surround'] }) -- add, delete, change surroundings (it's awesome)
-	use({ 'inkarkat/vim-ReplaceWithRegister', commit = lock['vim-ReplaceWithRegister'] }) -- replace with register contents using motion (gr + motion)
-
-	-- tag renaming
-	use({ 'AndrewRadev/tagalong.vim', commit = lock['tagalong.vim'] })
-
-	-- trouble
-	use({
-		'folke/trouble.nvim',
-		requires = 'nvim-tree/nvim-web-devicons',
-		commit = lock['trouble.nvim'],
-	})
-
-	-- which-key
-	use({
-		'folke/which-key.nvim',
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-			require('which-key').setup()
-		end,
-		commit = lock['which-key.nvim'],
-	})
-
-	-- treesitter configuration
-	use({
-		'nvim-treesitter/nvim-treesitter',
-		run = function()
-			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-			ts_update()
-		end,
-		commit = lock['nvim-treesitter'],
-	})
-
-	-- auto closing
-	use({ 'windwp/nvim-autopairs', commit = lock['nvim-autopairs'] }) -- autoclose parens, brackets, quotes, etc...
-	use({ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter', commit = lock['nvim-ts-autotag'] }) -- autoclose tags
-
-	-- git integration
-	use({ 'lewis6991/gitsigns.nvim', commit = lock['gitsigns.nvim'] }) -- show line modifications on left hand side
+		plugin['commit'] = lock[name]
+		use(plugin)
+	end
 
 	if packer_bootstrap then
 		require('packer').sync()
@@ -245,5 +253,8 @@ return packer.startup({
 	config = {
 		max_jobs = 10,
 		snapshot_path = vim.fn.stdpath('config'),
+		profile = {
+			enable = true,
+		},
 	},
 })
