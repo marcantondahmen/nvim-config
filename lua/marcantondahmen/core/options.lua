@@ -15,6 +15,11 @@ opt.autoindent = true
 -- line wrapping
 opt.wrap = false
 
+-- folding
+opt.foldmethod = 'indent'
+opt.foldlevel = 99
+opt.fdc = '0'
+
 -- search
 opt.ignorecase = true
 opt.smartcase = true
