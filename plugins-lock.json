@@ -18,7 +18,7 @@
 	"lspsaga": { "commit": "3112b7a" },
 	"lualine": { "commit": "05d78e9" },
 	"luasnip": { "commit": "e81cbe6" },
-	"markdown-preview": { "commit": "02cc387" },
+	"markdown-preview.nvim": { "commit": "02cc387" },
 	"mason": { "commit": "e110bc3b" },
 	"mason-lspconfig": { "commit": "3ba1b92" },
 	"mason-tool-installer": { "commit": "bf0f4f8" },

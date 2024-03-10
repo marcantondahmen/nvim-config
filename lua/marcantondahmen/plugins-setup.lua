@@ -69,7 +69,6 @@ local plugins = {
 	{ 'mzlogin/vim-markdown-toc' },
 	{
 		'iamcco/markdown-preview.nvim',
-		as = 'markdown-preview',
 		run = function()
 			vim.fn['mkdp#util#install']()
 		end,
@@ -149,7 +148,7 @@ local plugins = {
 		'antosha417/nvim-lsp-file-operations',
 		requires = {
 			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-tree.lua',
+			{ 'nvim-tree/nvim-tree.lua', as = 'nvim-tree' },
 		},
 	},
 	{ 'onsails/lspkind.nvim', as = 'lspkind' }, -- vs-code like icons for autocompletion
