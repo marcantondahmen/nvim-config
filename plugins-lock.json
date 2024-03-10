@@ -48,6 +48,7 @@
 	"trouble": { "commit": "f1168fe" },
 	"typescript-tools": { "commit": "094e4f4" },
 	"vim-ReplaceWithRegister": { "commit": "aad1e8f" },
+	"vim-markdown-toc": { "commit": "5acf680" },
 	"vim-maximizer": { "commit": "2e54952" },
 	"vim-pencil": { "commit": "6d70438" },
 	"vim-surround": { "commit": "3d188ed" },

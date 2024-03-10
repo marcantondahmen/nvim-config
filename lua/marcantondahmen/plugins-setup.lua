@@ -66,6 +66,7 @@ local plugins = {
 
 	-- markdown
 	{ 'preservim/vim-pencil' },
+	{ 'mzlogin/vim-markdown-toc' },
 	{
 		'iamcco/markdown-preview.nvim',
 		as = 'markdown-preview',
