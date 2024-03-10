@@ -58,6 +58,7 @@ This config includes the following plugins:
 -   [trouble.nvim](https://github.com/folke/trouble.nvim) diagnostics overview
 -   [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) TypeScript support
 -   [vim-maximizer](https://github.com/szw/vim-maximizer) maximize panes
+-   [vim-pencil](https://github.com/preservim/vim-pencil) improve writing experience in Markdown
 -   [vim-ReplaceWithRegister](https://github.com/inkarkat/vim-ReplaceWithRegister) better replace functionality
 -   [vim-surround](https://github.com/tpope/vim-surround) surround plugin
 -   [which-key.nvim](https://github.com/folke/which-key.nvim) keymaps help

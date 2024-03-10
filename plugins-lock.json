@@ -37,6 +37,7 @@
 	"tokyonight.nvim": { "commit": "76a5283" },
 	"nvim-treesitter": { "commit": "db0ccd92" },
 	"nui.nvim": { "commit": "c8de233" },
+	"vim-pencil": { "commit": "6d70438" },
 	"lspsaga.nvim": { "commit": "3112b7a" },
 	"neogen": { "commit": "cb1f384" },
 	"barbar.nvim": { "commit": "1d6b138" },

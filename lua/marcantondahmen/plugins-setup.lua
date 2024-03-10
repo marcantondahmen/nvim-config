@@ -64,7 +64,8 @@ local plugins = {
 		requires = 'nvim-treesitter/nvim-treesitter',
 	},
 
-	-- markdown preview
+	-- markdown
+	{ 'preservim/vim-pencil' },
 	{
 		'iamcco/markdown-preview.nvim',
 		run = function()
