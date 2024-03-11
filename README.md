@@ -1,6 +1,6 @@
 # Nvim Config
 
-This is the personal NeoVim configuration of Marc Anton Dahmen. It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8) and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
+This is the personal Neovim configuration of Marc Anton Dahmen. It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8) and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
 
 ![Screenshot](images/editor-tokyonight.png)
 
@@ -89,13 +89,13 @@ There are also some custom settings and extensions:
 
 Just clone the repository into the `~/.config` directory as follows:
 
-```
+```bash
 git clone git@github.com:marcantondahmen/nvim-config.git ~/.config/nvim
 ```
 
 Or using `https`:
 
-```
+```bash
 git clone https://github.com/marcantondahmen/nvim-config.git ~/.config/nvim
 ```
 
@@ -142,7 +142,7 @@ npm install -g neovim
 
 This config uses a lock file to prevent breaking changes on re-installs or config updates. In order to update a plugin, simply update its commit hash inside the `plugins-lock.json`. When adding a new plugin, run the following Neovim command to update the lock file:
 
-```
+```bash
 PackerSnapshot plugins-lock.json
 ```
 
