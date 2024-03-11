@@ -29,8 +29,6 @@ end
 
 -- configure plugin list
 local plugins = {
-	-- packer can manage itself
-	{ 'wbthomason/packer.nvim' },
 
 	-- lua functions that many plugins use
 	{ 'nvim-lua/plenary.nvim' },
@@ -38,13 +36,22 @@ local plugins = {
 
 	-- color schemes
 	-- { 'gbprod/nord.nvim' },
-	{ 'folke/tokyonight.nvim', as = 'tokyonight' },
+	{ 'folke/tokyonight.nvim' },
+
+	-- treesitter configuration
+	{
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	},
 
 	-- dashboard
 	{ 'goolord/alpha-nvim' },
 
 	-- terminal
-	{ 'akinsho/toggleterm.nvim', as = 'toggleterm' },
+	{ 'akinsho/toggleterm.nvim' },
 
 	-- auto session
 	{ 'rmagatti/auto-session' },
@@ -56,7 +63,7 @@ local plugins = {
 	{ 'alexghergh/nvim-tmux-navigation' },
 
 	-- commenting with gc
-	{ 'numToStr/Comment.nvim', as = 'comment' },
+	{ 'numToStr/Comment.nvim' },
 
 	-- docblocks
 	{
@@ -75,13 +82,13 @@ local plugins = {
 	},
 
 	-- indent guides
-	{ 'lukas-reineke/indent-blankline.nvim', as = 'indent-blankline' },
+	{ 'lukas-reineke/indent-blankline.nvim' },
 
 	-- highlight colors
 	{ 'brenoprata10/nvim-highlight-colors' },
 
 	-- file explorer
-	{ 'nvim-tree/nvim-tree.lua', as = 'nvim-tree' },
+	{ 'nvim-tree/nvim-tree.lua' },
 
 	-- vs-code like icons
 	{ 'nvim-tree/nvim-web-devicons' },
@@ -90,15 +97,14 @@ local plugins = {
 	{ 'rcarriga/nvim-notify' },
 
 	-- statusline
-	{ 'nvim-lualine/lualine.nvim', as = 'lualine' },
+	{ 'nvim-lualine/lualine.nvim' },
 
 	-- buffers and tabs
-	{ 'romgrk/barbar.nvim', as = 'barbar', requires = 'nvim-web-devicons' },
+	{ 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' },
 
 	-- winbar
 	{
 		'utilyre/barbecue.nvim',
-		as = 'barbecue',
 		requires = {
 			'SmiteshP/nvim-navic',
 			'nvim-tree/nvim-web-devicons', -- optional dependency
@@ -106,11 +112,11 @@ local plugins = {
 	},
 
 	-- fuzzy finding w/ telescope
-	{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', as = 'telescope-fzf-native' }, -- dependency for better sorting performance
-	{ 'nvim-telescope/telescope.nvim', as = 'telescope' }, -- fuzzy finder
+	{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }, -- dependency for better sorting performance
+	{ 'nvim-telescope/telescope.nvim' }, -- fuzzy finder
 
 	-- git diff
-	{ 'sindrets/diffview.nvim', as = 'diffview', requires = 'nvim-lua/plenary.nvim' },
+	{ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' },
 
 	-- search and replace
 	{ 'nvim-pack/nvim-spectre' },
@@ -121,48 +127,47 @@ local plugins = {
 	{ 'hrsh7th/cmp-path' }, -- source for file system paths
 
 	-- snippets
-	{ 'L3MON4D3/LuaSnip', as = 'luasnip' }, -- snippet engine
+	{ 'L3MON4D3/LuaSnip' }, -- snippet engine
 	{ 'saadparwaiz1/cmp_luasnip' }, -- for autocompletion
 	{ 'rafamadriz/friendly-snippets' }, -- useful snippets
 
 	-- managing & installing lsp servers, linters & formatters
-	{ 'williamboman/mason.nvim', as = 'mason' }, -- in charge of managing lsp servers, linters & formatters
-	{ 'williamboman/mason-lspconfig.nvim', as = 'mason-lspconfig' }, -- bridges gap b/w mason & lspconfig
-	{ 'WhoIsSethDaniel/mason-tool-installer.nvim', as = 'mason-tool-installer' },
+	{ 'williamboman/mason.nvim' }, -- in charge of managing lsp servers, linters & formatters
+	{ 'williamboman/mason-lspconfig.nvim' }, -- bridges gap b/w mason & lspconfig
+	{ 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 
 	-- formatter configs
-	{ 'stevearc/conform.nvim', as = 'conform' },
+	{ 'stevearc/conform.nvim' },
 
 	-- configuring lsp servers
 	{ 'neovim/nvim-lspconfig' }, -- easily configure language servers
 	{ 'hrsh7th/cmp-nvim-lsp' }, -- for autocompletion
 	{
 		'glepnir/lspsaga.nvim',
-		as = 'lspsaga',
 		requires = {
-			{ 'nvim-tree/nvim-web-devicons' },
-			{ 'nvim-treesitter/nvim-treesitter' },
+			'nvim-tree/nvim-web-devicons',
+			'nvim-treesitter/nvim-treesitter',
 		},
 	}, -- enhanced lsp uis
 	{
 		'antosha417/nvim-lsp-file-operations',
 		requires = {
 			'nvim-lua/plenary.nvim',
-			{ 'nvim-tree/nvim-tree.lua', as = 'nvim-tree' },
+			'nvim-tree/nvim-tree.lua',
 		},
 	},
-	{ 'onsails/lspkind.nvim', as = 'lspkind' }, -- vs-code like icons for autocompletion
-	{ 'pmizio/typescript-tools.nvim', as = 'typescript-tools' },
+	{ 'onsails/lspkind.nvim' }, -- vs-code like icons for autocompletion
+	{ 'pmizio/typescript-tools.nvim' },
 
 	-- signature help
-	{ 'ray-x/lsp_signature.nvim', as = 'lsp-signature' },
+	{ 'ray-x/lsp_signature.nvim' },
 
 	-- navbuddy
-	{ 'SmiteshP/nvim-navic' },
 	{
 		'SmiteshP/nvim-navbuddy',
 		requires = {
 			'neovim/nvim-lspconfig',
+			'SmiteshP/nvim-navic',
 		},
 	},
 
@@ -171,32 +176,21 @@ local plugins = {
 	{ 'inkarkat/vim-ReplaceWithRegister' }, -- replace with register contents using motion (gr + motion)
 
 	-- tag renaming
-	{ 'AndrewRadev/tagalong.vim', as = 'tagalong' },
+	{ 'AndrewRadev/tagalong.vim' },
 
 	-- trouble
 	{
 		'folke/trouble.nvim',
-		as = 'trouble',
 		requires = 'nvim-tree/nvim-web-devicons',
 	},
 
 	-- which-key
 	{
 		'folke/which-key.nvim',
-		as = 'which-key',
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 			require('which-key').setup()
-		end,
-	},
-
-	-- treesitter configuration
-	{
-		'nvim-treesitter/nvim-treesitter',
-		run = function()
-			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-			ts_update()
 		end,
 	},
 
@@ -205,7 +199,7 @@ local plugins = {
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' }, -- autoclose tags
 
 	-- git integration
-	{ 'lewis6991/gitsigns.nvim', as = 'gitsigns' }, -- show line modifications on left hand side
+	{ 'lewis6991/gitsigns.nvim' }, -- show line modifications on left hand side
 }
 
 -- read lock file
@@ -230,19 +224,54 @@ local readLockFile = function()
 	return {}
 end
 
--- add list of plugins to install
-local startup = function(use)
-	local lock = readLockFile()
+local commits = readLockFile()
 
-	for _, plugin in ipairs(plugins) do
-		local name = string.gsub(plugin[1], '(.*/)(.*)', '%2')
+local normalizePlugin
 
-		if plugin.as then
-			name = plugin.as
+normalizePlugin = function(plugin)
+	if type(plugin) == 'string' then
+		plugin = { plugin }
+	end
+
+	local basename = string.gsub(plugin[1], '(.*/)(.*)', '%2')
+	local name = string.gsub(string.lower(basename), '%.%w+$', '')
+
+	name = string.gsub(name, '_', '-')
+
+	if plugin.as then
+		name = plugin.as
+	else
+		plugin.as = name
+	end
+
+	plugin['commit'] = commits[name]
+
+	if plugin.requires then
+		if type(plugin.requires) == 'string' then
+			plugin.requires = { plugin.requires }
 		end
 
-		plugin['commit'] = lock[name]
-		use(plugin)
+		local deps = {}
+
+		for _, dep in ipairs(plugin.requires) do
+			local _dep = normalizePlugin(dep)
+
+			table.insert(deps, _dep)
+		end
+
+		plugin.requires = deps
+	end
+
+	return plugin
+end
+
+-- add list of plugins to install
+local startup = function(use)
+	-- packer can manage itself
+	use({ 'wbthomason/packer.nvim' })
+
+	for _, plugin in ipairs(plugins) do
+		use(normalizePlugin(plugin))
 	end
 
 	if packer_bootstrap then
