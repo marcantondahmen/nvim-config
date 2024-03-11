@@ -7,7 +7,7 @@ require('barbar').setup({
 	auto_hide = false,
 
 	-- Enable/disable current/total tabpages indicator (top right corner)
-	tabpages = true,
+	tabpages = false,
 
 	-- Enable/disable close button
 	closable = true,

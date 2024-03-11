@@ -48,6 +48,8 @@ require('tokyonight').setup({
 })
 
 vim.cmd([[colorscheme tokyonight]])
+-- fix black flash on startup in nvim 0.10
+vim.cmd([[ echo ' ']])
 
 -- set global color variable to be used by other plugins
 vim.g.theme_settings = {
