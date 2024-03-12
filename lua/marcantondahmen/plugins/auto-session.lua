@@ -1,8 +1,13 @@
-local status, autosession = pcall(require, 'auto-session')
-if not status then
-	return
-end
+return {
+	'rmagatti/auto-session',
+	config = function()
+		local success, autoSession = pcall(require, 'auto-session')
+		if not success then
+			return
+		end
 
-autosession.setup({
-	auto_restore_enabled = false,
-})
+		autoSession.setup({
+			auto_restore_enabled = false,
+		})
+	end,
+}

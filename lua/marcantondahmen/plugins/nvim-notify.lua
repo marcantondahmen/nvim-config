@@ -1,13 +1,18 @@
-local status, notify = pcall(require, 'notify')
-if not status then
-	return
-end
+return {
+	'rcarriga/nvim-notify',
+	config = function()
+		local notifySuccess, notify = pcall(require, 'notify')
+		if not notifySuccess then
+			return
+		end
 
-notify.setup({
-	stages = 'static',
-	render = 'default',
-	max_width = 60,
-	min_width = 60,
-})
+		notify.setup({
+			stages = 'static',
+			render = 'default',
+			max_width = 60,
+			min_width = 60,
+		})
 
-vim.notify = notify
+		vim.notify = notify
+	end,
+}

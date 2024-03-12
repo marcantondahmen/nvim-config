@@ -1,10 +1,15 @@
-local setup, icons = pcall(require, 'nvim-web-devicons')
-if not setup then
-	return
-end
+return {
+	'nvim-tree/nvim-web-devicons',
+	config = function()
+		local iconsSuccess, icons = pcall(require, 'nvim-web-devicons')
+		if not iconsSuccess then
+			return
+		end
 
-icons.setup({
-	color_icons = false,
-})
+		icons.setup({
+			color_icons = false,
+		})
 
-vim.api.nvim_set_hl(0, 'DevIconDefault', { link = '@none' })
+		vim.api.nvim_set_hl(0, 'DevIconDefault', { link = '@none' })
+	end,
+}
