@@ -1,5 +1,6 @@
 return {
 	'preservim/vim-pencil',
+	ft = 'markdown',
 	config = function()
 		vim.cmd([[
 			set nocompatible
