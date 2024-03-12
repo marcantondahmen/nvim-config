@@ -12,6 +12,15 @@ end
 
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
+-- autocommand that reloads neovim and compiles plugin configs
+-- when a file is saved in the plugins directory
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 -- import packer safely
 local status, packer = pcall(require, 'packer')
 if not status then
@@ -106,5 +115,6 @@ return packer.startup({
 		profile = {
 			enable = true,
 		},
+		log = { level = 'info' },
 	},
 })
