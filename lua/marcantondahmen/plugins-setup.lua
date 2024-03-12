@@ -29,6 +29,11 @@ end
 
 -- configure plugin list
 local plugins = {
+	-- packer can manage itself
+	{
+		'wbthomason/packer.nvim',
+		as = 'packer.nvim', -- skip name normalization
+	},
 
 	-- lua functions that many plugins use
 	{ 'nvim-lua/plenary.nvim' },
@@ -76,6 +81,7 @@ local plugins = {
 	{ 'mzlogin/vim-markdown-toc' },
 	{
 		'iamcco/markdown-preview.nvim',
+		as = 'markdown-preview.nvim', -- skip name normalization
 		run = function()
 			vim.fn['mkdp#util#install']()
 		end,
@@ -225,9 +231,12 @@ local readLockFile = function()
 end
 
 local commits = readLockFile()
-
+local registered = {}
 local normalizePlugin
 
+-- Normalize plugin names and add commit property from lock file recursively.
+-- In order to skip the name normalization, the original name has to be applied
+-- using the 'as' property (see packer.nvim spec on top).
 normalizePlugin = function(plugin)
 	if type(plugin) == 'string' then
 		plugin = { plugin }
@@ -244,7 +253,12 @@ normalizePlugin = function(plugin)
 		plugin.as = name
 	end
 
+	if registered[name] then
+		return nil
+	end
+
 	plugin['commit'] = commits[name]
+	registered[name] = true
 
 	if plugin.requires then
 		if type(plugin.requires) == 'string' then
@@ -267,11 +281,12 @@ end
 
 -- add list of plugins to install
 local startup = function(use)
-	-- packer can manage itself
-	use({ 'wbthomason/packer.nvim' })
-
 	for _, plugin in ipairs(plugins) do
-		use(normalizePlugin(plugin))
+		local normalized = normalizePlugin(plugin)
+
+		if normalized then
+			use(normalized)
+		end
 	end
 
 	if packer_bootstrap then
