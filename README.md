@@ -9,12 +9,12 @@ ______________________________________________________________________
 <!-- vim-markdown-toc GFM -->
 
 * [Theme](#theme)
-    * [Terminal Color Schemes](#terminal-color-schemes)
+	* [Terminal Color Schemes](#terminal-color-schemes)
 * [Included Plugins](#included-plugins)
 * [Installation](#installation)
-    * [Dependencies](#dependencies)
+	* [Dependencies](#dependencies)
 * [Adding or Updating Plugins](#adding-or-updating-plugins)
-    * [Lock File](#lock-file)
+	* [Lock File](#lock-file)
 * [Tmux](#tmux)
 * [Fonts](#fonts)
 * [Highlights](#highlights)

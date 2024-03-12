@@ -1,7 +1,7 @@
 return {
 	'goolord/alpha-nvim',
 	config = function()
-		local success, alpha = pcall(require,'alpha')
+		local success, alpha = pcall(require, 'alpha')
 		if not success then
 			return
 		end
