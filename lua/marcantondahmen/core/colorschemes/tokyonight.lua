@@ -44,6 +44,18 @@ require('tokyonight').setup({
 		hl.WhichKeyFloat = {
 			bg = c.bg_highlight,
 		}
+
+		hl.NvimTreeModifiedIcon = {
+			fg = c.yellow,
+		}
+
+		hl.NvimTreeModifiedFileHL = {
+			fg = c.yellow,
+		}
+
+		hl.NvimTreeModifiedFolderHL = {
+			fg = c.yellow,
+		}
 	end,
 })
 
