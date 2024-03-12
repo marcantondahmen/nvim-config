@@ -1,6 +1,7 @@
 local plugins = {
 	-- Plugins that don't need configuration.
 	'nvim-lua/plenary.nvim',
+	'nvim-tree/nvim-web-devicons',
 	'mzlogin/vim-markdown-toc',
 	'tpope/vim-surround',
 	'inkarkat/vim-ReplaceWithRegister',
