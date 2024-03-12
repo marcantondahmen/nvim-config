@@ -1,35 +1,37 @@
 # Nvim Config
 
-This is the personal Neovim configuration of Marc Anton Dahmen. It is based on [this YouTube tutorial](https://www.youtube.com/watch?v=vdn_pKJUda8) and [this config](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim).
-
 ![Screenshot](images/editor-tokyonight.png)
+
+This is the personal Neovim configuration of Marc Anton Dahmen.
+
+______________________________________________________________________
 
 <!-- vim-markdown-toc GFM -->
 
-* [Themes](#themes)
+* [Theme](#theme)
 	* [Terminal Color Schemes](#terminal-color-schemes)
 * [Included Plugins](#included-plugins)
 * [Installation](#installation)
 	* [Dependencies](#dependencies)
 * [Adding or Updating Plugins](#adding-or-updating-plugins)
+	* [Lock File](#lock-file)
 * [Tmux](#tmux)
 * [Additional Resources](#additional-resources)
 * [Fonts](#fonts)
+* [Highlights](#highlights)
 
 <!-- vim-markdown-toc -->
 
-## Themes
+## Theme
 
-This config includes two themes — [Tokyo Night (Storm)](https://github.com/folke/tokyonight.nvim) and [Nord](https://github.com/gbprod/nord.nvim). Since it is not possible to load both themes at the same time, the unused one can be simply commented out in the [init.lua](init.lua) file.
+This config uses the [Tokyo Night (Storm)](https://github.com/folke/tokyonight.nvim) theme.
 
 ### Terminal Color Schemes
 
-Matching terminal color schemes can be found here:
+WezTerm includes already a matching theme. For iTerm and the Windows terminal, matching color schemes can be found here:
 
 - [Tokyo Night (Storm) for iTerm](https://github.com/folke/tokyonight.nvim/blob/main/extras/iterm/tokyonight_storm.itermcolors)
 - [Tokyo Night (Storm) for Windows Terminal](https://github.com/folke/tokyonight.nvim/blob/main/extras/windows_terminal/tokyonight_storm.json)
-- [Nord for iTerm](https://github.com/nordtheme/iterm2)
-- [Nord for Windows Terminal](https://compiledexperience.com/blog/posts/windows-terminal-nord)
 
 ## Included Plugins
 
@@ -140,6 +142,16 @@ npm install -g neovim
 
 ## Adding or Updating Plugins
 
+In order to add a new plugin, simply add a LUA module that returns a **Packer** plugin spec, reload Neovim and run the following command after reloading:
+
+```bash
+PackerSync
+```
+
+Afterward make sure to also update the lock file.
+
+### Lock File
+
 This config uses a lock file to prevent breaking changes on re-installs or config updates. In order to update a plugin, simply update its commit hash inside the `plugins-lock.json`. When adding a new plugin, run the following Neovim command to update the lock file:
 
 ```bash
@@ -174,3 +186,11 @@ Here are some helpful links and resources in order to improve this config:
 ## Fonts
 
 Good looking fonts that also works well with symbols are **JetBrainsMono Nerd Font** and **Hack Nerd Font** that can be downloaded [here](https://www.nerdfonts.com/font-downloads). Note, that on **macOS**, nerd fonts can be installed using `brew`.
+
+## Highlights
+
+Run the following command in order to see all used highlight groups:
+
+```bash
+so $VIMRUNTIME/syntax/hitest.vim
+```
