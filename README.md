@@ -9,14 +9,13 @@ ______________________________________________________________________
 <!-- vim-markdown-toc GFM -->
 
 * [Theme](#theme)
-	* [Terminal Color Schemes](#terminal-color-schemes)
+    * [Terminal Color Schemes](#terminal-color-schemes)
 * [Included Plugins](#included-plugins)
 * [Installation](#installation)
-	* [Dependencies](#dependencies)
+    * [Dependencies](#dependencies)
 * [Adding or Updating Plugins](#adding-or-updating-plugins)
-	* [Lock File](#lock-file)
+    * [Lock File](#lock-file)
 * [Tmux](#tmux)
-* [Additional Resources](#additional-resources)
 * [Fonts](#fonts)
 * [Highlights](#highlights)
 
@@ -176,12 +175,6 @@ bind-key -T copy-mode-vi 'M-Left' select-pane -L
 bind-key -T copy-mode-vi 'M-Down' select-pane -D
 bind-key -T copy-mode-vi 'M-Right' select-pane -R
 ```
-
-## Additional Resources
-
-Here are some helpful links and resources in order to improve this config:
-
-- [LSP Servers](https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers)
 
 ## Fonts
 
