@@ -8,9 +8,9 @@ return {
 
 		notify.setup({
 			stages = 'static',
-			render = 'default',
-			max_width = 60,
-			min_width = 60,
+			render = 'wrapped-compact',
+			max_width = 80,
+			min_width = 0,
 		})
 
 		vim.notify = notify
