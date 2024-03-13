@@ -4,7 +4,6 @@ local plugins = {
 	'nvim-tree/nvim-web-devicons',
 	'tpope/vim-surround',
 	'inkarkat/vim-ReplaceWithRegister',
-	{ 'mzlogin/vim-markdown-toc', ft = 'markdown' },
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' },
 }
 
