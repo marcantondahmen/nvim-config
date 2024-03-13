@@ -3,6 +3,7 @@ return {
 	requires = {
 		'neovim/nvim-lspconfig',
 		'SmiteshP/nvim-navic',
+		'MunifTanjim/nui.nvim',
 	},
 	config = function()
 		local navbuddySuccess, navbuddy = pcall(require, 'nvim-navbuddy')
