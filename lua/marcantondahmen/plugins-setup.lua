@@ -35,6 +35,7 @@ local initAutoReload = function()
 	function CompilePlugins()
 		ReloadPlugins()
 
+		vim.cmd([[lua TreeClose()]])
 		vim.cmd([[PackerCompile]])
 	end
 
