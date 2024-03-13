@@ -20,43 +20,6 @@ if not status then
 	return
 end
 
--- Reload plugins when files in the plugins directory are written
-local initAutoReload = function()
-	function ReloadPlugins()
-		for name, _ in pairs(package.loaded) do
-			if name:match('plugins') then
-				package.loaded[name] = nil
-			end
-		end
-
-		vim.cmd([[source ~/.config/nvim/init.lua]])
-	end
-
-	function CompilePlugins()
-		ReloadPlugins()
-
-		vim.cmd([[lua TreeClose()]])
-		vim.cmd([[PackerCompile]])
-	end
-
-	vim.api.nvim_create_autocmd('User', {
-		pattern = 'PackerCompileDone',
-		callback = ReloadPlugins,
-	})
-
-	-- autocommand that reloads neovim and compiles plugin configs
-	-- when a file is saved in the plugins directory
-	vim.cmd([[
-	  augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua lua CompilePlugins()
-		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins-setup.lua lua CompilePlugins()
-	  augroup end
-	]])
-end
-
-initAutoReload()
-
 -- read lock file
 local readLockFile = function()
 	local path = vim.fn.stdpath('config') .. '/plugins-lock.json'
@@ -144,5 +107,10 @@ return packer.startup({
 			enable = true,
 		},
 		log = { level = 'info' },
+		display = {
+			open_fn = function()
+				return require('packer.util').float({ border = 'single' })
+			end,
+		},
 	},
 })
