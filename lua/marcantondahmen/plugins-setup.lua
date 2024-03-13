@@ -49,6 +49,7 @@ local initAutoReload = function()
 	  augroup packer_user_config
 		autocmd!
 		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua lua CompilePlugins()
+		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins-setup.lua lua CompilePlugins()
 	  augroup end
 	]])
 end
