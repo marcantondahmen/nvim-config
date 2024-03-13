@@ -100,6 +100,7 @@ return {
 
 		icons.setup({
 			color_icons = false,
+			default = true,
 		})
 
 		vim.api.nvim_set_hl(0, 'DevIconDefault', { link = '@none' })
