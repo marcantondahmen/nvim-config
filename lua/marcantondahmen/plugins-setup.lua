@@ -79,12 +79,10 @@ local readLockFile = function()
 end
 
 local commits = readLockFile()
-local normalizePlugin
+local lockPlugin
 
--- Normalize plugin names and add commit property from lock file recursively.
--- In order to skip the name normalization, the original name has to be applied
--- using the 'as' property (see packer.nvim spec on top).
-normalizePlugin = function(plugin)
+-- Add commit property from lock file recursively.
+lockPlugin = function(plugin)
 	if type(plugin) == 'string' then
 		plugin = { plugin }
 	end
@@ -107,7 +105,7 @@ normalizePlugin = function(plugin)
 		local deps = {}
 
 		for _, dep in ipairs(plugin.requires) do
-			table.insert(deps, normalizePlugin(dep))
+			table.insert(deps, lockPlugin(dep))
 		end
 
 		plugin.requires = deps
@@ -123,10 +121,10 @@ local startup = function(use)
 	local plugins = require('marcantondahmen.plugins')
 
 	for _, plugin in ipairs(plugins) do
-		local normalized = normalizePlugin(plugin)
+		local locked = lockPlugin(plugin)
 
-		if normalized then
-			use(normalized)
+		if locked then
+			use(locked)
 		end
 	end
 
