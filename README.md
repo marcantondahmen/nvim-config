@@ -8,16 +8,16 @@ ______________________________________________________________________
 
 <!-- vim-markdown-toc GFM -->
 
-* [Theme](#theme)
-	* [Terminal Color Schemes](#terminal-color-schemes)
-* [Included Plugins](#included-plugins)
-* [Installation](#installation)
-	* [Dependencies](#dependencies)
-* [Adding or Updating Plugins](#adding-or-updating-plugins)
-	* [Lock File](#lock-file)
-* [Tmux](#tmux)
-* [Fonts](#fonts)
-* [Highlights](#highlights)
+- [Theme](#theme)
+  - [Terminal Color Schemes](#terminal-color-schemes)
+- [Included Plugins](#included-plugins)
+- [Installation](#installation)
+  - [Dependencies](#dependencies)
+- [Adding or Updating Plugins](#adding-or-updating-plugins)
+  - [Lock File](#lock-file)
+- [Tmux](#tmux)
+- [Fonts](#fonts)
+- [Highlights](#highlights)
 
 <!-- vim-markdown-toc -->
 
