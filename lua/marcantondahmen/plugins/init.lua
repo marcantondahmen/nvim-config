@@ -1,7 +1,6 @@
 local plugins = {
 	-- Plugins that don't need configuration.
 	'nvim-lua/plenary.nvim',
-	'nvim-tree/nvim-web-devicons',
 	'tpope/vim-surround',
 	'inkarkat/vim-ReplaceWithRegister',
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' },
