@@ -1,6 +1,6 @@
 function ReloadConfig()
 	for name, _ in pairs(package.loaded) do
-		if name:match('marcantondahmen') then
+		if name:match('plugins') then
 			package.loaded[name] = nil
 		end
 	end
@@ -62,9 +62,7 @@ local function initAutoReload()
 	vim.cmd([[
 	  augroup packer_user_config
 		autocmd!
-		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/*.lua lua ReloadConfig()
 		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua lua CompilePlugins()
-		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/core/*.lua lua ReloadConfig()
 	  augroup end
 	]])
 end
