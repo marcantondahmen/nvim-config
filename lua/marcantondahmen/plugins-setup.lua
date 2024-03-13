@@ -1,31 +1,59 @@
 -- auto install packer if not installed
-local ensure_packer = function()
+local bootstrap = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+
 	if fn.empty(fn.glob(install_path)) > 0 then
 		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 		vim.cmd([[packadd packer.nvim]])
 		return true
 	end
+
 	return false
 end
 
-local packer_bootstrap = ensure_packer() -- true if packer was just installed
-
--- autocommand that reloads neovim and compiles plugin configs
--- when a file is saved in the plugins directory
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua source <afile> | PackerCompile
-  augroup end
-]])
+local isBootstrapped = bootstrap() -- true if packer was just installed
 
 -- import packer safely
 local status, packer = pcall(require, 'packer')
 if not status then
 	return
 end
+
+-- Reload plugins when files in the plugins directory are written
+local initAutoReload = function()
+	function ReloadPlugins()
+		for name, _ in pairs(package.loaded) do
+			if name:match('plugins') then
+				package.loaded[name] = nil
+			end
+		end
+
+		vim.cmd([[source ~/.config/nvim/init.lua]])
+	end
+
+	function CompilePlugins()
+		ReloadPlugins()
+
+		vim.cmd([[PackerCompile]])
+	end
+
+	vim.api.nvim_create_autocmd('User', {
+		pattern = 'PackerCompileDone',
+		callback = ReloadPlugins,
+	})
+
+	-- autocommand that reloads neovim and compiles plugin configs
+	-- when a file is saved in the plugins directory
+	vim.cmd([[
+	  augroup packer_user_config
+		autocmd!
+		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua lua CompilePlugins()
+	  augroup end
+	]])
+end
+
+initAutoReload()
 
 -- read lock file
 local readLockFile = function()
@@ -101,7 +129,7 @@ local startup = function(use)
 		end
 	end
 
-	if packer_bootstrap then
+	if isBootstrapped then
 		packer.sync()
 	end
 end
