@@ -6,7 +6,7 @@ local function reloadConfig()
 	end
 
 	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/init.lua')
-	vim.notify('Config reloaded')
+	vim.notify('Config reloaded', nil, { timeout = 500 })
 end
 
 local function compilePlugins()
@@ -29,7 +29,7 @@ local function gitCmdStr(cmd)
 end
 
 local function pullCallback(id, output, name)
-	vim.notify(table.concat(output, '\n'), nil, { title = 'Update' })
+	vim.notify(table.concat(output, '\n'), nil, { title = 'Update', timeout = 10000 })
 	vim.fn.timer_start(500, syncPlugins)
 end
 
@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd('User', {
 
 vim.api.nvim_create_autocmd('BufWritePost', {
 	group = 'madConfigUpdate',
-	pattern = { '*/nvim/lua/marcantondahmen/*.lua', '*/nvim/lua/marcantondahmen/core/*.lua' },
+	pattern = { '*/nvim/lua/marcantondahmen/*.lua' },
 	callback = function()
 		vim.schedule(reloadConfig)
 	end,
