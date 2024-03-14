@@ -68,7 +68,7 @@ return {
 				section_separators = { left = '', right = '' },
 				globalstatus = true,
 				disabled_filetypes = {
-					statusline = { 'alpha' },
+					statusline = { 'alpha', 'packer' },
 					winbar = {},
 				},
 			},

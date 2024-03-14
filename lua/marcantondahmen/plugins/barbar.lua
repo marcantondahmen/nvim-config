@@ -25,7 +25,7 @@ return {
 			clickable = true,
 
 			-- Excludes buffers from the tabline
-			exclude_ft = { 'alpha' },
+			exclude_ft = { 'alpha', 'packer' },
 			exclude_name = {},
 
 			-- A buffer to this direction will be focused (if it exists) when closing the current buffer.
