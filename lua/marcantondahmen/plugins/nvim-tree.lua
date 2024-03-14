@@ -2,7 +2,7 @@ return {
 	'nvim-tree/nvim-tree.lua',
 	requires = { 'romgrk/barbar.nvim' },
 	config = function()
-		local nvimtreeSuccess, nvimtree = pcall(require,'nvim-tree')
+		local nvimtreeSuccess, nvimtree = pcall(require, 'nvim-tree')
 		if not nvimtreeSuccess then
 			return
 		end
@@ -174,7 +174,6 @@ return {
 		})
 
 		-- open nvim-tree on setup
-
 		local function open_nvim_tree(data)
 			-- buffer is a [No Name]
 			local no_name = data.file == '' and vim.bo[data.buf].buftype == ''
@@ -198,6 +197,10 @@ return {
 			end
 		end
 
-		vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost' }, { callback = open_nvim_tree })
+		vim.api.nvim_create_augroup('madNvimTree', { clear = true })
+		vim.api.nvim_create_autocmd(
+			{ 'BufNewFile', 'BufReadPost' },
+			{ group = 'madNvimTree', callback = open_nvim_tree }
+		)
 	end,
 }

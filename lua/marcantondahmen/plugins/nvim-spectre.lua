@@ -12,7 +12,9 @@ return {
 			is_insert_mode = true,
 		})
 
+		vim.api.nvim_create_augroup('madSpectre', { clear = true })
 		vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
+			group = 'madSpectre',
 			pattern = '*',
 			callback = function()
 				spectre.close()

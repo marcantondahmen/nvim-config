@@ -105,7 +105,9 @@ return {
 			),
 		})
 
+		vim.api.nvim_create_augroup('madLuasnip', { clear = true })
 		vim.api.nvim_create_autocmd('ModeChanged', {
+			group = 'madLuasnip',
 			pattern = '*',
 			callback = function()
 				if

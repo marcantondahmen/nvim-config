@@ -49,12 +49,11 @@ opt.showmode = false
 opt.swapfile = false
 opt.fixeol = true
 
--- reload buffer when entering or gaining focus
-vim.cmd('autocmd FocusGained,BufEnter * checktime')
-
+-- reload buffer when entering or gaining focus and clear command line
 vim.cmd([[
-	augroup cmdline
+	augroup madCoreOptions
 		autocmd!
+		autocmd FocusGained,BufEnter * checktime
 		autocmd CmdlineLeave : echo ''
 	augroup end
 ]])

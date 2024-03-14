@@ -54,7 +54,13 @@ return {
 
 		alpha.setup(dashboard.opts)
 
-		vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
-		vim.cmd([[ autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2 ]])
+		vim.cmd([[
+			augroup madAlpha
+				autocmd FileType alpha setlocal nofoldenable
+				autocmd User AlphaReady set showtabline=0  
+				autocmd User AlphaReady autocmd BufEnter <buffer> setlocal showtabline=0
+				autocmd User AlphaReady autocmd BufUnload <buffer> set showtabline=2 
+			augroup end
+		]])
 	end,
 }
