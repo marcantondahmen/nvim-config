@@ -109,8 +109,14 @@ return packer.startup({
 		log = { level = 'info' },
 		display = {
 			open_fn = function()
-				return require('packer.util').float({ border = 'single' })
+				return require('packer.util').float({
+					border = 'single',
+					style = 'minimal',
+					zindex = 2,
+				})
 			end,
+			prompt_border = 'single',
+			header_sym = ' ',
 		},
 	},
 })

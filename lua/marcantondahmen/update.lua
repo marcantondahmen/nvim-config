@@ -1,23 +1,23 @@
-function ReloadConfig()
+local function reloadConfig()
 	for name, _ in pairs(package.loaded) do
-		if name:match('plugins') then
+		if string.match(name, 'marc.*$') then
 			package.loaded[name] = nil
 		end
 	end
 
-	vim.cmd('source ~/.config/nvim/init.lua')
-	vim.notify('Saved and reloaded', nil, { title = 'Configuration' })
+	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/init.lua')
+	vim.notify('Config reloaded')
 end
 
-function CompilePlugins()
-	ReloadConfig()
+local function compilePlugins()
+	reloadConfig()
 	TreeClose()
 
 	vim.cmd('PackerCompile')
 end
 
-function SyncPlugins()
-	ReloadConfig()
+local function syncPlugins()
+	reloadConfig()
 
 	vim.cmd('PackerSync')
 end
@@ -30,7 +30,7 @@ end
 
 local function pullCallback(id, output, name)
 	vim.notify(table.concat(output, '\n'), nil, { title = 'Update' })
-	vim.fn.timer_start(500, SyncPlugins)
+	vim.fn.timer_start(500, syncPlugins)
 end
 
 local function fetchCallback(id, output, name)
@@ -46,26 +46,38 @@ local function fetchCallback(id, output, name)
 	end
 end
 
-local function checkForUpdates()
-	vim.fn.jobstart(gitCmdStr('fetch origin --dry-run'), {
-		stdout_buffered = true,
-		on_stdout = fetchCallback,
-	})
-end
+vim.api.nvim_create_augroup('madConfigUpdate', { clear = true })
 
-local function initAutoReload()
-	vim.api.nvim_create_autocmd('User', {
-		pattern = 'PackerCompileDone',
-		callback = ReloadConfig,
-	})
+vim.api.nvim_create_autocmd('VimEnter', {
+	group = 'madConfigUpdate',
+	callback = function()
+		vim.fn.jobstart(gitCmdStr('fetch origin --dry-run'), {
+			stdout_buffered = true,
+			on_stdout = fetchCallback,
+		})
+	end,
+})
 
-	vim.cmd([[
-	  augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost ~/.config/nvim/lua/marcantondahmen/plugins/*.lua lua CompilePlugins()
-	  augroup end
-	]])
-end
+vim.api.nvim_create_autocmd('User', {
+	group = 'madConfigUpdate',
+	pattern = 'PackerCompileDone',
+	callback = function()
+		vim.schedule(reloadConfig)
+	end,
+})
 
-vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = checkForUpdates })
-vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = initAutoReload })
+vim.api.nvim_create_autocmd('BufWritePost', {
+	group = 'madConfigUpdate',
+	pattern = { '*/nvim/lua/marcantondahmen/*.lua', '*/nvim/lua/marcantondahmen/core/*.lua' },
+	callback = function()
+		vim.schedule(reloadConfig)
+	end,
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+	group = 'madConfigUpdate',
+	pattern = '*/nvim/lua/marcantondahmen/plugins/*.lua',
+	callback = function()
+		vim.schedule(compilePlugins)
+	end,
+})
