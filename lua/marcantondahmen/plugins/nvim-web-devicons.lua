@@ -11,6 +11,11 @@ return {
 			default = true,
 		})
 
-		vim.api.nvim_set_hl(0, 'DevIconDefault', { link = '@none' })
+		-- Remove colors.
+		for k, v in pairs(icons.get_icons()) do
+			icons.set_icon({
+				[k] = { icon = v.icon, color = 'NONE', cterm_color = 1, name = v.name },
+			})
+		end
 	end,
 }
