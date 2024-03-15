@@ -114,6 +114,7 @@ return packer.startup({
 					zindex = 2,
 				})
 			end,
+			title = '󰏗 packer.nvim',
 			prompt_border = 'single',
 			header_sym = ' ',
 		},

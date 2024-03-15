@@ -35,7 +35,8 @@ local function gitCmdStr(cmd)
 end
 
 local function pullCallback(id, output, name)
-	vim.notify(table.concat(output, '\n'), nil, { title = 'Pulled updates' })
+	print(' Pulling changes ...')
+	print(table.concat(output, '\n'))
 	vim.fn.timer_start(500, syncPlugins)
 end
 
