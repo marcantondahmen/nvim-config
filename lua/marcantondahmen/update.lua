@@ -7,6 +7,27 @@ local function compilePlugins()
 	})
 end
 
+local function reloadPluginConfigs()
+	for name, _ in pairs(package.loaded) do
+		if string.match(name, 'marc.*plugins') then
+			package.loaded[name] = nil
+			print('󰑓 Purged module cache for: ' .. name)
+		end
+	end
+
+	print('󰑓 Reloading plugin setup ...')
+	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/plugins-setup.lua')
+end
+
+local function syncPlugins()
+	reloadPluginConfigs()
+
+	vim.defer_fn(function()
+		print('󰏗 Running PackerSync ...')
+		vim.cmd('PackerSync')
+	end, 500)
+end
+
 local function gitCmdStr(cmd)
 	local config = vim.fn.stdpath('config')
 
@@ -14,10 +35,8 @@ local function gitCmdStr(cmd)
 end
 
 local function pullCallback(id, output, name)
-	vim.notify(table.concat(output, '\n'), nil, { title = 'Update', timeout = 8000 })
-	vim.fn.timer_start(500, function()
-		vim.cmd('PackerSync')
-	end)
+	vim.notify(table.concat(output, '\n'), nil, { title = 'Pulled updates' })
+	vim.fn.timer_start(500, syncPlugins)
 end
 
 local function fetchCallback(id, output, name)
