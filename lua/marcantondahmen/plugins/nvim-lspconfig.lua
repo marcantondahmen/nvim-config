@@ -1,5 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
+	event = 'BufEnter',
 	requires = {
 		'hrsh7th/cmp-nvim-lsp', -- for autocompletion
 		'onsails/lspkind.nvim', -- vs-code like icons for autocompletion
