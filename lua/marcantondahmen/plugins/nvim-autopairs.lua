@@ -1,5 +1,6 @@
 return {
 	'windwp/nvim-autopairs',
+	event = 'InsertEnter',
 	requires = { 'hrsh7th/nvim-cmp' },
 	config = function()
 		local autopairsSuccess, autopairs = pcall(require, 'nvim-autopairs')
@@ -19,11 +20,6 @@ return {
 
 		autopairs.setup({
 			check_ts = true, -- enable treesitter
-			ts_config = {
-				lua = { 'string' }, -- don't add pairs in lua string treesitter nodes
-				javascript = { 'template_string' }, -- don't add pairs in javscript template_string treesitter nodes
-				java = false, -- don't check treesitter on java
-			},
 		})
 
 		-- make autopairs and completion work together
