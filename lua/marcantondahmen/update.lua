@@ -1,25 +1,10 @@
-local function reloadConfig()
-	for name, _ in pairs(package.loaded) do
-		if string.match(name, 'marc.*$') then
-			package.loaded[name] = nil
-		end
-	end
-
-	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/init.lua')
-	vim.notify('Config reloaded', nil, { timeout = 500 })
-end
-
 local function compilePlugins()
-	reloadConfig()
-	TreeClose()
-
-	vim.cmd('PackerCompile')
-end
-
-local function syncPlugins()
-	reloadConfig()
-
-	vim.cmd('PackerSync')
+	vim.fn.jobstart("nvim --headless -c 'autocmd User PackerCompileDone quitall' -c 'PackerCompile'", {
+		stdout_buffered = true,
+		on_stdout = function()
+			vim.notify('Compiled plugins!', nil, { title = 'Packer', timeout = 750 })
+		end,
+	})
 end
 
 local function gitCmdStr(cmd)
@@ -29,8 +14,10 @@ local function gitCmdStr(cmd)
 end
 
 local function pullCallback(id, output, name)
-	vim.notify(table.concat(output, '\n'), nil, { title = 'Update', timeout = 10000 })
-	vim.fn.timer_start(500, syncPlugins)
+	vim.notify(table.concat(output, '\n'), nil, { title = 'Update', timeout = 8000 })
+	vim.fn.timer_start(500, function()
+		vim.cmd('PackerSync')
+	end)
 end
 
 local function fetchCallback(id, output, name)
@@ -48,6 +35,16 @@ end
 
 vim.api.nvim_create_augroup('madConfigUpdate', { clear = true })
 
+-- Notify after plugins have been synced.
+vim.api.nvim_create_autocmd('User', {
+	group = 'madConfigUpdate',
+	pattern = 'PackerComplete',
+	callback = function()
+		vim.notify('Please restart Neovim!', nil, { title = 'Update', timeout = false })
+	end,
+})
+
+-- Check for new updates on start.
 vim.api.nvim_create_autocmd('VimEnter', {
 	group = 'madConfigUpdate',
 	callback = function()
@@ -58,22 +55,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 	end,
 })
 
-vim.api.nvim_create_autocmd('User', {
-	group = 'madConfigUpdate',
-	pattern = 'PackerCompileDone',
-	callback = function()
-		vim.schedule(reloadConfig)
-	end,
-})
-
-vim.api.nvim_create_autocmd('BufWritePost', {
-	group = 'madConfigUpdate',
-	pattern = { '*/nvim/lua/marcantondahmen/*.lua' },
-	callback = function()
-		vim.schedule(reloadConfig)
-	end,
-})
-
+-- Compile plugins when plugin config files are saved.
 vim.api.nvim_create_autocmd('BufWritePost', {
 	group = 'madConfigUpdate',
 	pattern = '*/nvim/lua/marcantondahmen/plugins/*.lua',
