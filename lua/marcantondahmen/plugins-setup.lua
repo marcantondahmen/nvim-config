@@ -106,7 +106,6 @@ return packer.startup({
 		profile = {
 			enable = true,
 		},
-		log = { level = 'info' },
 		display = {
 			open_fn = function()
 				return require('packer.util').float({
