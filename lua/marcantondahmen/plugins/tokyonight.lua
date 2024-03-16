@@ -79,10 +79,6 @@ return {
 			end,
 		})
 
-		vim.cmd([[colorscheme tokyonight]])
-		-- fix black flash on startup in nvim 0.10
-		vim.cmd([[ echo ' ']])
-
 		vim.opt.fillchars = {
 			horiz = '█',
 			horizup = '█',
@@ -92,5 +88,7 @@ return {
 			vertright = '█',
 			verthoriz = '█',
 		}
+
+		vim.cmd('colorscheme tokyonight')
 	end,
 }
