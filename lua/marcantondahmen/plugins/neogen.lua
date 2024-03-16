@@ -1,5 +1,6 @@
 return {
 	'danymat/neogen',
+	event = 'InsertEnter',
 	requires = 'nvim-treesitter/nvim-treesitter',
 	config = function()
 		local neogenSuccess, neogen = pcall(require, 'neogen')

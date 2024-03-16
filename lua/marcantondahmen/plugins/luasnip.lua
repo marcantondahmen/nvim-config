@@ -1,8 +1,9 @@
 return {
 	'L3MON4D3/LuaSnip',
+	event = 'InsertEnter',
 	requires = {
-		'saadparwaiz1/cmp_luasnip',
-		'rafamadriz/friendly-snippets',
+		{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
+		{ 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
 	},
 	config = function()
 		local luasnipSuccess, luasnip = pcall(require, 'luasnip')
