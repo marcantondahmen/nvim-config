@@ -3,8 +3,10 @@ return {
 	event = 'VimEnter',
 	after = 'friendly-snippets',
 	requires = {
-		{ 'saadparwaiz1/cmp_luasnip', event = 'VimEnter' },
-		{ 'rafamadriz/friendly-snippets', event = 'VimEnter' },
+		{
+			'rafamadriz/friendly-snippets',
+			event = 'VimEnter',
+		},
 	},
 	config = function()
 		local luasnipSuccess, luasnip = pcall(require, 'luasnip')

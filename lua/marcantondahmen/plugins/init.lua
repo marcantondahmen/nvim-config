@@ -3,6 +3,8 @@ local plugins = {
 	'nvim-lua/plenary.nvim',
 	'tpope/vim-surround',
 	'inkarkat/vim-ReplaceWithRegister',
+	'onsails/lspkind.nvim',
+	{ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' },
 }
 

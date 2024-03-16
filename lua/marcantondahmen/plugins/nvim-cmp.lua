@@ -2,11 +2,6 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = 'VimEnter',
 	after = { 'LuaSnip', 'neogen', 'lspkind.nvim' },
-	requires = {
-		'onsails/lspkind.nvim',
-		'L3MON4D3/LuaSnip',
-		'danymat/neogen',
-	},
 	config = function()
 		local cmpSuccess, cmp = pcall(require, 'cmp')
 		if not cmpSuccess then
