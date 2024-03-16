@@ -50,6 +50,8 @@ local function fetchCallback(id, output, name)
 				on_stdout = pullCallback,
 			})
 		end)
+	else
+		print(' Config is up to date')
 	end
 end
 
