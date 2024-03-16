@@ -1,15 +1,19 @@
 return {
 	'L3MON4D3/LuaSnip',
-	event = 'InsertEnter',
+	event = 'VimEnter',
+	after = 'friendly-snippets',
 	requires = {
-		{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
-		{ 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
+		{ 'saadparwaiz1/cmp_luasnip', event = 'VimEnter' },
+		{ 'rafamadriz/friendly-snippets', event = 'VimEnter' },
 	},
 	config = function()
 		local luasnipSuccess, luasnip = pcall(require, 'luasnip')
 		if not luasnipSuccess then
 			return
 		end
+
+		-- load vs-code like snippets from plugins (e.g. friendly-snippets)
+		require('luasnip/loaders/from_vscode').lazy_load()
 
 		local s = luasnip.snippet
 		local t = luasnip.text_node

@@ -1,6 +1,7 @@
 return {
 	'hrsh7th/nvim-cmp',
 	event = 'VimEnter',
+	after = { 'LuaSnip', 'neogen', 'lspkind.nvim' },
 	requires = {
 		'onsails/lspkind.nvim',
 		'L3MON4D3/LuaSnip',
@@ -32,9 +33,6 @@ return {
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 		end
-
-		-- load vs-code like snippets from plugins (e.g. friendly-snippets)
-		require('luasnip/loaders/from_vscode').lazy_load()
 
 		vim.opt.completeopt = 'menu,menuone,noselect'
 

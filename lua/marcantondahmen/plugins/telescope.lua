@@ -1,6 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	event = 'BufEnter',
+	event = 'VimEnter',
 	requires = {
 		{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 	},
