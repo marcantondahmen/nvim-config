@@ -1,5 +1,6 @@
 return {
 	'nvim-pack/nvim-spectre',
+	event = 'VimEnter',
 	config = function()
 		local spectreSuccess, spectre = pcall(require, 'spectre')
 		if not spectreSuccess then

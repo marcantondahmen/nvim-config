@@ -1,5 +1,6 @@
 return {
 	'brenoprata10/nvim-highlight-colors',
+	event = 'BufRead',
 	config = function()
 		local hcSuccess, hc = pcall(require, 'nvim-highlight-colors')
 		if not hcSuccess then

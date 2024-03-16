@@ -1,5 +1,6 @@
 return {
 	'lewis6991/gitsigns.nvim',
+	event = 'BufRead',
 	config = function()
 		local gitSuccess, git = pcall(require, 'gitsigns')
 		if not gitSuccess then
