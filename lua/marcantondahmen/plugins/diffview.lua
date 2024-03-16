@@ -1,6 +1,7 @@
 return {
 	'sindrets/diffview.nvim',
 	requires = 'nvim-lua/plenary.nvim',
+	after = { 'tokyonight.nvim' },
 	config = function()
 		local diffSuccess, diff = pcall(require, 'diffview')
 		if not diffSuccess then
