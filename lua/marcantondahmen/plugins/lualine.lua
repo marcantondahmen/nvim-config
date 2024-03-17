@@ -1,8 +1,7 @@
 return {
 	'nvim-lualine/lualine.nvim',
-	requires = {
-		'folke/trouble.nvim',
-	},
+	after = { 'trouble.nvim' },
+	requires = { 'folke/trouble.nvim' },
 	config = function()
 		local lualineSuccess, lualine = pcall(require, 'lualine')
 		if not lualineSuccess then

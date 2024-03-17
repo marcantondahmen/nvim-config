@@ -7,6 +7,7 @@ return {
 		'pmizio/typescript-tools.nvim',
 		'folke/which-key.nvim',
 	},
+	after = { 'cmp-nvim-lsp', 'typescript-tools.nvim', 'which-key.nvim' },
 	config = function()
 		local lspconfigSuccess, lspconfig = pcall(require, 'lspconfig')
 		if not lspconfigSuccess then

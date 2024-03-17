@@ -2,6 +2,7 @@ return {
 	'windwp/nvim-autopairs',
 	event = 'InsertEnter',
 	requires = { 'hrsh7th/nvim-cmp' },
+	after = { 'nvim-cmp' },
 	config = function()
 		local autopairsSuccess, autopairs = pcall(require, 'nvim-autopairs')
 		if not autopairsSuccess then

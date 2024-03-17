@@ -1,5 +1,6 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
+	event = 'BufRead',
 	config = function()
 		local iblSuccess, ibl = pcall(require, 'ibl')
 		if not iblSuccess then

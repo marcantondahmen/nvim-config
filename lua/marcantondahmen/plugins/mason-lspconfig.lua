@@ -1,5 +1,6 @@
 return {
 	'williamboman/mason-lspconfig.nvim',
+	after = { 'mason.nvim' },
 	config = function()
 		local masonLspconfigSuccess, masonLspconfig = pcall(require, 'mason-lspconfig')
 		if not masonLspconfigSuccess then
