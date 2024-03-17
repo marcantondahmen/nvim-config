@@ -5,7 +5,7 @@ return {
 		'SmiteshP/nvim-navic',
 		'MunifTanjim/nui.nvim',
 	},
-	keys = { '<leader>' },
+	event = 'BufRead',
 	config = function()
 		local navbuddySuccess, navbuddy = pcall(require, 'nvim-navbuddy')
 		if not navbuddySuccess then
