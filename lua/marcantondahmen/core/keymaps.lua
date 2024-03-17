@@ -102,6 +102,10 @@ M.set = function()
 	keymap.set('n', '<c-d>', '<c-d>zz', options)
 	keymap.set('n', '<c-u>', '<c-u>zz', options)
 
+	-- move lines up and down
+	keymap.set('n', '<a-s-up>', ':m-2<cr>', options)
+	keymap.set('n', '<a-s-down>', ':m+1<cr>', options)
+
 	-- barbar
 	keymap.set('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
 	keymap.set('n', '<TAB>', '<Cmd>BufferNext<CR>', options)
