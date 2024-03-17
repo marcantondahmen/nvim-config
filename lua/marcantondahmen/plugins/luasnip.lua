@@ -1,13 +1,7 @@
 return {
 	'L3MON4D3/LuaSnip',
-	event = 'VimEnter',
-	after = 'friendly-snippets',
-	requires = {
-		{
-			'rafamadriz/friendly-snippets',
-			event = 'VimEnter',
-		},
-	},
+	requires = { 'rafamadriz/friendly-snippets' },
+	after = { 'friendly-snippets' },
 	config = function()
 		local luasnipSuccess, luasnip = pcall(require, 'luasnip')
 		if not luasnipSuccess then
