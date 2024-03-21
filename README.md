@@ -2,7 +2,9 @@
 
 ![Screenshot](images/editor-tokyonight.png)
 
-This is the personal Neovim configuration of Marc Anton Dahmen.
+This is the personal Neovim configuration of [Marc Anton Dahmen](https://marcdahmen.de). It provides a solid setup for TypeScript, PHP and Automad development based on terminal focused workflows.
+
+> Feel free to fork this config or use parts of it for inspiration. However, issues and pull-request will be ignored!
 
 ______________________________________________________________________
 
