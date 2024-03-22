@@ -6,7 +6,7 @@ This is the personal Neovim configuration of [Marc Anton Dahmen](https://marcdah
 
 > Feel free to fork this config or use parts of it for inspiration. However, issues and pull-request will be ignored!
 
-______________________________________________________________________
+---
 
 <!-- vim-markdown-toc GFM -->
 

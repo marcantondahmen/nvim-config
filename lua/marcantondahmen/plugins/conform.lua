@@ -17,7 +17,7 @@ return {
 				html = { 'prettier' },
 				json = { 'prettier' },
 				yaml = { 'prettier' },
-				markdown = { 'mdformat' },
+				markdown = { 'prettier' },
 				lua = { 'stylua' },
 				php = { 'php_cs_fixer' },
 				sh = { 'shfmt' },

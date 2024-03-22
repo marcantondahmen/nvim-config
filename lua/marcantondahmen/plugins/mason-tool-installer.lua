@@ -13,7 +13,6 @@ return {
 				'php-cs-fixer',
 				'shfmt',
 				'sql-formatter',
-				'mdformat',
 			},
 		})
 	end,
