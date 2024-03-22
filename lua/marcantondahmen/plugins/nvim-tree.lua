@@ -53,6 +53,7 @@ return {
 
 			-- remove default for H
 			vim.keymap.del('n', 'H', { buffer = bufnr })
+			vim.keymap.del('n', 'L', { buffer = bufnr })
 		end
 
 		-- configure nvim-tree
