@@ -92,39 +92,39 @@ keymaps.set = function()
 	-- set leader key to space
 	vim.g.mapleader = ' '
 
-	local keymap = vim.keymap
+	local map = vim.keymap.set
 	local options = { silent = true, noremap = true }
 
 	-- clear search highlight
-	keymap.set('n', '<esc>', ':noh<cr>', options)
+	map('n', '<esc>', ':noh<cr>', options)
 
 	-- move and center
-	keymap.set('n', 'n', 'nzz', options)
-	keymap.set('n', 'N', 'Nzz', options)
-	keymap.set('n', 'H', 'Hzz', options)
-	keymap.set('n', 'L', 'Lzz', options)
-	keymap.set('n', '<c-d>', '<c-d>zz', options)
-	keymap.set('n', '<c-u>', '<c-u>zz', options)
+	map('n', 'n', 'nzz', options)
+	map('n', 'N', 'Nzz', options)
+	map('n', 'H', 'Hzz', options)
+	map('n', 'L', 'Lzz', options)
+	map('n', '<c-d>', '<c-d>zz', options)
+	map('n', '<c-u>', '<c-u>zz', options)
 
 	-- move lines up and down
-	keymap.set('n', '<a-s-up>', ':m-2<cr>', options)
-	keymap.set('n', '<a-s-down>', ':m+1<cr>', options)
+	map('n', '<a-s-up>', ':m-2<cr>', options)
+	map('n', '<a-s-down>', ':m+1<cr>', options)
 
 	-- barbar
-	keymap.set('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
-	keymap.set('n', '<TAB>', '<Cmd>BufferNext<CR>', options)
-	keymap.set('n', '<C-,>', '<Cmd>BufferMovePrevious<CR>', options)
-	keymap.set('n', '<C-.>', '<Cmd>BufferMoveNext<CR>', options)
+	map('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
+	map('n', '<TAB>', '<Cmd>BufferNext<CR>', options)
+	map('n', '<C-,>', '<Cmd>BufferMovePrevious<CR>', options)
+	map('n', '<C-.>', '<Cmd>BufferMoveNext<CR>', options)
 
 	-- quit insert mode without esc
-	keymap.set('i', 'jk', '<ESC>', options)
-	keymap.set('i', 'kj', '<ESC>', options)
+	map('i', 'jk', '<ESC>', options)
+	map('i', 'kj', '<ESC>', options)
 
 	-- replace selection in buffer
-	keymap.set('v', 'r', 'y:%s*<c-r>"**gc<left><left><left>', { silent = true, noremap = false })
+	map('v', 'r', 'y:%s*<c-r>"**gc<left><left><left>', { silent = true, noremap = false })
 
 	-- replace selection in project
-	keymap.set('v', '<C-r>', '<esc><cmd>lua SadVisual()<CR>', { silent = true, noremap = false })
+	map('v', '<C-r>', '<esc><cmd>lua SadVisual()<CR>', { silent = true, noremap = false })
 end
 
 return keymaps
