@@ -1,7 +1,7 @@
-local M = {}
+local keymaps = {}
 
--- Keymaps that are handle by WhichKey
-M.whichKeyMaps = {
+-- Keymaps that are handled by WhichKey
+keymaps.whichKeyMaps = {
 	gR = { ':TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
 		a = { ':Neogen<cr>', 'Generate docblock' },
@@ -81,10 +81,14 @@ M.whichKeyMaps = {
 		m = { ':MarkdownPreview<cr>', 'Markdown preview' },
 		n = { ':Navbuddy<cr>', 'Open Navbuddy' },
 	},
+	['[d'] = { vim.diagnostic.goto_prev, 'Jump to previous diagnostic' },
+	[']d'] = { vim.diagnostic.goto_next, 'Jump to next diagnostic' },
+	['[g'] = { ':Gitsigns prev_hunk<cr>', 'Jump to previous Git hunk' },
+	[']g'] = { ':Gitsigns next_hunk<cr>', 'Jump to next Git hunk' },
 }
 
 -- All other keymaps that are not handled by WhichKey
-M.set = function()
+keymaps.set = function()
 	-- set leader key to space
 	vim.g.mapleader = ' '
 
@@ -123,4 +127,4 @@ M.set = function()
 	keymap.set('v', '<C-r>', '<esc><cmd>lua SadVisual()<CR>', { silent = true, noremap = false })
 end
 
-return M
+return keymaps
