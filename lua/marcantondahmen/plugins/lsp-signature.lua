@@ -1,6 +1,6 @@
 return {
 	'ray-x/lsp_signature.nvim',
-	event = 'InsertEnter',
+	event = 'BufRead',
 	config = function()
 		local lspSignatureSuccess, lspSignature = pcall(require, 'lsp_signature')
 		if not lspSignatureSuccess then
