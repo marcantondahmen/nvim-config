@@ -11,6 +11,7 @@
 	"diffview.nvim": { "commit": "3dc498c" },
 	"friendly-snippets": { "commit": "dcd4a58" },
 	"gitsigns.nvim": { "commit": "41dc075" },
+	"headlines.nvim": { "commit": "618ef1b" },
 	"indent-blankline.nvim": { "commit": "821a7ac" },
 	"lsp_signature.nvim": { "commit": "1b32f64" },
 	"lspkind.nvim": { "commit": "1735dd5" },

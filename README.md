@@ -100,6 +100,7 @@ All plugins in this config are managed by [packer.nvim](https://github.com/wbtho
 - [conform.nvim](https://github.com/stevearc/conform.nvim) formatting
 - [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
+- [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim) markdown headings and codeblock highlighting
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) indent guides
 - [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) signature help
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
@@ -145,7 +146,7 @@ There are also some custom settings and extensions:
 
 ### Adding Plugins
 
-In order to add a new plugin, simply add a `lua` module that returns a [packer.nvim](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file#specifying-plugins) plugin spec, reload Neovim and run the following command afterwards:
+In order to add a new plugin, simply add a `lua` module that returns a [packer.nvim](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file#specifying-plugins) plugin spec, **first reload Neovim** and run the following command afterwards:
 
 ```bash
 PackerSync
