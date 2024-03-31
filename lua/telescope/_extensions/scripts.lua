@@ -60,10 +60,10 @@ local getScripts = function()
 
 	for _, item in ipairs(shell) do
 		local short = item:gsub('^' .. cwd, '')
-		table.insert(
-			scripts,
-			{ '  ' .. short, 'echo "  $(pwd)" && echo "  ' .. short .. '\n" && sh ' .. item }
-		)
+		table.insert(scripts, {
+			'  ' .. short,
+			'echo "  $(pwd)" && echo "  ' .. short .. '\n" && ' .. vim.o.shell .. ' ' .. item,
+		})
 	end
 
 	return scripts
