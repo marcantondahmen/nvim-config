@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 -- Check for new updates on start.
-vim.api.nvim_create_autocmd('VimEnter', {
+vim.api.nvim_create_autocmd('UIEnter', {
 	group = 'madConfigUpdate',
 	callback = function()
 		vim.fn.jobstart(gitCmdStr('fetch origin --dry-run'), {
