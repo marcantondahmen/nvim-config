@@ -5,6 +5,8 @@ local plugins = {
 	'inkarkat/vim-ReplaceWithRegister',
 	'onsails/lspkind.nvim',
 	{ 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+	{ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+	{ 'hrsh7th/cmp-path', after = 'nvim-cmp' },
 	{ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' },
 }
 
