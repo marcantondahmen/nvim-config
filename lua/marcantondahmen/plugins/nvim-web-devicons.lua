@@ -7,7 +7,8 @@ return {
 		end
 
 		icons.setup({
-			color_icons = false,
+			-- Use colored icons, but set the color to "NONE" below in order to prevent default color.
+			color_icons = true,
 			default = true,
 		})
 
