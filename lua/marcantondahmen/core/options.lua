@@ -49,6 +49,14 @@ opt.showmode = false
 opt.swapfile = false
 opt.fixeol = true
 
+-- Automad filetypes
+vim.filetype.add({
+	filename = {
+		data = 'json',
+		index = 'json',
+	},
+})
+
 -- reload buffer when entering or gaining focus and clear command line
 vim.cmd([[
 	augroup madCoreOptions
