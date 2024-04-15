@@ -27,6 +27,8 @@ local getNpmScripts = function()
 		end
 	end
 
+	table.sort(scripts)
+
 	return scripts
 end
 
@@ -44,6 +46,8 @@ local getShellScripts = function()
 	end
 
 	fileList:close()
+
+	table.sort(files)
 
 	return files
 end
