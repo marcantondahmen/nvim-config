@@ -12,6 +12,7 @@ return {
 				typescript = { 'prettier' },
 				javascriptreact = { 'prettier' },
 				typescriptreact = { 'prettier' },
+				svelte = { 'prettier' },
 				css = { 'prettier' },
 				less = { 'prettier' },
 				html = { 'prettier' },
@@ -33,6 +34,6 @@ return {
 			},
 		})
 
-		require('conform.formatters.sql_formatter').args = { '-l', 'postgresql' }
+		require('conform.formatters.sql_formatter').args = { '-l', 'mysql' }
 	end,
 }
