@@ -9,6 +9,7 @@ return {
 
 		masonLspconfig.setup({
 			-- list of servers for mason to install
+			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 			ensure_installed = {
 				'tsserver',
 				'html',
@@ -19,6 +20,7 @@ return {
 				'intelephense',
 				'psalm',
 				'prismals',
+				'svelte',
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
