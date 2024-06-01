@@ -29,5 +29,6 @@ return {
 		})
 
 		vim.cmd('highlight SagaVirtLine guifg=#3b4261')
+		vim.cmd('highlight DiagnosticShowBorder guifg=#3b4261')
 	end,
 }
