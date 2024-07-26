@@ -182,6 +182,10 @@ return {
 			-- buffer is a directory
 			local directory = vim.fn.isdirectory(data.file) == 1
 
+			if vim.fn.argc() > 0 then
+				return
+			end
+
 			if no_name or directory then
 				return
 			end
