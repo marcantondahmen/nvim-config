@@ -17,6 +17,7 @@ return {
 				svelte = { 'prettier' },
 				css = { 'prettier' },
 				less = { 'prettier' },
+				scss = { 'prettier' },
 				html = { 'prettier' },
 				json = { 'prettier' },
 				yaml = { 'prettier' },
