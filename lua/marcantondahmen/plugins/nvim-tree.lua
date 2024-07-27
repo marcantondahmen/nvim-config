@@ -23,11 +23,13 @@ return {
 		function TreeFocus()
 			api.tree.find_file({ open = true, focus = true, update_root = false })
 			barbar.set_offset(width + 1, '', 'BufferVisible')
+			vim.g.TREEOPEN = true
 		end
 
 		function TreeClose()
 			api.tree.close()
 			barbar.set_offset(0)
+			vim.g.TREEOPEN = false
 		end
 
 		function TreeFocusOrClose()
@@ -174,17 +176,25 @@ return {
 			},
 		})
 
+		vim.g.TREEOPEN = false
+
 		-- open nvim-tree on setup
 		local function open_nvim_tree(data)
+			if vim.fn.argc() > 0 then
+				return
+			end
+
+			if vim.g.isRestoredSession then
+				if vim.g.TREEOPEN == false then
+					return
+				end
+			end
+
 			-- buffer is a [No Name]
 			local no_name = data.file == '' and vim.bo[data.buf].buftype == ''
 
 			-- buffer is a directory
 			local directory = vim.fn.isdirectory(data.file) == 1
-
-			if vim.fn.argc() > 0 then
-				return
-			end
 
 			if no_name or directory then
 				return

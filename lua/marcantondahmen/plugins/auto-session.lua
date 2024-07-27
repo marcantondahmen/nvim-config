@@ -6,8 +6,16 @@ return {
 			return
 		end
 
+		vim.g.isRestoredSession = false
+
 		autoSession.setup({
 			auto_restore_enabled = false,
+			pre_restore_cmds = {
+				function()
+					vim.g.isRestoredSession = true
+					print('Restoring session ...')
+				end,
+			},
 		})
 	end,
 }
