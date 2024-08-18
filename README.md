@@ -146,13 +146,7 @@ There are also some custom settings and extensions:
 
 ### Adding Plugins
 
-In order to add a new plugin, simply add a `lua` module that returns a [packer.nvim](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file#specifying-plugins) plugin spec, **first reload Neovim** and run the following command afterwards:
-
-```bash
-PackerSync
-```
-
-Make sure to also update the [lock file](#lock-file) as described below.
+In order to add a new plugin, simply add a `lua` module that returns a [packer.nvim](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file#specifying-plugins) plugin spec. Make sure to also update the [lock file](#lock-file) as described below.
 
 ### Lock File
 
