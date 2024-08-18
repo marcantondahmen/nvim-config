@@ -1,26 +1,17 @@
-local function compilePlugins()
-	vim.fn.jobstart("nvim --headless -c 'autocmd User PackerCompileDone quitall' -c 'PackerCompile'", {
-		stdout_buffered = true,
-		on_stdout = function()
-			vim.notify('Compiled plugins!', nil, { title = 'Packer', timeout = 750 })
-		end,
-	})
-end
-
-local function reloadPluginConfigs()
+local function reloadConfig()
 	for name, _ in pairs(package.loaded) do
-		if string.match(name, 'marc.*plugins') then
+		if string.match(name, 'marcantondahmen.*') then
 			package.loaded[name] = nil
 			print('󰑓 Purged module cache for: ' .. name)
 		end
 	end
 
 	print('󰑓 Reloading plugin setup ...')
-	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/plugins-setup.lua')
+	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/init.lua')
 end
 
 local function syncPlugins()
-	reloadPluginConfigs()
+	reloadConfig()
 
 	vim.defer_fn(function()
 		print('󰏗 Running PackerSync ...')
@@ -57,15 +48,6 @@ end
 
 vim.api.nvim_create_augroup('madConfigUpdate', { clear = true })
 
--- Notify after plugins have been synced.
-vim.api.nvim_create_autocmd('User', {
-	group = 'madConfigUpdate',
-	pattern = 'PackerComplete',
-	callback = function()
-		vim.notify('Please restart Neovim!', nil, { title = 'Update', timeout = false })
-	end,
-})
-
 -- Check for new updates on start.
 vim.api.nvim_create_autocmd('UIEnter', {
 	group = 'madConfigUpdate',
@@ -80,8 +62,8 @@ vim.api.nvim_create_autocmd('UIEnter', {
 -- Compile plugins when plugin config files are saved.
 vim.api.nvim_create_autocmd('BufWritePost', {
 	group = 'madConfigUpdate',
-	pattern = '*/nvim/lua/marcantondahmen/plugins/*.lua',
+	pattern = { '*/nvim/lua/marcantondahmen/plugins/*.lua', '*/nvim/lua/marcantondahmen/core/*.lua' },
 	callback = function()
-		vim.schedule(compilePlugins)
+		vim.schedule(syncPlugins)
 	end,
 })

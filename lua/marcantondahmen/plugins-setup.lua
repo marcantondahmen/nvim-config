@@ -101,7 +101,7 @@ return packer.startup({
 	startup,
 	config = {
 		ensure_dependencies = true,
-		max_jobs = 10,
+		max_jobs = 25,
 		snapshot_path = vim.fn.stdpath('config'),
 		profile = {
 			enable = true,
