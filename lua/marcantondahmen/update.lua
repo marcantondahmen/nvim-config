@@ -6,7 +6,7 @@ local function reloadConfig()
 		end
 	end
 
-	print('󰑓 Reloading plugin setup ...')
+	print('󰑓 Reloading config ...')
 	vim.cmd('luafile ~/.config/nvim/lua/marcantondahmen/init.lua')
 end
 
