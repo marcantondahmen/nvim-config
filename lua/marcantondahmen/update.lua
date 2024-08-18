@@ -62,7 +62,11 @@ vim.api.nvim_create_autocmd('UIEnter', {
 -- Compile plugins when plugin config files are saved.
 vim.api.nvim_create_autocmd('BufWritePost', {
 	group = 'madConfigUpdate',
-	pattern = { '*/nvim/lua/marcantondahmen/plugins/*.lua', '*/nvim/lua/marcantondahmen/core/*.lua' },
+	pattern = {
+		'*/nvim/lua/marcantondahmen/*.lua',
+		'*/nvim/lua/marcantondahmen/core/*.lua',
+		'*/nvim/lua/marcantondahmen/plugins/*.lua',
+	},
 	callback = function()
 		vim.schedule(syncPlugins)
 	end,
