@@ -80,7 +80,7 @@ end
 
 -- add list of plugins to install
 local startup = function(use)
-	use('wbthomason/packer.nvim')
+	use({ 'wbthomason/packer.nvim', commit = commits['packer.nvim'] })
 
 	local plugins = require('marcantondahmen.plugins')
 
