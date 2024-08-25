@@ -9,10 +9,10 @@ return {
 		tmux.setup({
 			disable_when_zoomed = true,
 			keybindings = {
-				left = '<A-Left>',
-				down = '<A-Down>',
-				up = '<A-Up>',
-				right = '<A-Right>',
+				left = '<S-Left>',
+				down = '<S-Down>',
+				up = '<S-Up>',
+				right = '<S-Right>',
 			},
 		})
 	end,
