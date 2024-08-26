@@ -107,8 +107,8 @@ keymaps.set = function()
 	map('n', '<c-u>', '<c-u>zz', options)
 
 	-- move lines up and down
-	map('n', '<a-c-up>', ':m-2<cr>', options)
-	map('n', '<a-c-down>', ':m+1<cr>', options)
+	map('n', '<a-s-up>', ':m-2<cr>', options)
+	map('n', '<a-s-down>', ':m+1<cr>', options)
 
 	-- barbar
 	map('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
