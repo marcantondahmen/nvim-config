@@ -76,6 +76,18 @@ return {
 				hl.NvimTreeGitRenamedIcon = {
 					fg = c.git.add,
 				}
+
+				hl.TelescopePromptBorder = {
+					fg = c.dark3,
+				}
+
+				hl.TelescopePromptTitle = {
+					fg = c.dark3,
+				}
+
+				hl.CursorLineNr = {
+					fg = c.fg_gutter,
+				}
 			end,
 		})
 
