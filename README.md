@@ -100,7 +100,6 @@ All plugins in this config are managed by [packer.nvim](https://github.com/wbtho
 - [conform.nvim](https://github.com/stevearc/conform.nvim) formatting
 - [diffview.nvim](https://github.com/sindrets/diffview.nvim) git diff view
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) git status gutter
-- [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim) markdown headings and codeblock highlighting
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) indent guides
 - [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) signature help
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) language server functions
@@ -120,6 +119,7 @@ All plugins in this config are managed by [packer.nvim](https://github.com/wbtho
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlighting
 - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) icons
 - [packer.nvim](https://github.com/wbthomason/packer.nvim) package manager
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) markdown rendering
 - [tagalong.nvim](https://github.com/AndrewRadev/tagalong.vim) update tags
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) fuzzy-serch menus
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) terminal
