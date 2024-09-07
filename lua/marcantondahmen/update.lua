@@ -63,9 +63,7 @@ vim.api.nvim_create_autocmd('UIEnter', {
 vim.api.nvim_create_autocmd('BufWritePost', {
 	group = 'madConfigUpdate',
 	pattern = {
-		'*/nvim/lua/marcantondahmen/*.lua',
-		'*/nvim/lua/marcantondahmen/core/*.lua',
-		'*/nvim/lua/marcantondahmen/plugins/*.lua',
+		'*/nvim/lua/marcantondahmen/*',
 	},
 	callback = function()
 		vim.schedule(syncPlugins)
