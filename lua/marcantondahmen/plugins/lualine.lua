@@ -14,14 +14,24 @@ return {
 		end
 
 		local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
-		local host = 'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")'
+		local host = {
+			'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")',
+			icon = '',
+			color = function()
+				if vim.env.SSH_TTY then
+					return { fg = '#f7768e' }
+				end
+
+				return { fg = '#545c7e' }
+			end,
+		}
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
 			sections = {
 				lualine_a = { 'mode' },
 				lualine_b = gitInfo,
 				lualine_c = { '' },
-				lualine_x = { 'filetype' },
+				lualine_x = { host, 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
 			},
@@ -89,7 +99,7 @@ return {
 					},
 					'diagnostics',
 				},
-				lualine_x = { { host, icon = '', color = { fg = '#545c7e' } }, 'filetype' },
+				lualine_x = { host, 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
 			},
