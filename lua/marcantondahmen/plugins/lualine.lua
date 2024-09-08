@@ -14,6 +14,7 @@ return {
 		end
 
 		local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
+		local host = 'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")'
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
 			sections = {
@@ -88,7 +89,7 @@ return {
 					},
 					'diagnostics',
 				},
-				lualine_x = { 'filetype' },
+				lualine_x = { { host, icon = '', color = { fg = '#545c7e' } }, 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
 			},
