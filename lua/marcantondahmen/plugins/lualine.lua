@@ -26,14 +26,15 @@ return {
 			getSshHost(),
 			icon = '',
 			color = { fg = '#f7768e' },
+			padding = { left = 1, right = 0 },
 		}
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
 			sections = {
 				lualine_a = { 'mode' },
 				lualine_b = gitInfo,
-				lualine_c = { '' },
-				lualine_x = { host, 'filetype' },
+				lualine_c = { host },
+				lualine_x = { 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
 			},
@@ -88,6 +89,7 @@ return {
 				lualine_a = { 'mode' },
 				lualine_b = gitInfo,
 				lualine_c = {
+					host,
 					{
 						'filename',
 						file_status = true, -- displays file status (readonly status, modified status)
@@ -101,7 +103,7 @@ return {
 					},
 					'diagnostics',
 				},
-				lualine_x = { host, 'filetype' },
+				lualine_x = { 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
 			},
