@@ -13,17 +13,19 @@ return {
 			return
 		end
 
+		local getSshHost = function()
+			if vim.env.SSH_TTY then
+				return 'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")'
+			end
+
+			return ''
+		end
+
 		local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
 		local host = {
-			'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")',
+			getSshHost(),
 			icon = '',
-			color = function()
-				if vim.env.SSH_TTY then
-					return { fg = '#f7768e' }
-				end
-
-				return { fg = '#545c7e' }
-			end,
+			color = { fg = '#f7768e' },
 		}
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
