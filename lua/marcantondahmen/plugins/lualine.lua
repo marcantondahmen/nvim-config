@@ -13,27 +13,26 @@ return {
 			return
 		end
 
-		local getSshHost = function()
-			if vim.env.SSH_TTY then
-				return 'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")'
-			end
+		local ssh = {
+			'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")',
+			icon = '',
+			color = { fg = '#1f2335', bg = '#a9b1d6' },
+			padding = { left = 1, right = 1 },
+			cond = function()
+				if vim.env.SSH_TTY then
+					return true
+				end
 
-			return ''
-		end
-
-		local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
-		local host = {
-			getSshHost(),
-			icon = '',
-			color = { fg = '#f7768e' },
-			padding = { left = 1, right = 0 },
+				return false
+			end,
 		}
+		local pwd = 'string.gsub(vim.fn.getcwd(), "(.*/)(.*)", "%2")'
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
 			sections = {
-				lualine_a = { 'mode' },
+				lualine_a = { ssh, 'mode' },
 				lualine_b = gitInfo,
-				lualine_c = { host },
+				lualine_c = { '' },
 				lualine_x = { 'filetype' },
 				lualine_y = { pwd },
 				lualine_z = { 'progress' },
@@ -86,10 +85,9 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { 'mode' },
+				lualine_a = { ssh, 'mode' },
 				lualine_b = gitInfo,
 				lualine_c = {
-					host,
 					{
 						'filename',
 						file_status = true, -- displays file status (readonly status, modified status)
