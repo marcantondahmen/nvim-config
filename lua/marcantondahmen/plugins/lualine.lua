@@ -15,8 +15,8 @@ return {
 
 		local ssh = {
 			'string.gsub(vim.fn.hostname(), "([^.]*).*", "%1")',
-			icon = '',
-			color = { fg = '#1f2335', bg = '#a9b1d6' },
+			icon = '',
+			color = { bg = '#292e42' },
 			padding = { left = 1, right = 1 },
 			cond = function()
 				if vim.env.SSH_TTY then
@@ -30,11 +30,11 @@ return {
 		local gitInfo = { { 'branch', icon = '󰘬' }, { 'diff', padding = { left = 0, right = 1 } } }
 		local nofile = {
 			sections = {
-				lualine_a = { ssh, 'mode' },
+				lualine_a = { 'mode' },
 				lualine_b = gitInfo,
 				lualine_c = { '' },
 				lualine_x = { 'filetype' },
-				lualine_y = { pwd },
+				lualine_y = { ssh, pwd },
 				lualine_z = { 'progress' },
 			},
 			filetypes = {
@@ -85,7 +85,7 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { ssh, 'mode' },
+				lualine_a = { 'mode' },
 				lualine_b = gitInfo,
 				lualine_c = {
 					{
@@ -102,7 +102,7 @@ return {
 					'diagnostics',
 				},
 				lualine_x = { 'filetype' },
-				lualine_y = { pwd },
+				lualine_y = { ssh, pwd },
 				lualine_z = { 'progress' },
 			},
 			extensions = { nofile, trouble },
