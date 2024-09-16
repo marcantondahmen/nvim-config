@@ -19,7 +19,9 @@ return {
 			color = { fg = '#73daca' },
 			padding = { left = 1, right = 1 },
 			cond = function()
-				if vim.env.SSH_CONNECTION then
+				local sys = vim.system({ 'tmux', 'showenv' }, { text = true }):wait()
+
+				if string.find(sys.stdout, 'SSH_CONNECTION=') then
 					return true
 				end
 
