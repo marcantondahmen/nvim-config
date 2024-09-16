@@ -19,7 +19,7 @@ return {
 			color = { fg = '#73daca' },
 			padding = { left = 1, right = 1 },
 			cond = function()
-				if vim.env.SSH_TTY then
+				if vim.env.SSH_CONNECTION then
 					return true
 				end
 
