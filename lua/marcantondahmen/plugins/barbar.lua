@@ -11,7 +11,7 @@ return {
 			animation = true,
 
 			-- Enable/disable auto-hiding the tab bar when there is a single buffer
-			auto_hide = true,
+			auto_hide = false,
 
 			-- Enable/disable current/total tabpages indicator (top right corner)
 			tabpages = false,
