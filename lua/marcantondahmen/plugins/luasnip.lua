@@ -93,6 +93,13 @@ return {
 				i(3),
 				t({ '', '<@ end @>' }),
 			}),
+			s({ trig = '@snippet', name = 'snippet ...' }, {
+				t({ '<@ snippet ' }),
+				i(1),
+				t({ ' @>', '	' }),
+				i(2),
+				t({ '', '<@ end @>' }),
+			}),
 		})
 
 		luasnip.add_snippets('typescript', {
