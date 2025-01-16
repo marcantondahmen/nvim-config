@@ -26,6 +26,7 @@ return {
 				php = { 'php_cs_fixer' },
 				sh = { 'shfmt' },
 				sql = { 'postgresql', 'mysql' },
+				blade = { 'blade-formatter' },
 				-- Use the "_" filetype to run formatters on filetypes that don't
 				-- have other formatters configured.
 				['_'] = { 'trim_whitespace' },
