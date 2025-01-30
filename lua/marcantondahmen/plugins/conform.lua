@@ -8,6 +8,8 @@ return {
 
 		local sqlConfig = vim.fn.stdpath('config') .. '/config/sql-formatter.config.json'
 
+		vim.env.PHP_CS_FIXER_IGNORE_ENV = 1
+
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { 'prettier' },
