@@ -109,6 +109,8 @@ keymaps.set = function()
 	-- move lines up and down
 	map('n', '<a-s-up>', ':m-2<cr>', options)
 	map('n', '<a-s-down>', ':m+1<cr>', options)
+	map('v', '<a-s-up>', ":m '<-2<cr>gv=gv", options)
+	map('v', '<a-s-down>', ":m '>+1<cr>gv=gv", options)
 
 	-- barbar
 	map('n', '<S-TAB>', '<Cmd>BufferPrevious<CR>', options)
@@ -125,6 +127,10 @@ keymaps.set = function()
 
 	-- replace selection in project
 	map('v', '<C-r>', '<esc><cmd>lua SadVisual()<CR>', { silent = true, noremap = false })
+
+	-- indent
+	map('v', '<TAB>', '>gv', options)
+	map('v', '<S-TAB>', '<gv', options)
 end
 
 return keymaps
