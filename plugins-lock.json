@@ -46,7 +46,7 @@
 	"telescope.nvim": { "commit": "7472420" },
 	"toggleterm.nvim": { "commit": "193786e" },
 	"tokyonight.nvim": { "commit": "4b386e6" },
-	"trouble.nvim": { "commit": "f1168fe" },
+	"trouble.nvim": { "commit": "85bedb7" },
 	"typescript-tools.nvim": { "commit": "3c501d7" },
 	"vim-ReplaceWithRegister": { "commit": "aad1e8f" },
 	"vim-markdown-toc": { "commit": "5acf680" },
