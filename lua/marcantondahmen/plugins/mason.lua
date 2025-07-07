@@ -9,6 +9,7 @@ return {
 		mason.setup({
 			ui = {
 				border = 'single',
+				backdrop = 100,
 			},
 		})
 	end,
