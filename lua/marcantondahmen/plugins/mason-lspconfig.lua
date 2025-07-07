@@ -1,5 +1,5 @@
 return {
-	'williamboman/mason-lspconfig.nvim',
+	'mason-org/mason-lspconfig.nvim',
 	after = { 'mason.nvim' },
 	config = function()
 		local masonLspconfigSuccess, masonLspconfig = pcall(require, 'mason-lspconfig')
@@ -11,7 +11,8 @@ return {
 			-- list of servers for mason to install
 			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 			ensure_installed = {
-				'tsserver',
+				-- Note that currently the typescript-tools.nvim package is used as a replacement fot ts_ls
+				-- 'ts_ls',
 				'html',
 				'cssls',
 				'tailwindcss',

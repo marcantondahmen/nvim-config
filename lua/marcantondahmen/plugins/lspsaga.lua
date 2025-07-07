@@ -1,5 +1,5 @@
 return {
-	'glepnir/lspsaga.nvim',
+	'nvimdev/lspsaga.nvim',
 	requires = {
 		'nvim-tree/nvim-web-devicons',
 		'nvim-treesitter/nvim-treesitter',
