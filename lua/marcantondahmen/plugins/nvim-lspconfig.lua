@@ -41,10 +41,10 @@ return {
 				g = {
 					name = 'Code navigation',
 					f = { '<cmd>Lspsaga finder<CR>', 'Show definition, references' },
-					D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'See definition and make edits in window' },
 					d = { '<cmd>Lspsaga peek_definition<CR>', 'Peek definition' },
 					i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
 					k = { '<cmd>Lspsaga hover_doc<CR>', 'Show documentation for what is under cursor' },
+					R = { ':TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 				},
 			})
 		end

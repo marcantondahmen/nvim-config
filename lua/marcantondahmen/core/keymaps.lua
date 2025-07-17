@@ -2,7 +2,6 @@ local keymaps = {}
 
 -- Keymaps that are handled by WhichKey
 keymaps.whichKeyMaps = {
-	gR = { ':TroubleToggle lsp_references<cr>', 'Trouble toggle references' },
 	['<leader>'] = {
 		a = { ':Neogen<cr>', 'Generate docblock' },
 		b = {
