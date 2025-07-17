@@ -25,6 +25,7 @@ return {
 			ui = {
 				border = 'single',
 				code_action = '󰌵',
+				title = false,
 			},
 		})
 
