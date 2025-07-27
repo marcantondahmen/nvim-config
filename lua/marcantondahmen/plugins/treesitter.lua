@@ -74,5 +74,8 @@ return {
 			-- auto install above language parsers
 			auto_install = true,
 		})
+
+		vim.treesitter.language.register('css', 'less')
+		vim.treesitter.language.register('css', 'scss')
 	end,
 }
