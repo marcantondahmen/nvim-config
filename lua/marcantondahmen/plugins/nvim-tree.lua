@@ -217,5 +217,11 @@ return {
 			{ 'BufNewFile', 'BufReadPost' },
 			{ group = 'madNvimTree', callback = open_nvim_tree }
 		)
+		vim.api.nvim_create_autocmd({ 'FocusGained' }, {
+			group = 'madNvimTree',
+			callback = function()
+				api.tree.git.reload()
+			end,
+		})
 	end,
 }
