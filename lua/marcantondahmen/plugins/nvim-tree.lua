@@ -220,7 +220,8 @@ return {
 		vim.api.nvim_create_autocmd({ 'FocusGained' }, {
 			group = 'madNvimTree',
 			callback = function()
-				api.tree.git.reload()
+				api.tree.reload()
+				api.git.reload()
 			end,
 		})
 	end,
