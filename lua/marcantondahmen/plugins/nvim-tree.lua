@@ -217,6 +217,7 @@ return {
 			{ 'BufNewFile', 'BufReadPost' },
 			{ group = 'madNvimTree', callback = open_nvim_tree }
 		)
+		-- Make sure that the focus-events setting is on in tmux.conf
 		vim.api.nvim_create_autocmd({ 'FocusGained' }, {
 			group = 'madNvimTree',
 			callback = function()
