@@ -49,11 +49,14 @@ opt.showmode = false
 opt.swapfile = false
 opt.fixeol = true
 
--- Automad filetypes
+-- Automad and pg filetypes
 vim.filetype.add({
 	filename = {
 		data = 'json',
 		index = 'json',
+	},
+	extension = {
+		pg = 'sql',
 	},
 })
 
