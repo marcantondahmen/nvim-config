@@ -13,6 +13,14 @@ return {
 			word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 			current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
 			current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+			preview_config = {
+				-- Options passed to nvim_open_win
+				style = 'minimal',
+				border = 'single',
+				relative = 'cursor',
+				row = 0,
+				col = 1,
+			},
 		})
 	end,
 }
