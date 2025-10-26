@@ -34,7 +34,7 @@
 	"nvim-notify": { "commit": "b5825cf" },
 	"nvim-spectre": { "commit": "3712ff0" },
 	"nvim-tmux-navigation": { "commit": "4898c98" },
-	"nvim-tree.lua": { "commit": "b0b4955" },
+	"nvim-tree.lua": { "commit": "64e2192" },
 	"nvim-treesitter": { "commit": "42fc28b" },
 	"nvim-ts-autotag": { "commit": "531f483" },
 	"nvim-web-devicons": { "commit": "75df79f" },
