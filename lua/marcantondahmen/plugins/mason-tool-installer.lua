@@ -12,7 +12,7 @@ return {
 				'stylua',
 				'php-cs-fixer',
 				'shfmt',
-				'sql-formatter',
+				'pgformatter',
 				'blade-formatter',
 			},
 		})

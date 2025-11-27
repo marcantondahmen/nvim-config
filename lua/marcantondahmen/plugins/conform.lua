@@ -6,8 +6,6 @@ return {
 			return
 		end
 
-		local sqlConfig = vim.fn.stdpath('config') .. '/config/sql-formatter.config.json'
-
 		vim.env.PHP_CS_FIXER_IGNORE_ENV = 1
 
 		conform.setup({
@@ -27,7 +25,7 @@ return {
 				lua = { 'stylua' },
 				php = { 'php_cs_fixer' },
 				sh = { 'shfmt' },
-				sql = { 'postgresql', 'mysql' },
+				sql = { 'pg_format' },
 				blade = { 'blade-formatter' },
 				-- Use the "_" filetype to run formatters on filetypes that don't
 				-- have other formatters configured.
@@ -46,11 +44,6 @@ return {
 					timeout_ms = 5000,
 				}
 			end,
-			-- Define customized sql formatters for different languages, mysql or postgresql.
-			formatters = {
-				mysql = { command = 'sql-formatter', args = { '-l', 'mysql', '-c', sqlConfig } },
-				postgresql = { command = 'sql-formatter', args = { '-l', 'postgresql', '-c', sqlConfig } },
-			},
 			-- Don't notify on errors since the sql formatter will always fail on postgresql files.
 			notify_on_error = false,
 		})
