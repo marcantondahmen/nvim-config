@@ -40,12 +40,22 @@ return {
 				i(1),
 				t({ ' #>' }),
 			}),
-			s({ trig = '@pagelist', name = 'foreach in pagelist' }, {
+			s({ trig = '@pagelist', name = '<@ foreach in pagelist @>' }, {
 				t({ '<@ foreach in pagelist @>', '	' }),
 				i(1),
 				t({ '', '<@ end @>' }),
 			}),
-			s({ trig = '@pagelistelse', name = 'foreach in pagelist else' }, {
+			s({ trig = '@filters', name = '<@ foreach in filters @>' }, {
+				t({ '<@ foreach in filters @>', '	' }),
+				i(1),
+				t({ '', '<@ end @>' }),
+			}),
+			s({ trig = '@tags', name = '<@ foreach in tags @>' }, {
+				t({ '<@ foreach in tags @>', '	' }),
+				i(1),
+				t({ '', '<@ end @>' }),
+			}),
+			s({ trig = '@pagelistelse', name = '<@ foreach in pagelist @>...<@ else @>' }, {
 				t({ '<@ foreach in pagelist @>', '	' }),
 				i(1),
 				t({ '', '<@ else @>', '	' }),
