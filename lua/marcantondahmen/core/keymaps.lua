@@ -80,8 +80,18 @@ keymaps.whichKeyMaps = {
 		m = { ':MarkdownPreview<cr>', 'Markdown preview' },
 		n = { ':Navbuddy<cr>', 'Open Navbuddy' },
 	},
-	['[d'] = { vim.diagnostic.goto_prev, 'Jump to previous diagnostic' },
-	[']d'] = { vim.diagnostic.goto_next, 'Jump to next diagnostic' },
+	['[d'] = {
+		function()
+			vim.diagnostic.jump({ count = -1, float = true })
+		end,
+		'Jump to previous diagnostic',
+	},
+	[']d'] = {
+		function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end,
+		'Jump to next diagnostic',
+	},
 	['[g'] = { ':Gitsigns prev_hunk<cr>', 'Jump to previous Git hunk' },
 	[']g'] = { ':Gitsigns next_hunk<cr>', 'Jump to next Git hunk' },
 }
@@ -130,6 +140,16 @@ keymaps.set = function()
 	-- indent
 	map('v', '<TAB>', '>gv', options)
 	map('v', '<S-TAB>', '<gv', options)
+
+	-- map de layout
+	map('n', 'öd', function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, options)
+	map('n', 'äd', function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, options)
+	map('n', 'ög', ':Gitsigns prev_hunk<cr>', options)
+	map('n', 'äg', ':Gitsigns next_hunk<cr>', options)
 end
 
 return keymaps
