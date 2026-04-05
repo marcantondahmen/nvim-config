@@ -141,7 +141,8 @@ keymaps.set = function()
 	map('v', '<TAB>', '>gv', options)
 	map('v', '<S-TAB>', '<gv', options)
 
-	-- map de layout
+	-- alternatively on older laptops that have no us layout it can be useful
+	-- to map diagnostics and git navigation to ö and ä
 	map('n', 'öd', function()
 		vim.diagnostic.jump({ count = -1, float = true })
 	end, options)
